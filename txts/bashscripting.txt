@@ -1,4 +1,3 @@
-
 .----------------------------------.
 | Programação em Bourne-Again Shell `------------------------------------,
 | Por MELEU <meleu@meleu.cjb.net>         http://meleu.da.ru     05/2002 |
@@ -4340,4 +4339,6 @@ preocupando em acumular riquezas.
    Como diriam "nuestros hermanos": Hasta luego.
 
 
+
 -------------------------------------------------------------------------
+
