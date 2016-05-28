@@ -1,6 +1,6 @@
 {
   "name": "meleu.github.io",
   "tagline": "minha pagina web",
-  "body": "# intro\r\nAtualizar...",
+  "body": "# intro\r\nTentando fazer do github meu novo lar na web\r\n\r\n# textos\r\n\r\n[Permissões de Arquivos UNIX](https://raw.githubusercontent.com/meleu/meleu.github.io/master/txts/permissoes.txt) -- Texto sobre as permissões de arquivos UNIX incluindo material referente a linguagem C.\r\n\r\n[Programação em Bourne-Again Shell](https://raw.githubusercontent.com/meleu/meleu.github.io/master/txts/bashscripting.txt) -- Um texto bem completinho (mas que também não esgota o assunto) que fiz sobre programação em bash. Além daquelas coisas tradicionais de if, while, for, etc. também tem informações sobre substituição de variáveis, sequências de escape ANSI, getopts, dialog, entre outras coisas. Espero que goste! :-) \r\n",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
