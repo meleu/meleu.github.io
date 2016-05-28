@@ -1,2 +1,3 @@
-# (meleu.github.io)[http://meleu.github.io]
-My personal web page.
+# meleu.github.io
+
+http://meleu.github.io - My personal web page.
