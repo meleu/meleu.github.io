@@ -2,18 +2,19 @@
 layout: default
 title: about
 ---
-Eu era nerdão de Linux nazantiga. Hoje sou praticante de uma nerdeza mais branda. Sou formado em Ciência da Computação e
-essa área é uma das minhas grandes paixões, mas devido ao acaso (mentira, é por causa de dinheiro) o meu ganha-pão é outro.
+Eu era nerdão de Linux nazantiga, me amarro em programar e cheguei a me formar em Ciência da Computação. Achava
+que iria trabalhar com isso. Mas o acaso acabou me levando para outra área (se preferir pode substituir "acaso" por "dinheiro").
+Hoje sou praticante de uma nerdeza mais branda.
 
-Palavras chave de coisas que eu gosto/tenho interesse:
+Palavras chave de coisas que eu gosto/tenho interesse (sem ordem de preferência):
 
+- aggressive inline skating
+- bateria (sim, o instrumento musical)
 - Linux
 - shell script
 - linguagem C
 - TCP/IP
 - Raspberry Pi
 - Android
-- video games antigos (e o [RetroPie](http://retropie.org.uk/)/RetroArch me proporciona todos eles num só lugar)
+- old games (e o [RetroPie](http://retropie.org.uk/)/RetroArch me proporciona todos eles num só lugar)
 - [RetroAchievements](http://retroachievements.org) (uma maneira de registrar suas conquistas nos videogames antigos)
-- bateria (sim, o instrumento musical)
-- aggressive inline skating
