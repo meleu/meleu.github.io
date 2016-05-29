@@ -4,6 +4,9 @@ title: sobre meleu
 ---
 # {{ page.title }}
 
+![alt text]({{owner_gravatar_url}} "meleu")
+
+
 Eu era nerdão de Linux nazantiga, me amarro em programar e futucar o Linux pela linha de comando. Cheguei a me formar em Ciência
 da Computação e achava que iria trabalhar com isso, mas o acaso acabou me levando para outra área (se preferir pode substituir
 "acaso" por "dinheiro"). Hoje sou praticante de uma nerdeza mais branda e apenas nas horas vagas.
