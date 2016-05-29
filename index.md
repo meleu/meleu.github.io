@@ -11,7 +11,8 @@ Meu blog em [blog](/blog).
 
 # projetos
 ### meus projetos
-(RetroPie-input-selection)[https://github.com/meleu/RetroPie-input-selection] - Um script (para usar no RetroPie) que
+
+[RetroPie-input-selection](https://github.com/meleu/RetroPie-input-selection) - Um script (para usar no RetroPie) que
 permite ao usuário escolher qual joystick será utilizado para controlar os players 1 ao 4 no RetroArch.
 
 [.dotfiles](https://github.com/meleu/.dotfiles) - Isso não é um projeto propriamente dito. É só uma cópia dos meus
