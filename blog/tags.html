@@ -8,7 +8,7 @@ title: posts organizados por tags
   {% for tag in site.tags %}
     {% assign t = tag | first %}
     {% assign posts = tag | last %}
-    <li>{{t | downcase | replace:" ","-" }} has {{ posts | size }} posts</li>
+    <li>{{t | downcase | replace:" ","-" }}: {{ posts | size }} posts</li>
   {% endfor %}
 </ul>
 
@@ -17,17 +17,16 @@ title: posts organizados por tags
     {% assign t = tag | first %}
     {% assign posts = tag | last %}
 
-{{ t | downcase }}
+<h3>{{ t | downcase }}</h3>
 <ul>
 {% for post in posts %}
     {% if post.tags contains t %}
     <li>
+        <span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>:
         <a href="{{ post.url }}">{{ post.title }}</a>
-        <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
     </li>
     {% endif %}
 {% endfor %}
 </ul>
 {% endfor %}
-
 
