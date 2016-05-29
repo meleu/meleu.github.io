@@ -1,11 +1,8 @@
 ---
 layout: default
-title: sobre meleu
+title: about
 ---
 # {{ page.title }}
-
-{{ owner_gravatar_url }}
-
 
 Eu era nerdão de Linux nazantiga, me amarro em programar e futucar o Linux pela linha de comando. Cheguei a me formar em Ciência
 da Computação e achava que iria trabalhar com isso, mas o acaso acabou me levando para outra área (se preferir pode substituir
