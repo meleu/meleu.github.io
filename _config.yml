@@ -1,2 +1,3 @@
 name: meleu's personal webpage
 markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
