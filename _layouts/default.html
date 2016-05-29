@@ -14,15 +14,9 @@
   <body>
     <header>
       <div class="container">
-        <h1>meleu.github.io</h1>
+        <h1>{{ page.title }}</h1>
         <h2>Tentando fazer do github meu novo lar na web.</h2>
         {% include menu.html %}
-        
-        {{#project_page?}}
-<p><a href="{{owner_url}}" class="avatar"><img src="{{owner_gravatar_url}}" width="48" height="48"/></a> <a href="{{owner_url}}">{{owner_name}}</a> maintains <a href="{{github_url}}">{{project_title}}</a></p>
-{{/project_page?}}
-        
-        
       </div>
     </header>
     
