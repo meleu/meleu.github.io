@@ -1,0 +1,14 @@
+---
+layout: post
+title: 'O que o #! faz'
+date: '2007-07-16T09:57:00.002-03:00'
+author: Meleu Zord
+tags:
+- unix
+- shell
+modified_time: '2008-04-21T10:01:55.287-03:00'
+blogger_id: tag:blogger.com,1999:blog-1613465446497619833.post-8100131051435671184
+blogger_orig_url: http://mdicas.blogspot.com/2007/07/o-que-o-faz.html
+---
+
+Essa eu li em <a href="http://br.geocities.com/cesarakg/tips-shell-programming.html">http://br.geocities.com/cesarakg/tips-shell-programming.html</a>.<br /><br />Quando executamos um arquivo que começa com o #! (chamado de hash-bang) o kernel lê o arquivo, vê o hash-bang, e continua a ler o resto da linha. Então ele pega o que ele encontrar nesta linha depois do hash-bang e executa tendo como parâmetro o próprio arquivo.<br /><br />Vamos aos exemplos:<br /><br />O arquivo abaixo chama-se hello.sh:<br /><blockquote>#!/bin/bash<br /># hello.sh: o famigerado "Hello World!"<br />echo "Hello World!"</blockquote><br />quando é digitado no shell:<br /><blockquote>prompt$ ./hello.sh</blockquote><br />o kernel vai ver o #! e vai ler o que vem a seguir, neste caso '/bin/bash'. E então ele executa o equivalente a isto:<br /><blockquote>prompt$ /bin/bash hello.sh</blockquote><br />Então lembrando: o kernel lê o que está depois do hash-bang e executa o que estiver lá, usando o nome do arquivo como parâmetro. No caso do exemplo acima temos o seguinte:<br /><br />O que foi lido após o hash-bang: /bin/bash<br />Nome do arquivo: hello.sh<br /><br /><br />Um exemplo muito interessante mencionado no texto é o seguinte:<br /><br />O nome do arquivo é helpme.<br /><blockquote>#!/bin/cat<br />vi    unix editor<br />man   manual pages<br />sh    Bourne Shell<br />ksh   Korn Shell<br />csh   C Shell<br />bash  Bourne Again Shell</blockquote><br />O que é lido após o hash-bang: /bin/cat<br />Nome do arquivo: helpme<br /><br />Portanto será executado: /bin/cat helpme<br /><br />Uma observação interessante é que o bash (e a maioria dos shells) considera tudo que vem depois de um caractere '#' como comentário, portanto o hash-bang e toda a sua linha é um comentário para o shell. Porém no exemplo helpme acima, o /bin/cat não vai ignorar e #! e irá exibir o contúdo de todo o arquivo.<br /><br />No <a href="http://br.geocities.com/cesarakg/tips-shell-programming.html">documento mencionado</a> existem outras dicas. O texto é curto e de rápida leitura. Eu recomendo.

@@ -1,0 +1,15 @@
+---
+layout: post
+title: 'crunchbang!: minha nova distribuição linux favorita'
+date: '2012-12-06T20:58:00.001-02:00'
+author: Meleu Zord
+tags:
+- Linux
+- crunchbang
+- debian
+modified_time: '2012-12-06T20:58:41.140-02:00'
+blogger_id: tag:blogger.com,1999:blog-1613465446497619833.post-1566186065770324857
+blogger_orig_url: http://mdicas.blogspot.com/2012/12/crunchbang-minha-nova-distribuicao.html
+---
+
+Acho que encontrei minha mais nova distribuição Linux favorita: crunchbang! [<a href="http://www.crunchbang.org/">www.crunchbang.org</a>]. Na verdade trata-se de um debian com uma configuração minimalista, muito boa para computadores modestos. Nos meus testes iniciais estou gostando muito.<br /><br />Esse post é só um registro rápido do que fiz para instalar e no pós-instalação. Sem entrar em detalhes, se você é completamente newbie existem ótimos guias por aí de como instalar crunchbang! e/ou debian. ;-)<br /><br />A versão utilizada foi crunchbang-10-20120207-i386.iso <br /><br /><b>1º passo: preparando o pendrive para o boot</b><br /><br />Ao contrário da maioria das outras distribuições, não dá pra criar um pendrive bootável do crunchbang! usando o unetbootin. Numa rápida googlada eu vi em [<a href="http://crunchbanglinux.org/wiki/statler_usb_installation">http://crunchbanglinux.org/wiki/statler_usb_installation</a>] que o processo é ainda mais simples. Com o seu pendrive não-montado em diretório algum, basta executar o seguinte comando:<br /><br /><code>sudo dd if=/path/to/iso/crunchbang-10-XXXX.iso of=/dev/sdX bs=4M; sync </code><br /><br />Pronto! O pendrive está pronto para o boot!<br /><br /><b>2º passo: instalando</b><br /><br />Instalar...<br /><br /><b>3º passo: o pós-instalação</b><br /><br />Após a instalação o crunchbang! executa um script para instalar alguns pacotes extras que não vêem junto com a instalação padrão. Como sou curioso, fui dar uma olhada no script (que se encontra em /usr/bin/cb-welcome) e executei os comandos "na mão". Mas antes, dei uma olhada no sources.list e retirei o comentário da linha<br /><br /><code>deb http://packages.crunchbang.org/statler-mozilla squeeze-backports iceweasel-release</code> <br /><br />Isso é um mirror do Debian Multimedia [<a href="http://deb-multimedia.org/">deb-multimedia.org</a>]. Muito útil!<br /><br />Em seguida executei os seguintes comandos "inspirado" nos scripts chamados pelo cb-welcome:<br /><br /><code>apt-get update<br />apt-get dist-upgrade<br />apt-get install cups cups-pdf system-config-printer hpijs<br />debconf-set-selections /usr/share/crunchbang/debconf/sunjava.preseed<br />apt-get install sun-java6-jre sun-java6-plugin<br />apt-get -t squeeze-backports install libreoffice libreoffice-gtk<br /></code><br /><br />Além destes, eu também instalei o rednotebook, que eu gosto de usar como diário de bordo para anotar as alterações que vou fazendo no sistema.<br /><br />Agora vou futucar alguns aplicativos para ripar meus DVDs dos Simpsons, mas isso é assunto para outro post!

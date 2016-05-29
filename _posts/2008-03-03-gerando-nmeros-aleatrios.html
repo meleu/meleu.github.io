@@ -1,0 +1,15 @@
+---
+layout: post
+title: gerando números aleatórios
+date: '2008-03-03T16:27:00.006-03:00'
+author: Meleu Zord
+tags:
+- C
+- estudo
+- programacao
+modified_time: '2008-03-09T22:19:39.878-03:00'
+blogger_id: tag:blogger.com,1999:blog-1613465446497619833.post-3850335321305979558
+blogger_orig_url: http://mdicas.blogspot.com/2008/03/gerando-nmeros-aleatrios.html
+---
+
+Essa eu aprendi no <a href="http://www.cs.cf.ac.uk/Dave/C/">Programming in C - UNIX System Calls and Subroutines using C</a>. Trata-se de uma gambiarra para gerar números aleatórios.<br /><br />Abaixo uma função que gera n números aleatórios de zero a nove e guarda no vetor V passado a função como parâmetro:<br /><br /><blockquote><br />#include &lt;stdlib.h&gt;<br />#include &lt;time.h&gt;<br /><br />#define MAIOR 10<br /><br /><br />void geranumeros(int V[], int n) {<br />&nbsp;&nbsp;&nbsp;&nbsp;srand((unsigned int) time(NULL));<br />&nbsp;&nbsp;&nbsp;&nbsp;while(n &gt; 0)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V[--n] = rand() % MAIOR;<br />}<br /></blockquote><br /><br />Achei isso especialmente útil na hora de testar os algoritmos de ordenação ensinados na disciplina de Estrutura de Dados II.

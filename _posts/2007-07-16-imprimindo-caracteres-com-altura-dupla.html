@@ -1,0 +1,14 @@
+---
+layout: post
+title: Imprimindo caracteres com altura dupla no OpenVMS
+date: '2007-07-16T12:41:00.001-03:00'
+author: Meleu Zord
+tags:
+- OpenVMS
+- DCL
+modified_time: '2007-07-17T09:55:04.535-03:00'
+blogger_id: tag:blogger.com,1999:blog-1613465446497619833.post-4396658834859255611
+blogger_orig_url: http://mdicas.blogspot.com/2007/07/imprimindo-caracteres-com-altura-dupla.html
+---
+
+Dica para OpenVMS. Nada a ver com Linux, UNIX, FreeBSD e muito menos Windows.<br /><br />Isso e muitas outras coisas eu aprendi em <a href="http://www.kgbreport.com/dcl/198703.txt">http://www.kgbreport.com/dcl/198703.txt</a><br /><br />Imprimir caracteres com altura dupla fica bem bonito! ;-) Veja o código:<br /><blockquote>$ ESC[0,32] = %X1B<br />$ ALTDC = ESC+"#3" ! parte de cima da string<br />$ ALTDB = ESC+"#4" ! parte de baixo da string<br />$ WRITE SYS$OUTPUT ALTDC,"Exemplo: meleu eh nerd!"<br />$ WRITE SYS$OUTPUT ALTDB,"Exemplo: meleu eh nerd!"</blockquote><br />O código fica assim mesmo, muito esquisitão. Mas lendo o texto indicado acima e fuçando os códigos escritos lá tudo fica mais claro

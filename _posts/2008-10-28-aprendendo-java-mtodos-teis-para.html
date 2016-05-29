@@ -1,0 +1,14 @@
+---
+layout: post
+title: 'aprendendo java: métodos úteis para manipulação de arrays'
+date: '2008-10-28T15:52:00.001-02:00'
+author: Meleu Zord
+tags:
+- java
+- programacao
+modified_time: '2008-10-28T15:53:42.067-02:00'
+blogger_id: tag:blogger.com,1999:blog-1613465446497619833.post-1824868867537021756
+blogger_orig_url: http://mdicas.blogspot.com/2008/10/aprendendo-java-mtodos-teis-para.html
+---
+
+Iniciando a série "lembretes úteis para quem está aprendendo Java". Esta dica foi obtida no livro "Core Java 2 - Volume I: Fundamentos".<br /><br />Para copiar o conteúdo de um array para outro, pode-se usar o método arraycopy da classe System. a sintaxe é a seguinte:<br /><br />System.arraycopy(from, fromIndex, to, toIndex, count);<br /><br />As variáveis from e to devem ser Object. E como sabemos, todo array em java É UM Object (ou seja, herda os campos e métodos da classe Object).<br /><br />Traduzindo para o bom português: copie os "count" elementos de "from", começando em "fromIndex" e vá armazenando em "to" a partir de "toIndex".<br /><br />Exemplo de utilização do método arraycopy:<br /><br /><blockquote><br />public class teste {<br />&nbsp;&nbsp;public static void main(String args[]) {<br />&nbsp;&nbsp;&nbsp;&nbsp;int[] smallPrimes = {2, 3, 5, 7, 11, 13};<br />&nbsp;&nbsp;&nbsp;&nbsp;int[] luckyNumbers = {1001, 1002, 1003, 1004, 1005, 1006, 1007};<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;System.arraycopy(smallPrimes, 2, luckyNumbers, 3, 4);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;for(int i = 0; i < luckyNumbers.length; i++)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(i +": "+ luckyNumbers[i]);<br /> <br />&nbsp;&nbsp;} // final de main<br />} // final da classe teste<br /></blockquote><br /><br /><br />A saída deste programa será:<br /><br />0: 1001<br />1: 1002<br />2: 1003<br />3: 5<br />4: 7<br />5: 11<br />6: 13<br /><br /><br />A simples ordenação de um array pode ser feita através do método sort da classe java.util.Arrays. Para ordenar basta fazer o seguinte (luckyNumbers é um array de inteiros):<br /><br />Arrays.sort(luckyNumbers);<br /><br />Reza a lenda que este método usa o QuickSort.<br /><br /><br />Outros métodos úteis para manipulação de arrays (todos da classe java.util.Arrays):<br /><br /><li> static int binarySearch(type[] a, type v)<br />usa o algoritmo de busca binária para buscar o valor v dentro do array a. Se econtrado, seu índice é retornado. Do contrário é retornado um valor negativo r; o valor -r - 1 é o ponto em que v deverá ser inserido para manter o array a ordenado.<br /><u>Parâmetros</u>:<br />a: um array <b><u>ORDENADO</b></u> do tipo int, long, short, char, byte, float ou double.<br />v: um valor do mesmo tipo que os elementos de a.<br /><br /><li> static void fill(type[] a, type v)<br />atribui o valor v a todos os elementos do array a.

@@ -1,0 +1,13 @@
+---
+layout: post
+title: recuperando senha do root no FreeBSD
+date: '2008-03-08T04:35:00.002-03:00'
+author: Meleu Zord
+tags:
+- FreeBSD
+modified_time: '2008-03-08T04:40:19.427-03:00'
+blogger_id: tag:blogger.com,1999:blog-1613465446497619833.post-7106145190527658579
+blogger_orig_url: http://mdicas.blogspot.com/2008/03/recuperando-senha-do-root-no-freebsd.html
+---
+
+Essa dica foi retirada de <a href="http://under-linux.org/wiki/index.php/Dicas/FreeBSD/FreeBSD-Senha">http://under-linux.org/wiki/index.php/Dicas/FreeBSD/FreeBSD-Senha</a>.<br /><br />Na tela de contagem regressiva para escolha do boot, basta optar pelo prompt de comando para as opções de boot. Daí é só entrar com "boot -s" que vai entrar como administrador sem pedir senha alguma. Daí é só usar o passwd para trocar a senha. Se não funcionar é porque precisa montar as partições. Um "mount -a" deve resolver isso e então é só usar o passwd.<br /><br />Essa me tirou do sufoco hoje! =D

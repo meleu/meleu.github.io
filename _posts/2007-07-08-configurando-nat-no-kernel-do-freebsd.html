@@ -1,0 +1,15 @@
+---
+layout: post
+title: Configurando NAT no kernel do FreeBSD
+date: '2007-07-08T13:27:00.001-03:00'
+author: Meleu Zord
+tags:
+- NAT
+- TCPIP
+- FreeBSD
+modified_time: '2009-03-29T00:35:09.326-03:00'
+blogger_id: tag:blogger.com,1999:blog-1613465446497619833.post-3797216065901196003
+blogger_orig_url: http://mdicas.blogspot.com/2007/07/configurando-nat-no-kernel-do-freebsd.html
+---
+
+<b>OBSERVAÇÕES</b>: Este procedimento foi retirado do livro "Compartilhe a Internet usando FreeBSD+Squid". O que está descrito aqui somente configura o kernel para realizar NAT. Para compartilhar a conexão com sua rede interna são necessárias muitas outras coisas não descritas aqui.<br /><br />Fazer um backup da configuração original (usualmente GENERIC)<br /><br /><blockquote># cd /usr/src/sys/i386/conf/<br /># cp -p GENERIC MEUKERN<br /></blockquote><br />editar o MEUKERN inserindo o seguinte:<br /><br /><blockquote># define a politica aberta do firewall<br />options IPFIREWALL_DEFAULT_TO_ACCEPT<br /># ativa ipfw<br />options IPFIREWALL<br /># ativa log do ipfw atraves do syslog<br />options IPFIREWALL_VERBOSE<br />options IPFIREWALL_VERBOSE_LIMIT=100<br /># ativa NAT<br />options IPFIREWALL_FORWARD<br />#ativa o redirecionamento de porta atraves do socket "divert"<br />options IPDIVERT<br /></blockquote><br />Salvar o arquivo, voltar para o shell e fazer o seguinte:<br /><blockquote># cd /usr/src<br /># make buildkernel KERNCONF=MEUKERN<br /># make isntallkern KERNCONF=MEUKERN<br /></blockquote><br />No /etc/rc.conf iserir as linhas:<br /><br /><blockquote>firewall_enable="YES"<br />firewall_type="OPEN"<br />natd_enable="YES"<br />natd_interface="dc0"<br />natd_flags=""<br /></blockquote><br />O natd_interface é a interface que vai NATear os pacotes, ou seja, a interface que vai se conectar a internet. Por isso pode ter nome diferente de dc0 (varia de acordo com o chipset da placa de rede).<br /><br />Em seguida reiniciar a máquina.<br /><blockquote># shutdown -r now<br /></blockquote><br />Fazer adaptações se necessário. ;-)

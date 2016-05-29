@@ -1,0 +1,14 @@
+---
+layout: post
+title: Acessando arquivos compartilhados do Windows no Linux
+date: '2009-03-20T15:49:00.005-03:00'
+author: Meleu Zord
+tags:
+- Linux
+- windows
+modified_time: '2009-03-20T17:00:18.600-03:00'
+blogger_id: tag:blogger.com,1999:blog-1613465446497619833.post-7463401457459403408
+blogger_orig_url: http://mdicas.blogspot.com/2009/03/acessando-arquivos-compartilhados-do.html
+---
+
+Para acessar os arquivos compartilhados em uma máquina Windows na rede através do Linux das duas maneiras descritas a seguir é necessário ter instalado smbclient e smbfs.<br /><br /><b>usando smbclient</b><br />Essa eu vi em <a href="http://suporte.bs2.com.br/questions/1/Copiar+arquivos+de+uma+maquina+Windows+via+smbclient">http://suporte.bs2.com.br/questions/1/Copiar+arquivos+de+uma+maquina+Windows+via+smbclient</a>.<br /><br />O acesso se dá através da linha de comando bem estilo ftp. Quebra um galho legal quando não temos acesso de superusuário.<br /><br />Para listar os recursos compartilhados do windão fazemos o seguinte:<br /><blockquote><br />prompt$ smbclient -L ip_da_maquina_windows<br /></blockquote><br />Agora para acessar os arquivos, por exemplo, fazemos o seguinte:<br /><blockquote><br />prompt$ smbclient //ip_da_maquina_windows/SharedDocs<br /></blockquote><br />Se der tudo certo teremos um prompt estilo "smb /> ". Daí é só usar put, get, dir, mput, mget, prompt, recurse e principalmente o help.<br /><br />Para copiar toda uma árvore de diretórios, basta usar prompt e recurse, em seguida mget ou mput.<br /><br /><b>usando smbmount</b><br />Essa eu pesquei em <a href="http://www.vivaolinux.com.br/artigo/Montando-um-compartilhamento-com-o-smbmount/">http://www.vivaolinux.com.br/artigo/Montando-um-compartilhamento-com-o-smbmount/</a><br /><br />Quando se tem acesso de superusuário pode-se montar diretório compartilhado do windão em um ponto local do Linux e navegar normalmente como se fosse um diretório local.<br /><br />Para isto fazemos:<br /><blockquote><br />prompt# smbmount //ip_da_maquina_windows/SharedDocs /mnt<br /></blockquote><br />Prontinho, se tudo der certo basta navegar pelo diretório /mnt.

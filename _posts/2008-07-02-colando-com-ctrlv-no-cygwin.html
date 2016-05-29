@@ -1,0 +1,13 @@
+---
+layout: post
+title: colando com CTRL+V no cygwin
+date: '2008-07-02T22:42:00.002-03:00'
+author: Meleu Zord
+tags:
+- cygwin
+modified_time: '2008-07-02T22:49:49.075-03:00'
+blogger_id: tag:blogger.com,1999:blog-1613465446497619833.post-7611845501869335927
+blogger_orig_url: http://mdicas.blogspot.com/2008/07/colando-com-ctrlv-no-cygwin.html
+---
+
+Essa veio de <a href="http://iwiwdsmi.blogspot.com/search/label/cygwin">http://iwiwdsmi.blogspot.com/search/label/cygwin</a>.<br /><br />Adicione esta linha no ~/.bashrc<br /><blockquote>stty lnext ^q stop undef start undef</blockquote><br /><br />Adicione esta linha no ~/.inputrc<br /><blockquote>"\C-v": paste-from-clipboard</blockquote><br /><br />Mas lembre-se: isso só funciona no bash. Nos outros aplicativos que testei (vim, lynx, nc, cat) o CTRL+V não cola. Mas mesmo assim já é uma mão na roda! ;-)
