@@ -1,3 +1,13 @@
+title: meleu.github.io
 name: meleu's personal webpage
+url: http://meleu.github.io
+keywords: linux, shell, C, programming, programacao, retropie, retroachievements, retrogames, linuxmint, archlinux, cygwin
+
 markdown: kramdown
+
+# colocar as postagens "sob" o /blog
 permalink: /blog/:year/:month/:day/:title
+
+# Site general settings
+lang: "en"
+lang_alternate: "pt_BR"
