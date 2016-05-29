@@ -2,7 +2,8 @@
 layout: default
 title: sobre meleu
 ---
-{{ page.title }}
+# {{ page.title }}
+
 Eu era nerdão de Linux nazantiga, me amarro em programar e cheguei a me formar em Ciência da Computação. Achava
 que iria trabalhar com isso, mas o acaso acabou me levando para outra área (se preferir pode substituir "acaso" por "dinheiro").
 Hoje sou praticante de uma nerdeza mais branda.
