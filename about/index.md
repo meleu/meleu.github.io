@@ -4,7 +4,7 @@ title: sobre meleu
 ---
 # {{ page.title }}
 
-![alt text]({{ owner_gravatar_url }} "meleu")
+{{ owner_gravatar_url }}
 
 
 Eu era nerdão de Linux nazantiga, me amarro em programar e futucar o Linux pela linha de comando. Cheguei a me formar em Ciência
