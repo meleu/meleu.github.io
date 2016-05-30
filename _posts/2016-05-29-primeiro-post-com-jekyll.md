@@ -6,7 +6,7 @@ tags:
 - jekyll
 - github
 - Markdown
-- blog]
+- blog
 ---
 
 Este é o meu primeiro post na minha casa nova: [github.com](https://github.com). Ele é
