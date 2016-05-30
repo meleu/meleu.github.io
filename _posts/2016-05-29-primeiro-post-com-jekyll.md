@@ -2,7 +2,11 @@
 layout: post
 title: meu primeiro post usando jekyll
 date: 2016-05-29
-tags: [jekyll, github, Markdown, blog]
+tags: 
+- jekyll
+- github
+- Markdown
+- blog]
 ---
 
 Este é o meu primeiro post na minha casa nova: [github.com](https://github.com). Ele é
