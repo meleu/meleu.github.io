@@ -1,9 +1,9 @@
 ---
 layout: default
-title: meleu.github.io
+title: 
 ---
 # intro
-Esta é a minha presença na web.
+Minha presença na web.
 
 Um pouco sobre mim em [about](/about).
 
