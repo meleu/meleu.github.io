@@ -1,0 +1,16 @@
+---
+layout: post
+title: bluetooth no XFCE
+date: '2009-03-19T02:57:00.003-03:00'
+author: Meleu Zord
+tags:
+- Linux
+- ubuntu
+- bluetooth
+- xfce
+modified_time: '2009-03-19T03:43:47.634-03:00'
+blogger_id: tag:blogger.com,1999:blog-1613465446497619833.post-4630243569559308594
+blogger_orig_url: http://mdicas.blogspot.com/2009/03/bluetooth-no-xfce.html
+---
+
+Sou um fã do xfce e resolvi adotá-lo como padrão no meu laptop, porém me deparei com um problema quando tentei usar bluetooth para trocar arquivos com meu celular. No GNOME funciona tudo que é uma maravilha, mas no meu querido xfce não era bem assim...<br /><br />Depois de uma googlada achei esta página: <a href="http://www.ubuntugeek.com/blueman-bluetooth-manager-for-ubuntu.html">http://www.ubuntugeek.com/blueman-bluetooth-manager-for-ubuntu.html</a>. E pronto! Problema resolvido! Instala-se o blueman (bluetooth manager) e o problema está resolvido!<br /><br />No meu caso, que uso o Ubuntu 8.10, eu inseri a seguinte linha no '/etc/apt/sources.list':<br /><blockquote><br />deb http://ppa.launchpad.net/blueman/ppa/ubuntu intrepid main<br /></blockquote><br /><br />Em seguida peguei a chave do OpenPGP <a href="http://keyserver.ubuntu.com:11371/pks/lookup?search=0x947C4F7371932C794B153F0F6B15AB91951DC1E2&op=index">aqui</a> e <a href="https://help.launchpad.net/Packaging/PPA#Adding%20a%20PPA%20to%20your%20Ubuntu%20repositories">segui estas instruções</a> para reconhecer o repositório como um site confiável. [Se você não é tão paranóico com a segurança, pode pular esse passo]<br /><br />Agora como root faça<br /><br /><blockquote><br />apt-get update<br />apt-get install blueman<br /></blockquote><br /><br />Agora é só transferir arquivos usando o blueman. Tem também o blueman-applet pra deixar o blueman ali sossegadinho no "systray".<br /><br />UM PORÉM: se quiser navegar pelos arquivos do celular (ou outro dispositivo) o blueman por padrão chama o nautilus. Isso pode bagunçar o xfce. Por isso sugiro a utilização do obextool (instalável via apt-get) ou o <a href="http://sourceforge.net/projects/obexftpfrontend/">obexftpfrontend</a>, só que este último é feito em java e é meio pesadinho...

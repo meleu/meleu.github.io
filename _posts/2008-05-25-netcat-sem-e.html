@@ -1,0 +1,14 @@
+---
+layout: post
+title: netcat sem -e
+date: '2008-05-25T21:58:00.004-03:00'
+author: Meleu Zord
+tags:
+- netcat
+- fifo
+modified_time: '2008-05-30T16:55:06.395-03:00'
+blogger_id: tag:blogger.com,1999:blog-1613465446497619833.post-1843299513568588012
+blogger_orig_url: http://mdicas.blogspot.com/2008/05/netcat-sem-e.html
+---
+
+Se o netcat for compilado sem -DGAPING_SECURITY_HOLE ele não terá a opção -e, que é usada para executar um comando assim que a conexão é estabelecida. Desta forma NÃO podemos fazer, por exemplo<br /><br /><blockquote><br />$ nc -l -p 6060 -e /bin/sh<br /></blockquote><br /><br />Pesquisando pela web eu vi em <a href="http://www.datastronghold.com/articles/3.html">http://www.datastronghold.com/articles/3.html</a> uma maneira criativa de fazer isso, porém o método proposto é meio incômodo.<br /><br />Continuando a minha pesquisa eu acabei aprendendo uma maneira mais bacana de fazer isso. Pasmem: eu aprendi isso no orkut!<br /><br />Vamos lá.<br /><br />Basta criar um named pipe, também chamado de fifo, e usá-lo para que a saída do /bin/sh volte para o netcat. Vamos ao comando:<br /><br /><blockquote><br />$ mkfifo test_fifo # criando o named pipe<br />$ nc -l -p 6060 < test_fifo | /bin/sh > test_fifo<br /></blockquote><br /><br />Explicando:<br />- o netcat fica escutando na porta 6060;<br />- a entrada do netcat vem do test_fifo;<br />- a saída do netcat (vinda da rede) vai para a entrada de /bin/sh através do pipe;<br />- a saída de /bin/sh vai para test_fifo;<br />- como test_fifo é um named pipe o que entra nele vindo de /bin/sh sai indo para o netcat.<br /><br /><br />Moral da história: se você souber garimpar as informações, o orkut pode ter lá alguma valia!

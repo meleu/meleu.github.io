@@ -1,0 +1,14 @@
+---
+layout: post
+title: Limpar a tela do terminal no OpenVMS
+date: '2007-07-16T12:10:00.001-03:00'
+author: Meleu Zord
+tags:
+- OpenVMS
+- DCL
+modified_time: '2007-07-17T09:44:14.232-03:00'
+blogger_id: tag:blogger.com,1999:blog-1613465446497619833.post-3735742819179438027
+blogger_orig_url: http://mdicas.blogspot.com/2007/07/limpar-tela-do-terminal-no-openvms.html
+---
+
+Dica para OpenVMS. Nada a ver com Linux, UNIX, FreeBSD e muito menos Windows.<br /><br />Ainda não descobri um comando que limpa o terminal no OpenVMS. Um equivalente ao 'cls' no DOS ou um 'clear' nos shells do UNIX. Sendo assim eu costumo fazer a seguinte gambiarra:<br /><blockquote>$ CLS:==TYPE/PAGE NL:</blockquote><br />e coloco isso no meu "LOGIN.COM". Agora é só usar 'CLS' no shell que ele limpará a tela do terminal.<br /><br />Se o problema for muita poeira, é melhor usar um paninho levemente umedecido (he... he... he... piadinha sem graça...).

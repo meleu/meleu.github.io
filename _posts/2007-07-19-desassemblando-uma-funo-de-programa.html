@@ -1,0 +1,16 @@
+---
+layout: post
+title: '"Desassemblando" uma função de programa'
+date: '2007-07-19T02:59:00.002-03:00'
+author: Meleu Zord
+tags:
+- shellcode
+- assembly
+- gdb
+- shell
+modified_time: '2008-05-30T17:00:16.710-03:00'
+blogger_id: tag:blogger.com,1999:blog-1613465446497619833.post-8071957797116760601
+blogger_orig_url: http://mdicas.blogspot.com/2007/07/desassemblando-uma-funo-de-programa.html
+---
+
+<p>Essa eu aprendi na man page do gdb. Achei útil para ver o endereço e o tamanho das instruçoões.</p> <p>O parâmetro &quot;-batch&quot; executa o gdb no modo execução de comandos em lote. E o parâmetro &quot;-x file&quot; é o arquivo onde está os comandos a serem executados.</p> <p>Por exemplo: veja o seguinte arquivo chamado disassmain.</p> <blockquote class="gmail_quote" style="PADDING-LEFT: 1ex; MARGIN: 0px 0px 0px 0.8ex; BORDER-LEFT: #ccc 1px solid"> <p>disassemble main</p></blockquote> <p>disassemble&nbsp;é o comando do gdb que desassembla uma função</p> <p>Agora execute o seguinte comando (supondo um programa chamado prog):</p> <blockquote class="gmail_quote" style="PADDING-LEFT: 1ex; MARGIN: 0px 0px 0px 0.8ex; BORDER-LEFT: #ccc 1px solid">$ gdb -batch -x disassmain prog</blockquote> <p>Observe o resultado e veja que maravilha! ;-)</p> <p>Agora eu fiz um script muito simples, porém interessante, que recebe como parâmetros na linha de comando o nome da funcao a ser &quot;desassemblada&quot; e o nome do programa. Chamei-o carinhosamente de mdisasm (meleu&#39;s disassembler): </p> <blockquote class="gmail_quote" style="PADDING-LEFT: 1ex; MARGIN: 0px 0px 0px 0.8ex; BORDER-LEFT: #ccc 1px solid"> <p>#!/bin/bash<br>TMPFILE=/tmp/mdisasm.$$&nbsp;&nbsp;&nbsp;&nbsp; # este &#39;$$&#39; retorna o PID do script em execucao</p> <p>if [ $# -ne 2 ]; then&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # $# eh o numero de argumentos (tem que ser 2)<br>&nbsp;&nbsp; echo<br>&nbsp;&nbsp; echo &quot;uso: `basename $0` funcao programa<br>&nbsp;&nbsp; echo<br>&nbsp;&nbsp; exit 1<br>fi</p> <p>cat &lt;&lt; _EOF_ &gt; $TMPFILE&nbsp;&nbsp;&nbsp;&nbsp; # abaixo daqui ateh _EOF_ vai para $TMPFILE<br>disassemble $1<br>_EOF_</p> <p>gdb -batch -x $TMPFILE $2</p> <p>rm -f $TMPFILE</p></blockquote> <div> <p>Isso é útil quando queremos ver o endereço de uma determinada instrução, seu tamanho e o seu mnemônico.</p> <p>Agora para &quot;desassemblar&quot; uma única função e ver as instruções em hexadecimal (útil para escrita de shellcodes) eu ainda não achei uma solução. Ainda continuo usando &#39;objudump -d prog &gt; arquivo.out&#39; e depois lendo  arquivo.out procurando a função desejada. Fica lançado um desafio pra mim mesmo. Queria uma solução simples, mas acho que terei que apelar para o grep+sed...<br></p></div><br /><P><P>[Desafio vencido: <a href="http://mdicas.blogspot.com/2007/07/desassemblando-para-hexadecimal.html">http://mdicas.blogspot.com/2007/07/desassemblando-para-hexadecimal.html</a>]

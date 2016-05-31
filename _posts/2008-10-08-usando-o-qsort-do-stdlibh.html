@@ -1,0 +1,14 @@
+---
+layout: post
+title: usando o qsort() do stdlib.h
+date: '2008-10-08T02:11:00.003-03:00'
+author: Meleu Zord
+tags:
+- C
+- programacao
+modified_time: '2008-10-28T15:51:32.554-02:00'
+blogger_id: tag:blogger.com,1999:blog-1613465446497619833.post-6424992234613074085
+blogger_orig_url: http://mdicas.blogspot.com/2008/10/usando-o-qsort-do-stdlibh.html
+---
+
+O protótipo é o seguinte:<br /><blockquote><br />#include &lt;stdlib.h&gt;<br /><br />void qsort(void *base, size_t nmemb, size_t size, int (*compare)(cont void *, const void*));<br /></blockquote><br /><br />Criei uma função compara() para comparar dois inteiros:<br /><blockquote><br />int compara(int const *a, int const *b) {<br />&nbsp;&nbsp;&nbsp;&nbsp;return *a - *b;<br />}<br /></blockquote><br /><br />e usei o seguinte comando para ordenar um array de inteiros lista[] com 10 elementos.<br /><blockquote><br />qsort(lista, 10, sizeof(int), &compara);<br /></blockquote><br /><br />Pronto! Agora lista já está ordenada.

@@ -1,0 +1,16 @@
+---
+layout: post
+title: transformando o eeepc num meeeleupc
+date: '2008-05-08T17:35:00.003-03:00'
+author: Meleu Zord
+tags:
+- eeepc
+- Linux
+- wmaker
+- shell
+modified_time: '2008-05-08T18:06:35.253-03:00'
+blogger_id: tag:blogger.com,1999:blog-1613465446497619833.post-6625444209184961748
+blogger_orig_url: http://mdicas.blogspot.com/2008/05/transformando-o-eeepc-num-meeeleupc.html
+---
+
+Se, assim como eu, você tem um eeepc e gosta de modo texto e quando está no modo gráfico quer no máximo um Window Maker, experimente o meeeleupc! ;-)<br /><br />Baixe o arquivo em <a href="http://www.geocities.com/meleuzord/meeeleupc.tar.gz">http://www.geocities.com/meleuzord/meeeleupc.tar.gz</a>.<br /><br />Descompacte o arquivo em algum lugar, por exemplo no seu homedir:<br /><blockquote><br />tar xvzf meeeleupc.tar.gz<br /></blockquote><br />entre no diretório criado e execute o instalar como root:<br /><blockquote><br />cd meeeleupc<br />sudo ./instalar<br /></blockquote><br /><br />Resumidamente o script vai fazer duas coisas:<br /><li> configurar o EeePC para que inicie no modo texto (Multiuser Mode) com dois consoles (tty4 e 5);<br /><li> instalar e configurar o wmaker bem bacaninha para ser utilizado no EeePC.<br /><br />Além disso, desinstala aqueles programas coreanos/chines/tailandes/xingling/etc. e instala alguns programas que eu acho importante ter (vim, nmap, netcat, lynx, irssi, etc.)<br /><br />Fiz uma comparacao usando 'df -h' para ver quanto de espaco foi consumido neste process. O EeePC 701 após um 'Restore Factory Settings' tem 1.3GB livres, após a instalacão do meeeleupc fica com 1.1GB livres.<br /><br />Após a instalacão, os arquivos podem ser encontrados em /usr/local/share/meeeleupc, inclusive um script para desabilitar o Multiuser Mode (somente texto) e voltar com a interface original.<br /><br />Eu acho que o codigo está bem simples de ler. Qualquer dúvida/sugestão/crítica será bem vinda em meleuzord arroba yahoo ponto com.
