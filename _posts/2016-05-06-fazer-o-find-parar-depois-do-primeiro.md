@@ -14,6 +14,7 @@ blogger_orig_url: http://mdicas.blogspot.com/2016/05/fazer-o-find-parar-depois-d
 Estava fazendo um script para abrir um determinado arquivo baseado no que era encontrado através de um find. O problema é que as vezes o find encontrava mais de um arquivo que atendia o critério de busca, e eu gostaria de parar no primeiro arquivo encontrado. Uma rápida googlada e a solução apareceu...
 
 Fazer o comando find parar após o primeiro arquivo encontrado:
+
 ```
 find caminho/do/diretorio -name nome-do-arquivo -print -quit
 ```
