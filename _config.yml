@@ -1,6 +1,7 @@
 title: meleu.github.io
 name: my personal webpage
 url: http://meleu.github.io
+baseurl: /
 keywords: linux, shell, C, programming, programacao, retropie, retroachievements, retrogames, linuxmint, archlinux, cygwin
 
 markdown: kramdown
