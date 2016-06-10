@@ -4,8 +4,6 @@ url: http://meleu.github.io
 keywords: linux, shell, C, programming, programacao, retropie, retroachievements, retrogames, linuxmint, archlinux, cygwin
 
 markdown: kramdown
-
-# syntax highlight
 highlighter: rouge
 
 # colocar as postagens "sob" o /blog
