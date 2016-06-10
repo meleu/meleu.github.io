@@ -1,6 +1,6 @@
 ---
 layout: post
-title: meu primeiro post usando jekyll
+title: validando datas em shell scripts
 date: 2016-06-09
 tags:
 - shell
