@@ -1,7 +1,7 @@
 ---
 layout: post
 title: meu primeiro post usando jekyll
-date: 2016-05-29
+date: 2016-06-09
 tags:
 - shell
 - linux
