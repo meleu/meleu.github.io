@@ -5,6 +5,9 @@ keywords: linux, shell, C, programming, programacao, retropie, retroachievements
 
 markdown: kramdown
 
+# syntax highlight
+highlighter: rouge
+
 # colocar as postagens "sob" o /blog
 permalink: /blog/:year/:month/:day/:title
 
