@@ -10,7 +10,7 @@ Estava querendo uma forma de validar datas no meu shell script. Ou seja, verific
 
 Pois é! Nada de reinventar a roda. Vamos usar o que já temos na mão. Imaginemos que temos uma variável `DATE` e queremos que ela receba uma data válida vinda do primeiro argumento da linha de comando, se a data não for válida, sai do programa. O formato que queremos para `DATE` é dd-mm-aaaa. Eis um scriptzinho de exemplo:
 
-{% highlight bash linenos %}
+```bash
 #!/bin/bash
 # datavalida.sh
 DATE=$(date -d "$1" +%d-%m-%Y 2>/dev/null) || {
@@ -19,13 +19,13 @@ DATE=$(date -d "$1" +%d-%m-%Y 2>/dev/null) || {
 }
 
 echo "DATE = $DATE"
-{% endhighlight %}
+```
 
 Só tem um contra-tempo: a data a ser passada como parâmetro precisa estar no formato "americano". Ou seja, 01/03/2009 é três de janeiro de 2009, e não primeiro de março... Mas isso é mole de resolver usando uns `cut` aqui e acolá. Eu preferi deixar assim mesmo para poder usar algumas facilidades do `date`, como "yesterday" e "-4 days" por exemplo.
 
 Agora vejamos alguns exemplos do uso do script acima:
 
-{% highlight bash %}
+```
 [prompt]$ # se não passar parâmetro algum, mostra a data de hoje
 [prompt]$ ./datavalida.sh
 DATE = 09-06-2016
@@ -43,4 +43,4 @@ DATE = 18-06-2016
 DATE = 10-06-2016
 [prompt]$ ./datavalida.sh 2011-09-11
 DATE = 11-09-2011
-{% endhighlight %}
+```
