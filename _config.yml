@@ -28,4 +28,3 @@ paginate_path: "/page:num/"
 
 # colocar as postagens "sob" o /blog
 permalink: /blog/:year/:month/:day/:title
-relative_permalinks: true
