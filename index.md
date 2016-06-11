@@ -1,6 +1,6 @@
 ---
 layout: default
-title: meleu
+title: home
 ---
 # intro
 Minha presença na web.
