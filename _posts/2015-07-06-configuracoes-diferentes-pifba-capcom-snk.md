@@ -46,8 +46,8 @@ considero ideal para um já não fica legal no outro. Pois aqui vou descrever co
 
 #### passo 1
 
-- Colocar as roms dos jogos SNK no diretório "/home/pi/RetroPie/roms/neogeo". No meu caso foram as várias edições de Art of Fighting, Samurai Shodown, Metal Slug, Fatal Fury e King of Fighters. O sistema vai continuar executando o pifba para jogar estas roms, mas fazendo desta forma o emulationstation vai ficar mais organizadinho.
-- Colocar as roms CAPCOM no diretório "/home/pi/RetroPie/roms/fba". No meu caso foram os Street Fighter da vida, Marvel vs Capcom, X-Men vs Street Fighter (infelizmente não rodou Street Fighter 3).
+- Colocar as roms dos jogos SNK no diretório `/home/pi/RetroPie/roms/neogeo`. No meu caso foram as várias edições de Art of Fighting, Samurai Shodown, Metal Slug, Fatal Fury e King of Fighters. O sistema vai continuar executando o pifba para jogar estas roms, mas fazendo desta forma o emulationstation vai ficar mais organizadinho.
+- Colocar as roms CAPCOM no diretório `/home/pi/RetroPie/roms/fba`. No meu caso foram os Street Fighter da vida, Marvel vs Capcom, X-Men vs Street Fighter (infelizmente não rodou Street Fighter 3).
 
 #### passo 2
 
