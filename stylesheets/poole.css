@@ -59,9 +59,10 @@ html {
 }
 
 body {
-  color: #515151;
-/*  background-color: #fff; */
-  background-color: #bfbfbf;
+/*  color: #515151;
+  background-color: #fff; */
+   background: #151515 url("../images/bkg.png") 0 0;
+   color: #eaeaea;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
