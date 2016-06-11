@@ -23,8 +23,8 @@ highlighter: rouge
 lang: "pt_BR"
 lang_alternate: "en"
 
-paginate: 5
-paginate_path: "/page:num/"
+#paginate: 5
+#paginate_path: "/page:num/"
 
 # colocar as postagens "sob" o /blog
 permalink: /blog/:year/:month/:day/:title
