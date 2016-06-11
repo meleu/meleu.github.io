@@ -1,13 +1,20 @@
 name: meleu
+title: meleu
+tagline: "Tentando fazer do github meu novo lar na web"
 description: "meu novo lar na web"
 
 url: "http://meleu.github.io"
 baseurl: "/"
 keywords: linux, shell, C, programming, programacao, retropie, retroachievements, retrogames, linuxmint, archlinux, cygwin
-author: "meleu"
-email: "meleu arroba yahoo ponto com"
+
+author:
+  name: "meleu"
+  url: "http://meleu.github.io"
+  email: "meleu arroba yahoo ponto com"
+  
 gravatar_hash: "3b630bd3a90def23e68ab2f04a86da5c"
-github: "meleu"
+github:
+  repo: "https://github.com/meleu/meleu.github.io"
 
 markdown: kramdown
 highlighter: rouge
@@ -21,29 +28,4 @@ paginate_path: "/page:num/"
 
 # colocar as postagens "sob" o /blog
 permalink: /blog/:year/:month/:day/:title
-
-nav:
-  - name: "about"
-    href: "/about"
-  - name: "blog"
-    href: "/blog"
-    
-sass:
-  style: :compressed
-  
-  defaults:
-  -
-    scope:
-      path:         ""
-      type:         "pages"
-    values:
-      layout:       "page"
-  -
-    scope:
-      path:         ""
-      type:         "posts"
-    values:
-      layout:       "post"
-
-gems:
-  - jekyll-paginate
+relative_permalinks: true
