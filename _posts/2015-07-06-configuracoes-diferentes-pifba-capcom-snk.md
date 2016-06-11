@@ -16,8 +16,8 @@ blogger_orig_url: http://mdicas.blogspot.com/2015/07/pra-quem-nao-sabe-o-que-e-r
 
 Pra quem não sabe o que é RetroPie e nem Raspberry Pi, eu recomendo uma visita nos seguintes links:
 
-- https://retropie.org.uk/
-- https://www.raspberrypi.org/
+- [https://retropie.org.uk/](https://retropie.org.uk/)
+- [https://www.raspberrypi.org/](https://www.raspberrypi.org/)
 
 
 **OBSERVAÇÃO:**
@@ -214,7 +214,9 @@ MaintainAspectRatio=1
 
 Mudar o dono do arquivo `/opt/retropie/configs/fba/fba2x.cfg`, executando o seguinte comando:
 
-``` chown pi.pi /opt/retropie/configs/fba/fba2x.cfg
+```
+chown pi.pi /opt/retropie/configs/fba/fba2x.cfg
+```
 
 Isso vai permitir que possamos alterar este arquivo no esquema a seguir.
 
@@ -223,8 +225,9 @@ Isso vai permitir que possamos alterar este arquivo no esquema a seguir.
 
 Copiar o arquivo `/etc/emulationstation/es_systems.cfg` para seu diretório pessoal, executando o seguinte comando:
 
-```cp /etc/emulationstation/es_systems.cfg ~/.emulationstation/es_systems.cfg
-
+```
+cp /etc/emulationstation/es_systems.cfg ~/.emulationstation/es_systems.cfg
+```
 
 #### passo 5
 
