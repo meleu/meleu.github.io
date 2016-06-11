@@ -1,7 +1,6 @@
 ---
 layout: post
-title: 'RetroPie 3.0: configuração de controles distintas para jogos de luta SNK e
-  CAPCOM'
+title: 'RetroPie: configuração de controles distintas para jogos de luta SNK e CAPCOM'
 date: '2015-07-06T23:33:00.000-03:00'
 author: Meleu Zord
 tags:
