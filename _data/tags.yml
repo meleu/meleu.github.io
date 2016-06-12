@@ -1,0 +1,38 @@
+inteligencia-artificial:
+  name: Inteligencia Artificial
+  
+linuxmint:
+  name: Linux Mint
+  
+archlinux:
+  name: Arch Linux
+  
+shell-script:
+  name: Shell Script
+  
+cubo:
+  name: cubo de rubik
+
+shell:
+  name: shell
+
+shellcode
+  name: shellcode
+  
+ubuntu
+  name: ubuntu
+  
+cygwin
+  name: cygwin
+  
+vim
+  name: vim
+  
+windows
+  name: windows
+  
+zorin-os-lite
+  name: zorin os lite
+  
+computador-antigo
+  name: computador antigo
