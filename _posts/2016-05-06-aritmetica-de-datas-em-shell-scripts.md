@@ -2,7 +2,7 @@
 layout: post
 title: Aritmética de datas em shell scripts
 date: '2016-05-06T01:29:00.002-03:00'
-author: Meleu Zord
+author: meleu
 tags:
 - bash
 - shell

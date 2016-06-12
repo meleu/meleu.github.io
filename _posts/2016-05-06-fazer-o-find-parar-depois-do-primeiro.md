@@ -2,9 +2,9 @@
 layout: post
 title: fazer o find parar depois do primeiro match
 date: '2016-05-06T23:50:00.001-03:00'
-author: Meleu Zord
+author: meleu
 tags:
-- Linux
+- linux
 - bash
 - shell
 modified_time: '2016-05-06T23:50:14.834-03:00'
