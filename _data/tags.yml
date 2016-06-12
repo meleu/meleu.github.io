@@ -34,5 +34,5 @@ windows:
 zorin-os-lite:
   name: zorin os lite
   
-computador-antigo:
+- slug: computador-antigo
   name: computador antigo
