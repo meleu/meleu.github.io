@@ -1,44 +1,44 @@
-- slug: linux
+linux:
   name: Linux
 
-- slug: ubuntu
+ubuntu:
   name: ubuntu
 
-- slug: linuxmint
+linuxmint:
   name: Linux Mint
 
-- slug: archlinux
+archlinux:
   name: Arch Linux
 
-- slug: dcl
+dcl:
   name: DCL
 
-- slug: cygwin
+cygwin:
   name: Cygwin
   
-- slug: windows
+windows:
   name: Windows
   
-- slug: computador-antigo
+computador-antigo:
   name: computador antigo
 
-- slug: shell-script
+shell-script:
   name: Shell Script
 
-- slug: cubo
+cubo:
   name: cubo de rubik
 
-- slug: shellcode
+shellcode:
   name: shellcode
 
-- slug: vim
+vim:
   name: vim
 
-- slug: retroarch
+retroarch:
   name: RetroArch
   
-- slug: retropie
+retropie:
   name: RetroPie
 
-- slug: retroachievements
+retroachievements:
   name: RetroAchievements
