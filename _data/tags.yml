@@ -1,32 +1,17 @@
-- slug: nteligencia-artificial
-  name: Inteligencia Artificial
-  
+- slug: linux
+  name: Linux
+
+- slug: ubuntu
+  name: ubuntu
+
 - slug: linuxmint
   name: Linux Mint
 
 - slug: archlinux
   name: Arch Linux
-  
-- slug: shell-script
-  name: Shell Script
-  
-- slug: cubo
-  name: cubo de rubik
 
-- slug: shell
-  name: shell
-
-- slug: shellcode
-  name: shellcode
-  
-- slug: ubuntu
-  name: ubuntu
-  
 - slug: cygwin
   name: cygwin
-  
-- slug: vim
-  name: vim
   
 - slug: windows
   name: windows
@@ -36,3 +21,21 @@
   
 - slug: computador-antigo
   name: computador antigo
+
+- slug: shell-script
+  name: Shell Script
+
+- slug: cubo
+  name: cubo de rubik
+
+- slug: shellcode
+  name: shellcode
+
+- slug: vim
+  name: vim
+
+- slug: retroarch
+  name: RetroArch
+  
+- slug: retropie
+  name: RetroPie
