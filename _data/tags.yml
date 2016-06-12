@@ -1,37 +1,37 @@
-inteligencia-artificial:
+- slug: nteligencia-artificial
   name: Inteligencia Artificial
   
-linuxmint:
+- slug: linuxmint
   name: Linux Mint
-  
-archlinux:
+
+- slug: archlinux
   name: Arch Linux
   
-shell-script:
+- slug: shell-script
   name: Shell Script
   
-cubo:
+- slug: cubo
   name: cubo de rubik
 
-shell:
+- slug: shell
   name: shell
 
-shellcode:
+- slug: shellcode:
   name: shellcode
   
-ubuntu:
+- slug: ubuntu
   name: ubuntu
   
-cygwin:
+- slug: cygwin
   name: cygwin
   
-vim:
+- slug: vim
   name: vim
   
-windows:
+- slug: windows
   name: windows
   
-zorin-os-lite:
+- slug: zorin-os-lite
   name: zorin os lite
   
 - slug: computador-antigo
