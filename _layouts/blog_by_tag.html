@@ -1,4 +1,7 @@
-<h1>Articles by tag :{{ page.tag }}</h1>
+---
+layout: default
+----
+<h1>Posts com o tag: {{ page.tag }}</h1>
 <div>
     {% if site.tags[page.tag] %}
         {% for post in site.tags[page.tag] %}
