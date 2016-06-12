@@ -2,7 +2,7 @@
 layout: default
 title: home
 ---
-# intro
+# home
 Estou tentando fazer do github meu novo lar na web. Passei algum tempo no
 blogspot, depois até tentei wordpress, mas quando vi o que dava para fazer
 no github, resolvi tentar. Acho que é mais o meu estilo...
