@@ -23,11 +23,11 @@ highlighter: rouge
 lang: "pt_BR"
 lang_alternate: "en"
 
-paginate: 5
-paginate_path: "/blog/page:num/"
-
 # colocar as postagens "sob" o /blog
 permalink: /blog/:year/:month/:day/:title
 
-gems:
-- jekyll-paginate
+#paginate: 5
+#paginate_path: "/blog/page:num/"
+
+#gems:
+#- jekyll-paginate
