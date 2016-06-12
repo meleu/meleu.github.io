@@ -1,14 +1,14 @@
 - slug: linux
-  name: Linux
+  name: Linux, linux
 
 - slug: ubuntu
   name: ubuntu
 
 - slug: linuxmint
-  name: Linux Mint
+  name: Linux Mint, linux mint, LinuxMint
 
 - slug: archlinux
-  name: arch linux
+  name: arch linux, Arch Linux, ArchLinux
 
 - slug: cygwin
   name: cygwin
