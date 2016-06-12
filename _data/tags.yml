@@ -1,8 +1,5 @@
-- slug: Linux
-  name: linux
-
 - slug: linux
-  name: linux
+  name: Linux
 
 - slug: ubuntu
   name: ubuntu
