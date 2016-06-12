@@ -39,3 +39,6 @@
   
 - slug: retropie
   name: RetroPie
+
+- slug: retroachievements
+  name: RetroAchievements
