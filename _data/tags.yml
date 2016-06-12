@@ -16,23 +16,23 @@ cubo:
 shell:
   name: shell
 
-shellcode
+shellcode:
   name: shellcode
   
-ubuntu
+ubuntu:
   name: ubuntu
   
-cygwin
+cygwin:
   name: cygwin
   
-vim
+vim:
   name: vim
   
-windows
+windows:
   name: windows
   
-zorin-os-lite
+zorin-os-lite:
   name: zorin os lite
   
-computador-antigo
+computador-antigo:
   name: computador antigo
