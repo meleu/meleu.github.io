@@ -16,7 +16,7 @@
 - slug: shell
   name: shell
 
-- slug: shellcode:
+- slug: shellcode
   name: shellcode
   
 - slug: ubuntu
