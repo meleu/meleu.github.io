@@ -1,29 +1,23 @@
 - slug: linux
   name: Linux
 
-- slug: Linux
-  name: Linux
-
 - slug: ubuntu
   name: ubuntu
 
-- slug: Linux Mint
-  name: linuxmint
+- slug: linuxmint
+  name: Linux Mint
 
-- slug: arch linux
-  name: archlinux
+- slug: archlinux
+  name: Arch Linux
 
-- slug: DCL
-  name: dcl
+- slug: dcl
+  name: DCL
 
 - slug: cygwin
-  name: cygwin
+  name: Cygwin
   
 - slug: windows
-  name: windows
-  
-- slug: zorin-os-lite
-  name: zorin os lite
+  name: Windows
   
 - slug: computador-antigo
   name: computador antigo
