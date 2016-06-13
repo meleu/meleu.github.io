@@ -1,0 +1,21 @@
+controle bluetooth
+parear
+tem que ter ROMs
+
+online updater
+core updater
+escolher os cores
+
+save config on exit
+display overlay
+input
+input hotkeys
+input bind
+
+load content
+quick menu
+controls
+
+
+retroachievements
+retroachievements account
