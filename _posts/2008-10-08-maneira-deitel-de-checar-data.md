@@ -18,7 +18,9 @@ no livro "Java: Como Programar", sexta edição,  do Deitel. Aí vai...
 
 - ano: pode ser qualquer inteiro não negativo.
 - mês: inteiro dentro do intervalo [1,12].
-- dia: aí vai o algoritmo em C, levando em consideração que o mês e ano são válidos.
+- dia: depende do mês, e se for fevereiro, depende de ser ano bissexto.
+
+Aí vai o algoritmo em C **já levando em consideração que o mês e ano são válidos**.
 
 ```c
 int checarDia(int dia, int mes, int ano) {
