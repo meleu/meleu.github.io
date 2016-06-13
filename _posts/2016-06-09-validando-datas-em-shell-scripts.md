@@ -49,6 +49,6 @@ DATE = 11-09-2011
 
 ![alt text][retropad]
 
-{% assign imgra = /images/retroarch/ %}
+{% assign imgra = '/images/retroarch/' %}
 
 [retropad]: {{ imgra }}Retropad_360pad.png "RetroPad"
