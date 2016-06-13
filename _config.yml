@@ -6,7 +6,7 @@ keywords: linux, shell, C, programming, programacao, retropie, retroachievements
 
 url: "http://meleu.github.io"
 baseurl: "/"
-blogurl: "http://meleu.github.io/blog/"
+blogurl: "/blog/"
 
 author:
   name: "meleu"
