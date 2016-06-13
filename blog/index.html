@@ -4,13 +4,14 @@ title: blog
 ---
     <h1>blog</h1>
     <h3><a href="atom.xml">feed</a></h3>
+    <h3><a href="archive">arquivo de postagens</a></h3>
 <!--
     <h3><a href="tags.html">postagens ordenadas por tags</a></h3>
 -->
 
 Postagens mais recentes do blog:
     <ul class="posts">
-        {% for post in site.posts limit:5 %}
+        {% for post in site.posts limit:10 %}
         <li><span>{{ post.date | date_to_string }}</span>: <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
         {% endfor %}
     </ul>
