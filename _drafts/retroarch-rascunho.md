@@ -206,7 +206,7 @@ A identificação dos botões no RetroArch é inspirada na nomeclatura do
 SNES: Y, B, X, A, L e R. Mas também possui outros botões, como
 L2, R2, L3 e R3. Eis um esquema que pode ajudar:
 
-images/retroarch/retropad_360.png
+![alt text][retropad]
 
 
 ### Configuração dos hotkeys
@@ -241,3 +241,6 @@ retroachievements
 habilitar display overlay
 retroachievements account
 desabilitar display overlay
+
+
+[retropad]: {{ site.baseurl }}images/retroarch/Retropad_360pad.png "RetroPad"
