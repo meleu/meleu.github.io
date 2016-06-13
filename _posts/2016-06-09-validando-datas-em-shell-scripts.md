@@ -44,3 +44,10 @@ DATE = 10-06-2016
 [prompt]$ ./datavalida.sh 2011-09-11
 DATE = 11-09-2011
 ```
+
+
+
+![alt text][retropad]
+
+{% assign imgra = {{ site.baseurl }}images/retroarch/ %}
+[retropad]: {{ imgra }}Retropad_360pad.png "RetroPad"
