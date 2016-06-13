@@ -2,10 +2,11 @@ name: meleu
 title: meleu
 description: "Tentando fazer do github meu novo lar na web."
 tagline: "home"
+keywords: linux, shell, C, programming, programacao, retropie, retroachievements, retrogames, linuxmint, archlinux, cygwin
 
 url: "http://meleu.github.io"
 baseurl: "/"
-keywords: linux, shell, C, programming, programacao, retropie, retroachievements, retrogames, linuxmint, archlinux, cygwin
+blog: "http://meleu.github.io/blog/"
 
 author:
   name: "meleu"
