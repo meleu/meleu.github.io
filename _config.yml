@@ -6,7 +6,7 @@ keywords: linux, shell, C, programming, programacao, retropie, retroachievements
 
 url: "http://meleu.github.io"
 baseurl: "/"
-blog: "http://meleu.github.io/blog/"
+blogurl: "http://meleu.github.io/blog/"
 
 author:
   name: "meleu"
@@ -14,6 +14,7 @@ author:
   email: "meleu arroba yahoo ponto com"
   
 gravatar_hash: "3b630bd3a90def23e68ab2f04a86da5c"
+
 github:
   repo: "https://github.com/meleu/meleu.github.io"
 
