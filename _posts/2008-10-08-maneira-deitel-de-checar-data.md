@@ -20,7 +20,7 @@ no livro "Java: Como Programar", sexta edição,  do Deitel. Aí vai...
 - mês: inteiro dentro do intervalo [1,12].
 - dia: aí vai o algoritmo em C, levando em consideração que o mês e ano são válidos.
 
-```java
+```c
 int checarDia(int dia, int mes, int ano) {
    /* aqui está a simplicidade do algoritmo:
    * cada elemento deste array é o maior dia do mês cujo número
