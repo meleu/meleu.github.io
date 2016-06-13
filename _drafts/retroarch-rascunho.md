@@ -151,7 +151,7 @@ Você já tem o joystick, as ROMs e os cores (emuladores) e está seco para joga
 Espere um pouquinho mais! Vamos só configurar os botões do joystick e mais
 algumas coisinhas...
 
-### Certifique-se de que o `Save Configuration On Exit` está habilitado
+### Certifique-se de que o 'Save Configuration On Exit' está habilitado
 
 Vá no ícone da engrenagem, e escolha `Configuration`.
 
@@ -159,14 +159,14 @@ images/retroarch/saveconfigonexit.png
 
 
 Por padrão a opção
-`Save Configuration On Exit` já está habilitada. Mas eu achei importante
-mostrar o caminho até ela porque quando não está habilitada, as configurações
-que você alterar não serão salvas.
+`Save Configuration On Exit` já está habilitada. Mas eu acho importante
+mostrar o caminho até ela porque quando não está habilitada, as alterações
+que você fizer não serão salvas.
 
 images/retroarch/saveconfigonexit.png
 
 
-### Desabilitar o joystick virtual
+### Desabilitar o "joystick virtual"
 
 Como vamos jogar com nosso joystick bluetooth, não precisamos daquele
 joystick de mentirinha sendo exibido na tela do touch e atrapalhando
@@ -199,7 +199,8 @@ Dentro deste menu, **nao altere as 3 primeiras opções**. Como o escopo
 desse texto é só o basicão, ignore essas opções.
 
 A opção `User 1 Bind All`, percorre todos os botões pedindo para você atribuir
-um botão equivalente do seu joystick. Talvez seja mais interessante fazer esta
+um botão equivalente do seu joystick. Mas para quem usando o RetroArch pela
+primeira vez, talvez seja mais interessante fazer esta
 configuração individualmente, botão por botão.
 
 A identificação dos botões no RetroArch é inspirada na nomeclatura do
@@ -243,4 +244,4 @@ retroachievements account
 desabilitar display overlay
 
 
-[retropad]: {{ site.baseurl }}images/retroarch/Retropad_360pad.png "RetroPad"
+[retropad]: /images/retroarch/Retropad_360pad.png "RetroPad"
