@@ -321,7 +321,7 @@ os hotkeys da maneira que eu sugeri).
 
 ![alt text][quickmenu]
 
-Se você se deparar com essa tela escrito "Search:" aperte o B para tirar
+Se você se deparar com essa tela escrito "Search:" aperte o **B** para tirar
 esse Search da tela.
 
 ![alt text][quickmenu-search]
@@ -332,9 +332,6 @@ Agora vamos à uma explicação rápida das opções mais importantes do Quick M
 - **Resume**: volta para o jogo.
 - **Restart**: reinicia o jogo.
 - **Close**: fecha o jogo.
-- **Take Screenshot**: salva uma imagem do jogo.
-- **State Slot**: altera o slot do savestate (que você pode fazer com
-Select+[direcional direita/esquerda].
 - **Save State**: salva o estado do jogo (que você pode fazer direto no
 jogo com Select+R).
 - **Load State**: carrega o estado que tiver salvo do jogo (você pode fazer
