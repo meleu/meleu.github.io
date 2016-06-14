@@ -99,7 +99,8 @@ de abrir o RetroArch, quando você abrí-lo é provável que ele já detecte
 o seu joystick e aí você poderá navegar no menu através do direcional;
 ativar/selecionar uma opção no botão equivalente ao A do SNES (ou bola
 do PlayStation); voltar/cancelar no botão equivalente ao B do SNES (X no
-PlayStation).
+PlayStation). Se estes botões não estiverem funcionando, calma que nós
+já vamos configurá-los!
 
 Não vou explicar aqui cada item dos menus do RetroArch. Você vai entendendo
 sob demanda, a medida que formos avançando aqui no texto. Por enquanto só
