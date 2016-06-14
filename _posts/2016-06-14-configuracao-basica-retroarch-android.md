@@ -60,6 +60,9 @@ Não será abordado nesse texto como parear o joystick com o Android e nem
 como obter as ROMs dos jogos. Então, supondo que você já tem um joystick
 pareado com o seu Android e já tem ROMs no seu dispositivo, podemos começar.
 
+Ah! É interessante que você habilite o recurso de rotação de tela automática no seu
+Android.
+
 
 ## instalação
 
@@ -122,8 +125,8 @@ Para instalar um core nós vamos em `Online Updater`:
 Agora vem mais uma fonte de confusão: existem vários cores para um mesmo sistema e
 você não sabe qual escolher! Só para SNES, existem 10 disponíveis!!
 
-Bem, até hoje eu não sei as diferenças, vantagens/desvantagens de cada core.
-Portanto vou apenas indicar os que eu percebo que é mais comum
+Bem, eu não sei as diferenças, vantagens/desvantagens de cada core.
+Portanto vou apenas indicar os que eu percebo que são mais comuns
 do pessoal instalar e que eu instalei e não tenho problema
 algum.
 
@@ -375,7 +378,7 @@ Qualquer dúvida, coloca aí nos comentários que a gente tenta resolver.
 
 [mastersystemcore]: {{ imgra }}mastersystemcore.png
 
-[megadrive]:        {{ imgra }}megadrivecore.png
+[megadrivecore]:    {{ imgra }}megadrivecore.png
 
 [nescore]:          {{ imgra }}nescore.png
 
