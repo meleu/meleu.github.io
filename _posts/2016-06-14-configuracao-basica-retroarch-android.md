@@ -205,7 +205,7 @@ final, vai ter a opção `Input User 1 Binds`.
 Dentro deste menu, **nao altere as 3 primeiras opções**. Como o escopo
 desse texto é só o basicão, ignore essas opções.
 
-"[alt text][inputbindall]
+![alt text][inputbindall]
 
 A opção `User 1 Bind All`, percorre todos os botões pedindo para você atribuir
 um botão equivalente do seu joystick. Mas para quem está usando o RetroArch pela
