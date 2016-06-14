@@ -362,7 +362,7 @@ Isso só acontece quando você tem algum core ativo (quando você está jogando
 algum game).
 
 
-## Conclusão
+## conclusão
 
 Agora você já pode jogar os saudosos jogos antigos! Aproveite e dê a nota
 máxima para o RetroArch lá no Google Play Store. Afinal de contas é um programa
