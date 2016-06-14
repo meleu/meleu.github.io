@@ -108,14 +108,15 @@ vamos ignorar.
 ## instalando os cores
 
 Outra coisa a se acostumar ao usar o RetroArch é chamar os emuladores de
-*cores*. Isso é outra coisa que já acaba confundindo os não-iniciados.
+*cores*. Isso é outra coisa que confunde os não-iniciados.
 Então acostume-se: Cada emulador é chamado de core dentro do RetroArch.
 
-Para instalar um core nós vamos fazer em `Online Updater` e em seguida
-`Core Updater`, conforme as imagens abaixo:
+Para instalar um core nós vamos em `Online Updater`:
 
 ![alt text][onlineupdater]
 
+ E em seguida vamos `Core Updater`:
+ 
 ![alt text][coreupdater]
 
 Agora vem mais uma fonte de confusão: existem vários cores para um mesmo sistema e
