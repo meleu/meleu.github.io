@@ -132,23 +132,23 @@ do pessoal instalar e que eu instalei e não tenho problema
 algum.
 
 
-Para NES (Nintendinho 8 bits) eu uso o FCEUmm:
+Para **NES** (Nintendinho 8 bits) eu uso o FCEUmm:
 
 ![alt text][nescore]
 
 
-Para SNES (Super Nintendo) eu uso o Snes9x Next (já usei o Snes9x e não tive problema
+Para **SNES** (Super Nintendo) eu uso o Snes9x Next (já usei o Snes9x e não tive problema
 algum, mas depois li em algum lugar que o Next tem uma performance melhor):
 
 ![alt text][snescore]
 
 
-Para Mega Drive, Master System e Sega 32X, usa-se o picodrive:
+Para **Mega Drive**, **Master System** e **Sega 32X**, usa-se o picodrive:
 
 ![alt text][megadrivecore]
 
 
-Para os *true old gamers*, temos o Stella para emular o Atari 2600:
+Para os *true old gamers*, temos o Stella para emular o **Atari 2600**:
 
 ![alt text][ataricore]
 
