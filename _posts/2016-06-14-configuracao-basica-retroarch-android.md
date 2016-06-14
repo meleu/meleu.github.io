@@ -361,7 +361,7 @@ que a gente costuma ver nos apps que se dizem Free.
 
 Posteriormente pretendo falar sobre os
 [RetroAchievements](http://retroachievements.org) e como habilitar esse recurso
-no RetroArch. Você verá que a diversão com esses jogos antigos será multiplicada.
+no RetroArch. Você verá que a diversão com os jogos antigos será multiplicada.
 
 Qualquer dúvida, coloca aí nos comentários que a gente tenta resolver.
 
