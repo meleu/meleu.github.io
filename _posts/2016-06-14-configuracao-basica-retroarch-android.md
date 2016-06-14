@@ -369,16 +369,24 @@ Qualquer dúvida, coloca aí nos comentários que a gente tenta resolver.
 
 [retropad]:         {{ imgra }}Retropad_360pad.png "RetroPad"
 [ataricore]:        {{ imgra }}ataricore.png
+[configuration]:    {{ imgra }}configuration.png
 [coreupdater]:      {{ imgra }}coreupdater.png
 [displayoverlay]:   {{ imgra }}displayoverlay.png
+[input]:            {{ imgra }}input.png
+[inputuser1binds]:  {{ imgra }}inputuser1binds.png
+[inputbindall]:     {{ imgra }}inputbindall.png
 [inputhotkeys]:     {{ imgra }}inputhotkeys.png
 [loadcontent]:      {{ imgra }}loadcontent.png
 [loadrecent]:       {{ imgra }}loadrecent.png
+[mainmenu]:         {{ imgra }}mainmenu.png
+[main-quickmenu]:   {{ imgra }}main-quickmenu.png
 [mastersystemcore]: {{ imgra }}mastersystemcore.png
 [megadrivecore]:    {{ imgra }}megadrivecore.png
 [nescore]:          {{ imgra }}nescore.png
 [onlineupdater]:    {{ imgra }}onlineupdater.png
+[onscreenoverlay]:  {{ imgra }}onscreenoverlay.png
 [quickmenu]:        {{ imgra }}quickmenu.png
+[quickmenu-search]: {{ imgra }}quickmenu-search.png
 [saveconfigonexit]: {{ imgra }}saveconfigonexit.png
 [selectfile]:       {{ imgra }}selectfile.png
 [snescore]:         {{ imgra }}snescore.png
