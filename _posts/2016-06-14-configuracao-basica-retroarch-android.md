@@ -167,8 +167,7 @@ algumas coisinhas...
 
 Vá em `Settings` (ícone da engrenagem), e escolha `Configuration`.
 
-![alt text][saveconfigonexit]
-
+![alt text][configuration]
 
 Por padrão a opção
 `Save Configuration On Exit` já está habilitada. Mas eu acho importante
@@ -210,8 +209,10 @@ final, vai ter a opção `Input User 1 Binds`.
 Dentro deste menu, **nao altere as 3 primeiras opções**. Como o escopo
 desse texto é só o basicão, ignore essas opções.
 
+"[alt text][inputbindall]
+
 A opção `User 1 Bind All`, percorre todos os botões pedindo para você atribuir
-um botão equivalente do seu joystick. Mas para quem usando o RetroArch pela
+um botão equivalente do seu joystick. Mas para quem está usando o RetroArch pela
 primeira vez, talvez seja mais interessante fazer esta
 configuração individualmente, botão por botão.
 
@@ -220,6 +221,17 @@ SNES: Y, B, X, A, L e R. Mas também possui outros botões, como
 L2, R2, L3 e R3. Eis um esquema que pode ajudar:
 
 ![alt text][retropad]
+
+Esse RGUI ali no meio do controle você pode ignorar.
+
+Você vai observar que existem os botões L3 e R3:
+
+![alt text][inputl3r3]
+
+Estes botões são os botões analógicos pressionados. Ou seja L3 é o direcional
+analógico esquerdo pressionado, e o R3 é o direcional analógico direito
+pressionado. Se o seu joystick não possuir estes botões, simplesmente ignore
+(o meu 8Bitdo Zero, por exemplo, não tem direcional analógico, nem L2 e R2).
 
 
 ### Configuração dos hotkeys
