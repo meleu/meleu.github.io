@@ -76,7 +76,7 @@ Atualmente (junho/2016) a versão disponível é a 1.3.4.
 
 Isso é o que aparece quando você inicia o RetroArch pela primeira vez:
 
-![alt text][onlineupdater]
+![alt text][mainmenu]
 
 A primeira coisa a se estranhar no RetroArch é a sua interface com o usuário.
 Atenção para duas grandes diferenças:
