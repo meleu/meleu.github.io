@@ -270,7 +270,8 @@ para os botões.
 
 ![alt text][retropad]
 
-Vamos à explicação 
+Vamos à explicação
+
 - `Enable hotkeys`: **Select**. Esta opção é a mais importante, pois é o botão
 que você tem que pressionar em combinação com algum outro para realizar 
 determinada ação.
