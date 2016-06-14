@@ -253,10 +253,13 @@ Vamos à explicação
 tem que pressionar em combinação com algum outro para realizar determinada
 ação.
 
-<b>&larr</b
-<b>&rarr</b
-<b>&uarr</b
-<b>&darr</b
+<b>&larr</b>
+
+<b>&rarr</b>
+
+<b>&uarr</b>
+
+<b>&darr</b>
 
 - `Menu toggle`: **X**. Sai momentaneamente do jogo e volta para o Quickmenu do RetroArch
 (falarei mais sobre esse QuickMenu daqui a pouco.)
