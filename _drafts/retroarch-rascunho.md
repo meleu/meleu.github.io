@@ -212,14 +212,66 @@ L2, R2, L3 e R3. Eis um esquema que pode ajudar:
 
 ### Configuração dos hotkeys
 
-Os hotkeys são combinações de botões que você pode fazer no seu joystick
+As hotkeys são combinações de botões que você pode acionar no seu joystick
 para possibilitar que você controle o RetroArch sem necessidade de outro
-dispositivo de entrada. Ou seja, totalmente pelo joystick. Você pode
-configurar coisas como resetar o jogo, tirar um screenshot, salvar o 
+dispositivo de entrada (teclado, touch screen, etc).
+Ou seja, pelo joystick você poderá fazer coisas como resetar o jogo,
+tirar um screenshot, sair do RetroArch, salvar o 
 estado do jogo, carregar um estado salvo do jogo, ir para o menu do
 RetroArch, etc...
 
-Vamos configurar aqui somente as coisas mais básicas.
+No menu de configurações vá em `Input`:
+
+images/retroarch/input.png
+
+
+Uma vez dentro do menu do `Input`, desça a lista que lá embaixo, quase no
+final, vai ter a opção `Input Hotkey Binds`.
+
+images/retroarch/inputhotkeybinds.png
+
+
+Aparecerão várias opções, mas vou explicar aqui somente as configurações
+mais básicas.
+
+Usarei o seguinte formato:
+
+- `Função`: **botão**. Explicação da função.
+
+Sendo que o **botão** você pode definir qualquer um que quiser, eu
+apenas estou mostrando qual é a configuração mais consagrada entre
+os usuários do RetroArch.
+
+**Lembre-se que a identificação dos botões segue o esquema da imagem abaixo**
+e o seu controle físico, que você tem em mãos, pode ter uma identificação diferente
+para os botões.
+
+![alt text][retropad]
+
+Vamos à explicação 
+- `Enable hotkeys`: **Select**. Esta opção é a mais importante, pois é o botão que você
+tem que pressionar em combinação com algum outro para realizar determinada
+ação.
+
+<b>&larr</b
+<b>&rarr</b
+<b>&uarr</b
+<b>&darr</b
+
+- `Menu toggle`: **X**. Sai momentaneamente do jogo e volta para o Quickmenu do RetroArch
+(falarei mais sobre esse QuickMenu daqui a pouco.)
+
+- `Reset game`: **B**. Reinicia o jogo. Apesar de ser comum essa configuração
+no botão B, eu acho ruim pois você pode apertar acidentalmente. Eu costumava
+alterar isso para direcional para baixo.
+
+Load state
+Save state
+Quit RetroArch
+Savestate slot +
+Savestate slot -
+Reset game
+
 
 images/retroarch/saveconfigonexit.png
 images/retroarch/saveconfigonexit.png
@@ -246,17 +298,31 @@ desabilitar display overlay
 {% assign imgra = "/images/retroarch/" %}
 
 [retropad]:         {{ imgra }}Retropad_360pad.png "RetroPad"
+
 [ataricore]:        {{ imgra }}ataricore.png
+
 [coreupdater]:      {{ imgra }}coreupdater.png
+
 [displayoverlay]:   {{ imgra }}displayoverlay.png
+
 [inputhotkeys]:     {{ imgra }}inputhotkeys.png
+
 [loadcontent]:      {{ imgra }}loadcontent.png
+
 [loadrecent]:       {{ imgra }}loadrecent.png
+
 [mastersystemcore]: {{ imgra }}mastersystemcore.png
+
 [megadrive]:        {{ imgra }}megadrivecore.png
+
 [nescore]:          {{ imgra }}nescore.png
+
 [onlineupdater]:    {{ imgra }}onlineupdater.png
+
 [quickmenu]:        {{ imgra }}quickmenu.png
+
 [saveconfigonexit]: {{ imgra }}saveconfigonexit.png
+
 [selectfile]:       {{ imgra }}selectfile.png
+
 [snescore]:         {{ imgra }}snescore.png
