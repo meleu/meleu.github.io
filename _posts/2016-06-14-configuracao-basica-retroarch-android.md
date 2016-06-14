@@ -237,7 +237,7 @@ pressionado. Se o seu joystick não possuir estes botões, simplesmente ignore
 ### Configuração dos hotkeys
 
 As hotkeys são combinações de botões que você pode acionar no seu joystick
-para possibilitar que você controle o RetroArch sem necessidade de outro
+para controlar o RetroArch sem necessidade de outro
 dispositivo de entrada (teclado, touch screen, etc).
 Ou seja, pelo joystick você poderá fazer coisas como resetar o jogo,
 tirar um screenshot, sair do RetroArch, salvar o 
@@ -249,22 +249,20 @@ No menu de configurações vá em `Input`:
 ![alt text][input]
 
 
-Uma vez dentro do menu do `Input`, desça a lista que lá embaixo, quase no
+Vai abrir um menu com várias opções, desça a lista que lá embaixo, quase no
 final, vai ter a opção `Input Hotkey Binds`.
 
 ![alt text][inputhotkeybinds]
 
 
 Aparecerão várias opções, mas vou explicar aqui somente as configurações
-mais básicas.
-
-Usarei o seguinte formato:
+mais básicas. Usarei o seguinte formato:
 
 - `Função`: **botão**. Explicação da função.
 
 Sendo que o **botão** você pode definir qualquer um que quiser, eu
-apenas estou mostrando qual é a configuração mais consagrada entre
-os usuários do RetroArch.
+estou mostrando aqui apenas uma sugestão de configuração que é 
+mais consagrada entre os usuários do RetroArch.
 
 **Lembre-se que a identificação dos botões segue o esquema da imagem abaixo**
 e o seu controle físico, que você tem em mãos, pode ter uma identificação diferente
