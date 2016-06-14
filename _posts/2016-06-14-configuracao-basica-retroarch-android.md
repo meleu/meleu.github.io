@@ -220,7 +220,7 @@ L2, R2, L3 e R3. Eis um esquema que pode ajudar:
 
 Esse RGUI ali no meio do controle você pode ignorar.
 
-Você vai observar que existem os botões L3 e R3:
+Ainda dentro do `Input User 1 Binds`, você vai observar que existem os botões L3 e R3:
 
 ![alt text][inputl3r3]
 
