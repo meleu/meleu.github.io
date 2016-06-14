@@ -383,6 +383,7 @@ Qualquer dúvida, coloca aí nos comentários que a gente tenta resolver.
 [inputuser1binds]:   {{ imgra }}inputuser1binds.png
 [inputbindall]:      {{ imgra }}inputbindall.png
 [inputhotkeys]:      {{ imgra }}inputhotkeys.png
+[inputl3r3]:         {{ imgra }}inputl3r3.png
 [loadcontent]:       {{ imgra }}loadcontent.png
 [loadrecent]:        {{ imgra }}loadrecent.png
 [mainmenu]:          {{ imgra }}mainmenu.png
