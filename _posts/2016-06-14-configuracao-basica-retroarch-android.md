@@ -102,8 +102,7 @@ do PlayStation); voltar/cancelar no botão equivalente ao B do SNES (X no
 PlayStation). Se estes botões não estiverem funcionando, calma que nós
 já vamos configurá-los!
 
-Não vou explicar aqui cada item dos menus do RetroArch. Você vai entendendo
-sob demanda, a medida que formos avançando aqui no texto. Por enquanto só
+Não vou explicar aqui cada item dos menus do RetroArch. Por enquanto só
 é importante que você observe que o ícone da casinha no canto inferior esquerdo
 é o `Main Menu`; e o ícone da engrenagem no canto inferior direito acessa
 o menu de configurações (`Settings tab`). O outro ícone que tem no meio nós
