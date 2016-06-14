@@ -1,7 +1,7 @@
 ---
 layout: post
 title: configuração básica do RetroArch
-date: 2016-06-13
+date: 2016-06-14
 tags:
 - retroarch
 - android
