@@ -326,8 +326,7 @@ esse Search da tela.
 
 ![alt text][quickmenu-search]
 
-Agora vamos à uma explicação rápida das opções mais importantes do Quick Menu
-(as opções que eu não menciono aqui, é para ignorar):
+Agora vamos à uma explicação rápida das opções mais importantes do Quick Menu:
 
 - **Resume**: volta para o jogo.
 - **Restart**: reinicia o jogo.
@@ -344,13 +343,13 @@ configuração específica para o jogo que está ativo.
 
 Lembre-se: para voltar para o jogo vá em **Resume**.
 
-Se você apertar o B (ou o botão definido para voltar/cancelar), você retornará para o `Main Menu`. Só que agora observe que a primeira opção do Main Menu é o `Quick Menu`:
+Se você apertar o B enquanto estiver no Quick Menu, você retornará para o 
+`Main Menu`. Só que agora observe que a primeira opção do Main Menu é o `Quick Menu`:
 
 ![alt text][main-quickmenu]
 
-
-Isso só acontece quando você tem algum core ativo (quando o jogo está rodando
-o core está ativo).
+Isso só acontece quando você tem algum core ativo (quando você está jogando
+algum game).
 
 
 ## Conclusão
