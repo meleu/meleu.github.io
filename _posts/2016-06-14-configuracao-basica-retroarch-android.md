@@ -22,12 +22,13 @@ o RetroArch e a partir dele você terá disponível emuladores de diversos
 sistemas.
 
 Esse texto aborda o que considero o mínimo necessário para você jogar no
-RetroArch. Mas ele é tão rico de recursos que isso aqui é só a ponta do iceberg.
+RetroArch. Mas o app é tão rico de recursos que o que vemos aqui é só a ponta do iceberg.
 Dá pra fazer muito mais, e deixá-lo com visual bem bacana. Depois tentarei
-escrever sobre outras configurações possíveis.
+escrever sobre outras configurações possíveis. Mas por enquanto vamos ficar
+no básico do básico para você sair jogando.
 
 Gostaria de deixar bem claro que os emuladores que eu utilizo vão no máximo
-até SNES e MegaDrive. O RetroArch disponibiliza emuladores de sistemas não
+até SNES e MegaDrive. O RetroArch disponibiliza também emuladores de sistemas não
 tão antigos, como de Dreamcast, Nintendo 64 e PlayStation 1, mas o desempenho
 pode variar muito. Eu não testei nenhum destes.
 
@@ -35,7 +36,7 @@ Uma coisa que a princípio pode causar estranheza, é que a nota do RetroArch
 no Google Play Store não é tão alta. Mas lendo os comentários nota-se
 claramente que muita gente dá nota baixa por não saber fazer as configurações
 iniciais antes de começar a jogar. Foi para tentar mudar este cenário que
-escrevi este texto (eu mesmo sofri um pouco até deixar o RetroArch do meu jeito).
+escrevi este texto (eu mesmo sofri um pouco no começo).
 
 
 ## pré requisitos
@@ -47,14 +48,13 @@ Para tirar o máximo proveito do RetroArch no Android, são necessárias duas co
 
 Por padrão o RetroArch disponibiliza um joystick virtual, que fica na
 tela e você comanda pelo touch screen. Mas eu não consigo ter prazer
-algum jogando desta forma. Por isso acho que nem vale a pena jogar
-os jogos dos videogames antigos pelo touch. Sem joystick, nem jogo.
+algum jogando desta forma. Então nem vale a pena. Sem joystick eu nem jogo.
 
-Existem inúmeros modelos de joysticks bluetooth. Eu não experimentei vários, mas
-posso falar de dois modelos que uso e estou muito satisfeito:
+Existem inúmeros modelos de joysticks bluetooth no mercado. Eu não experimentei
+vários, mas posso falar de dois modelos que uso e estou muito satisfeito:
 
 - ípega GT-9023 ([aqui tem um vídeo review bacana](https://www.youtube.com/watch?v=QROvmQq-D-4))
-- [8Bitdo ZERO](http://www.8bitdo.com/zero/)
+- [8Bitdo ZERO](http://www.8bitdo.com/zero/) (um controlezinho minúsculo e discreto)
 
 Não será abordado nesse texto como parear o joystick com o Android e nem
 como obter as ROMs dos jogos. Então, supondo que você já tem um joystick
@@ -71,27 +71,30 @@ Atualmente (junho/2016) a versão disponível é a 1.3.4.
 
 ## interface com usuário
 
+Isso é o que aparece quando você inicia o RetroArch pela primeira vez:
+
+![alt text][onlineupdater]
+
 A primeira coisa a se estranhar no RetroArch é a sua interface com o usuário.
 Atenção para duas grandes diferenças:
 
-1. **No RetroArch você dá o primeiro toque para escolher, e então
-toca novamente para acionar a opção escolhida**
-2. **O tradicional botão de voltar do Android não funciona nessa interface
-do RetroArch! Você tem que voltar por aquela setinha apontada para esquerda
+1. **No RetroArch você dá o primeiro toque numa opção para selecioná-la, e então
+toca novamente para acionar a opção selecionada.**
+2. **O botão de voltar do Android não funciona no RetroArch!
+Você tem que voltar por aquela setinha apontada para esquerda
 que aparece lá no canto superior esquerdo**
 
 Nos outros apps do Android, geralmente quando você toca em uma opção de um menu, você já está acionando
-aquela opção. No RetroArch você dá o primeiro toque para escolher, e então
-toca novamente para acionar a opção escolhida. Isso pode causar estranheza,
+aquela opção. No RetroArch você dá o primeiro toque para selecionar, e então
+toca novamente para acionar aquela seleção. Isso pode causar estranheza,
 mas quando você configurar seu joystick direitinho, você vai acabar
-controlando o RetroArch inteiramente pelo joystick. E pelo joystick também
-não há necessidade de usar o botão de voltar do Android.
+controlando tudo pelo joystick. Inclusive o esquema de voltar/cancelar do Android.
 
-**Observação**: Se você parear certinho seu joystick com o Android antes
+**Observação**: Se você parear certinho seu joystick antes
 de abrir o RetroArch, quando você abrí-lo é provável que ele já detecte
-o seu joystick e aí você poderá navegar no menu através do direcional,
+o seu joystick e aí você poderá navegar no menu através do direcional;
 ativar/selecionar uma opção no botão equivalente ao A do SNES (ou bola
-do PlayStation), voltar/cancelar no botão equivalente ao B do SNES (X no
+do PlayStation); voltar/cancelar no botão equivalente ao B do SNES (X no
 PlayStation).
 
 Não vou explicar aqui cada item dos menus do RetroArch. Você vai entendendo
@@ -100,8 +103,6 @@ sob demanda, a medida que formos avançando aqui no texto. Por enquanto só
 é o `Main Menu`; e o ícone da engrenagem no canto inferior direito acessa
 o menu de configurações (`Settings tab`). O outro ícone que tem no meio nós
 vamos ignorar.
-
-![alt text][onlineupdater]
 
 
 ## instalando os cores
