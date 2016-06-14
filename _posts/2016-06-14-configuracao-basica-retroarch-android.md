@@ -143,14 +143,9 @@ algum, mas depois li em algum lugar que o Next tem uma performance melhor):
 ![alt text][snescore]
 
 
-Para Mega Drive, uso o picodrive:
+Para Mega Drive, Master System e Sega 32X, usa-se o picodrive:
 
 ![alt text][megadrivecore]
-
-
-Para quem curte Master System, o core é o Emux:
-
-![alt text][mastersystemcore]
 
 
 Para os caras quem são *true old gamers*, tem o Stella para emular o Atari 2600:
@@ -381,7 +376,6 @@ Qualquer dúvida, coloca aí nos comentários que a gente tenta resolver.
 [loadrecent]:       {{ imgra }}loadrecent.png
 [mainmenu]:         {{ imgra }}mainmenu.png
 [main-quickmenu]:   {{ imgra }}main-quickmenu.png
-[mastersystemcore]: {{ imgra }}mastersystemcore.png
 [megadrivecore]:    {{ imgra }}megadrivecore.png
 [nescore]:          {{ imgra }}nescore.png
 [onlineupdater]:    {{ imgra }}onlineupdater.png
