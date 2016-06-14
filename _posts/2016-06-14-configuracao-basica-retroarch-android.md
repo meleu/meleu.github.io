@@ -63,7 +63,8 @@ pareado com o seu Android e já tem ROMs no seu dispositivo, podemos começar.
 
 ## instalação
 
-Sem mistério: vai no Google Play Store e instala o [RetroArch](https://play.google.com/store/apps/details?id=com.retroarch).
+Sem mistério: vai no Google Play Store e instala o
+[RetroArch](https://play.google.com/store/apps/details?id=com.retroarch).
 
 Atualmente (junho/2016) a versão disponível é a 1.3.4.
 
@@ -100,7 +101,7 @@ sob demanda, a medida que formos avançando aqui no texto. Por enquanto só
 o menu de configurações (*Settings tab*). O outro ícone que tem no meio nós
 vamos ignorar.
 
-images/retroarch/onlineupdater.png
+![alt text][onlineupdater]
 
 
 ## instalando os cores
@@ -112,8 +113,9 @@ Então acostume-se: Cada emulador é chamado de core dentro do RetroArch.
 Para instalar um core nós vamos fazer em `Online Updater` e em seguida
 `Core Updater`, conforme as imagens abaixo:
 
-images/retroarch/onlineupdater.png
-images/retroarch/coreupdater.png
+![alt text][onlineupdater]
+
+![alt text][coreupdater]
 
 Agora vem mais uma fonte de confusão: existem vários cores para um mesmo sistema e
 você não sabe qual escolher! Só para SNES, existem 10 disponíveis!!
@@ -126,28 +128,28 @@ algum.
 
 Para NES (Nintendinho 8 bits) eu uso o FCEUmm:
 
-images/retroarch/nescore.png
+![alt text][nescore]
 
 
 Para SNES (Super Nintendo) eu uso o Snes9x Next (já usei o Snes9x e não tive problema
 algum, mas depois li em algum lugar que o Next tem uma performance melhor):
 
-images/retroarch/snescore.png
+![alt text][snescore]
 
 
 Para Mega Drive, uso o picodrive:
 
-images/retroarch/megadrivecore.png
+![alt text][megadrivecore]
 
 
 Para quem curte Master System, o core é o Emux:
 
-images/retroarch/mastersystemcore.png
+![alt text][mastersystemcore]
 
 
 Para os caras quem são *true old gamers*, tem o Stella para emular o Atari 2600:
 
-images/retroarch/ataricore.png
+![alt text][ataricore]
 
 
 ## configurando
@@ -160,7 +162,7 @@ algumas coisinhas...
 
 Vá em `Settings` (ícone da engrenagem), e escolha `Configuration`.
 
-images/retroarch/saveconfigonexit.png
+![alt text][saveconfigonexit]
 
 
 Por padrão a opção
@@ -168,7 +170,7 @@ Por padrão a opção
 mostrar o caminho até ela porque quando não está habilitada, as alterações
 que você fizer não serão salvas.
 
-images/retroarch/saveconfigonexit.png
+![alt text][saveconfigonexit]
 
 
 ### Desabilitar o "joystick virtual"
@@ -179,25 +181,25 @@ nossa visualização do game!
 
 Em `Settings` (ícone da engrenagem), vá em `Onscreen Overlay`.
 
-images/retroarch/onscreenoverlay.png
+![alt text][onscreenoverlay]
 
 
 Desabilite a opção `Display Overlay`
 
-images/retroarch/displayoverlay.png
+![alt text][displayoverlay]
 
 
 ### Configuração dos botões
 
 No menu de configurações vá em `Input`:
 
-images/retroarch/input.png
+![alt text][input]
 
 
 Uma vez dentro do menu do `Input`, desça a lista que lá embaixo, quase no
 final, vai ter a opção `Input User 1 Binds`.
 
-images/retroarch/inputuser1binds.png
+![alt text][inputuser1binds]
 
 
 Dentro deste menu, **nao altere as 3 primeiras opções**. Como o escopo
@@ -227,13 +229,13 @@ RetroArch, etc...
 
 No menu de configurações vá em `Input`:
 
-images/retroarch/input.png
+![alt text][input]
 
 
 Uma vez dentro do menu do `Input`, desça a lista que lá embaixo, quase no
 final, vai ter a opção `Input Hotkey Binds`.
 
-images/retroarch/inputhotkeybinds.png
+![alt text][inputhotkeybinds]
 
 
 Aparecerão várias opções, mas vou explicar aqui somente as configurações
@@ -352,13 +354,6 @@ Posteriormente pretendo falar sobre os
 no RetroArch. Você verá que a diversão com esses jogos antigos será multiplicada.
 
 Qualquer dúvida, coloca aí nos comentários que a gente tenta resolver.
-
-
-
-retroachievements
-habilitar display overlay
-retroachievements account
-desabilitar display overlay
 
 {% assign imgra = "/images/retroarch/" %}
 
