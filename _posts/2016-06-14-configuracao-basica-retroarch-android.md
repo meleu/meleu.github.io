@@ -229,6 +229,9 @@ analógico esquerdo pressionado, e o R3 é o analógico direito
 pressionado. Se o seu joystick não possuir estes botões, simplesmente ignore
 (o meu 8Bitdo Zero, por exemplo, não tem direcional analógico, nem L2 e R2).
 
+**ATENÇÃO! Se você quer fazer um uma configuração de botões diferente por conta
+de um determinado jogo ou console, não faça essa configuração aqui no `Input`!
+Utilize o `Quick Menu`, como veremos daqui a pouco.**
 
 ### Configuração dos hotkeys
 
