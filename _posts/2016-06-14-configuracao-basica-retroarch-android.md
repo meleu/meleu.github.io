@@ -83,10 +83,10 @@ A primeira coisa a se estranhar no RetroArch é a sua interface com o usuário.
 Atenção para duas grandes diferenças:
 
 1. **No RetroArch você dá o primeiro toque numa opção para selecioná-la, e então
-toca novamente para acionar a opção selecionada.**
+toca novamente para acionar a seleção.**
 2. **O botão de voltar do Android não funciona no RetroArch!
-Você tem que voltar por aquela setinha apontada para esquerda
-que aparece lá no canto superior esquerdo**
+Você tem que voltar por uma seta apontada para esquerda
+que aparece no canto superior esquerdo**
 
 Nos outros apps do Android, geralmente quando você toca em uma opção de um menu, você já está acionando
 aquela opção. No RetroArch você dá o primeiro toque para selecionar, e então
