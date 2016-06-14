@@ -274,9 +274,10 @@ Vamos à explicação
 
 - `Enable hotkeys`: **Select**. Esta opção é a mais importante, pois é o botão
 que você tem que pressionar em combinação com algum outro para realizar 
-determinada ação.
+determinada ação. Portanto, nas funções que explico abaixo, você tem que pressionar
+**Select+[botão]**.
 
-- `Menu toggle`: **X**. Sai momentaneamente do jogo e volta para o Quick Menu
+- `Menu toggle`: **X**. Sai momentaneamente do jogo e vai para o Quick Menu
 do RetroArch (falarei mais sobre esse Quick Menu daqui a pouco.)
 
 - `Reset game`: **B**. Reinicia o jogo. Apesar de ser comum essa configuração
