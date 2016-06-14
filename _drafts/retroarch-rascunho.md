@@ -71,16 +71,20 @@ Atualmente (junho/2016) a versão disponível é a 1.3.4.
 ## interface com usuário
 
 A primeira coisa a se estranhar no RetroArch é a sua interface com o usuário.
-O comportamento do touch screen é um pouco diferente dos apps tradicionais.
+Atenção para duas grandes diferenças:
 
-Geralmente quando você toca em uma opção de um menu, você já está acionando
-aquela opção. **No RetroArch você dá o primeiro toque para escolher, e então
-toca novamente para acionar a opção escolhida**. Com o tempo você se acostuma.
-
-**O tradicional botão de voltar do Android não funciona nessa interface
+1. **No RetroArch você dá o primeiro toque para escolher, e então
+toca novamente para acionar a opção escolhida**
+2. **O tradicional botão de voltar do Android não funciona nessa interface
 do RetroArch! Você tem que voltar por aquela setinha apontada para esquerda
-que aparece lá no canto superior esquerdo** (quem usa iPhone já está
-acostumado com esse comportamento).
+que aparece lá no canto superior esquerdo**
+
+Nos outros apps do Android, geralmente quando você toca em uma opção de um menu, você já está acionando
+aquela opção. No RetroArch você dá o primeiro toque para escolher, e então
+toca novamente para acionar a opção escolhida. Isso pode causar estranheza,
+mas quando você configurar seu joystick direitinho, você vai acabar
+controlando o RetroArch inteiramente pelo joystick. E pelo joystick também
+não há necessidade de usar o botão de voltar do Android.
 
 **Observação**: Se você parear certinho seu joystick com o Android antes
 de abrir o RetroArch, quando você abrí-lo é provável que ele já detecte
@@ -91,9 +95,10 @@ PlayStation).
 
 Não vou explicar aqui cada item dos menus do RetroArch. Você vai entendendo
 sob demanda, a medida que formos avançando aqui no texto. Por enquanto só
-importante que você observe que o ícone da casinha no canto inferior esquerdo
-é o menu inicial; e o ícone da engrenagem no canto inferior direito acessa
-o menu de configurações. Esse outro ícone aí no meio nós vamos ignorar.
+é importante que você observe que o ícone da casinha no canto inferior esquerdo
+é o Main Menu; e o ícone da engrenagem no canto inferior direito acessa
+o menu de configurações (*Settings tab*). O outro ícone que tem no meio nós
+vamos ignorar.
 
 images/retroarch/onlineupdater.png
 
@@ -153,7 +158,7 @@ algumas coisinhas...
 
 ### Certifique-se de que o 'Save Configuration On Exit' está habilitado
 
-Vá no ícone da engrenagem, e escolha `Configuration`.
+Vá em `Settings` (ícone da engrenagem), e escolha `Configuration`.
 
 images/retroarch/saveconfigonexit.png
 
@@ -172,7 +177,7 @@ Como vamos jogar com nosso joystick bluetooth, não precisamos daquele
 joystick de mentirinha sendo exibido na tela do touch e atrapalhando
 nossa visualização do game!
 
-No menu de configurações (ícone da engrenagem), vá em `Onscreen Overlay`.
+Em `Settings` (ícone da engrenagem), vá em `Onscreen Overlay`.
 
 images/retroarch/onscreenoverlay.png
 
@@ -249,48 +254,105 @@ para os botões.
 ![alt text][retropad]
 
 Vamos à explicação 
-- `Enable hotkeys`: **Select**. Esta opção é a mais importante, pois é o botão que você
-tem que pressionar em combinação com algum outro para realizar determinada
-ação.
+- `Enable hotkeys`: **Select**. Esta opção é a mais importante, pois é o botão
+que você tem que pressionar em combinação com algum outro para realizar 
+determinada ação.
 
-<b>&larr;</b>
-
-<b>&rarr;</b>
-
-<b>&uarr;</b>
-
-<b>&darr;</b>
-
-- `Menu toggle`: **X**. Sai momentaneamente do jogo e volta para o Quickmenu do RetroArch
-(falarei mais sobre esse QuickMenu daqui a pouco.)
+- `Menu toggle`: **X**. Sai momentaneamente do jogo e volta para o Quick Menu
+do RetroArch (falarei mais sobre esse Quick Menu daqui a pouco.)
 
 - `Reset game`: **B**. Reinicia o jogo. Apesar de ser comum essa configuração
-no botão B, eu acho ruim pois você pode apertar acidentalmente. Eu costumava
-alterar isso para <b>&darr;</b> direcional para baixo.
+no botão B, eu acho ruim pois você pode apertar acidentalmente e reiniciar o
+jogo. Se isso acontecer quando você estiver na fase última fase de Battletoads (NES)
+te garanto que não será nada agradável! Portanto é melhor deixar o Reset
+sem botão algum. E dá pra reiniciar pelo Quick Menu, como veremos daqui a pouco.
+É mais seguro.
 
-Load state
-Save state
-Quit RetroArch
-Savestate slot +
-Savestate slot -
-Reset game
+- `Quit RetroArch`: **Start**. Sai totalmente do RetroArch. Se você acha
+que pode acionar Select+Start acidentalmente (ex.: 8Bitdo Zero), é melhor deixar essa opção
+sem botão algum também.
+
+- `Save state`: **R**. Salva o estado do jogo.
+
+- `Load state`: **L**. Carrega o estado do jogo que foi salvo.
+
+- `Savestate slot +`: **[direcional direita]**. Muda o slot do savestate para +1.
+
+- `Savestate slot -`: **[direcional esquerda]**. Muda o slot do savestate para -1.
 
 
-images/retroarch/saveconfigonexit.png
-images/retroarch/saveconfigonexit.png
-images/retroarch/saveconfigonexit.png
-images/retroarch/saveconfigonexit.png
-images/retroarch/saveconfigonexit.png
-images/retroarch/saveconfigonexit.png
+## Carregar um jogo
+
+Finalmente vamos jogar! Vá no `Main Menu` (ícone da casinha) e escolha
+`Load Content`
+
+![alt text][loadcontent]
+
+Em seguida escolha `Select File And Detect Core`, vá navegando até
+o diretório onde você salvou as ROMs e escolha algum jogo.
+O RetroArch automaticamente vai detectar qual core utilizar para a ROM que você
+escolher, se ele ficar na dúvida, irá te perguntar qual core você quer utilizar.
+
+Pronto! Você está no game! Mas espere um pouco antes de se entregar ao vício!
+Vamos rapidinho dar uma olhada no `Quick Menu`.
 
 
-input
-input hotkeys
-input bind
+## Quick Menu
 
-load content
-quick menu
-controls
+Uma vez que você está no jogo, é possível retornar aos menus do RetroArch
+usando a combinação de botões **Select+X** (considerando que você configurou
+os [hotkeys](#Configuração dos hotkeys) da maneira que eu sugeri).
+
+![alt text][quickmenu]
+
+Se você se deparar com essa tela escrito "Search:" aperte o B para tirar
+esse Search da tela.
+
+![alt text][quickmenu-search]
+
+Agora vamos à uma explicação rápida das opções mais importantes do Quick Menu
+(as opções que eu não menciono aqui, é para ignorar):
+
+- **Resume**: volta para o jogo.
+- **Restart**: reinicia o jogo.
+- **Close**: fecha o jogo.
+- **Take Screenshot**: salva uma imagem do jogo.
+- **State Slot**: altera o slot do savestate (que você pode fazer com
+Select+[direcional direita/esquerda].
+- **Save State**: salva o estado do jogo (que você pode fazer direto no
+jogo com Select+R).
+- **Load State**: carrega o estado que tiver salvo do jogo (você pode fazer
+direto no jogo com Select+L).
+- **Controls**: Muito útil para quando você quer uma configuração de botões
+diferente para um jogo ou um core específico. Faça as configurações ao seu
+gosto e depois vá em `Save Core Remap File` para salvar a configuração para
+o core que está ativo, ou vá em `Save Game Remap File` para salvar a
+configuração específica para o jogo que está ativo.
+
+Lembre-se: para voltar para o jogo vá em **Resume**.
+
+Se você apertar o B (ou o botão definido para voltar/cancelar), você retornará para o `Main Menu`. Só que agora observe que a primeira opção do Main Menu é o `Quick Menu`:
+
+![alt text][main-quickmenu]
+
+
+Isso só acontece quando você tem algum core ativo (quando o jogo está rodando
+o core está ativo).
+
+
+## Conclusão
+
+Agora você já pode jogar os saudosos jogos antigos! Aproveite e dê a nota
+máxima para o RetroArch lá no Google Play Store. Afinal de contas é um programa
+poderoso, cheio de recursos, totalmente livre e sem aquelas propagandinhas chatas
+que a gente costuma ver nos apps que se dizem Free.
+
+Posteriormente pretendo falar sobre os
+[RetroAchievements](http://retroachievements.org) e como habilitar esse recurso
+no RetroArch. Você verá que a diversão com esses jogos antigos será multiplicada.
+
+Qualquer dúvida, coloca aí nos comentários que a gente tenta resolver.
+
 
 
 retroachievements
@@ -329,3 +391,4 @@ desabilitar display overlay
 [selectfile]:       {{ imgra }}selectfile.png
 
 [snescore]:         {{ imgra }}snescore.png
+
