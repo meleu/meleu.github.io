@@ -148,7 +148,7 @@ Para Mega Drive, Master System e Sega 32X, usa-se o picodrive:
 ![alt text][megadrivecore]
 
 
-Para os caras quem são *true old gamers*, tem o Stella para emular o Atari 2600:
+Para os *true old gamers*, temos o Stella para emular o Atari 2600:
 
 ![alt text][ataricore]
 
