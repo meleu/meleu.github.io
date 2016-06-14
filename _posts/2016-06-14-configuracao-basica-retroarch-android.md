@@ -368,32 +368,17 @@ Qualquer dúvida, coloca aí nos comentários que a gente tenta resolver.
 {% assign imgra = "/images/retroarch/" %}
 
 [retropad]:         {{ imgra }}Retropad_360pad.png "RetroPad"
-
 [ataricore]:        {{ imgra }}ataricore.png
-
 [coreupdater]:      {{ imgra }}coreupdater.png
-
 [displayoverlay]:   {{ imgra }}displayoverlay.png
-
 [inputhotkeys]:     {{ imgra }}inputhotkeys.png
-
 [loadcontent]:      {{ imgra }}loadcontent.png
-
 [loadrecent]:       {{ imgra }}loadrecent.png
-
 [mastersystemcore]: {{ imgra }}mastersystemcore.png
-
 [megadrivecore]:    {{ imgra }}megadrivecore.png
-
 [nescore]:          {{ imgra }}nescore.png
-
 [onlineupdater]:    {{ imgra }}onlineupdater.png
-
 [quickmenu]:        {{ imgra }}quickmenu.png
-
 [saveconfigonexit]: {{ imgra }}saveconfigonexit.png
-
 [selectfile]:       {{ imgra }}selectfile.png
-
 [snescore]:         {{ imgra }}snescore.png
-
