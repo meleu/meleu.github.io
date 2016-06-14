@@ -317,7 +317,7 @@ Vamos rapidinho dar uma olhada no `Quick Menu`.
 
 Uma vez que você está no jogo, é possível retornar aos menus do RetroArch
 usando a combinação de botões **Select+X** (considerando que você configurou
-os [hotkeys](#Configuração dos hotkeys) da maneira que eu sugeri).
+os hotkeys da maneira que eu sugeri).
 
 ![alt text][quickmenu]
 
