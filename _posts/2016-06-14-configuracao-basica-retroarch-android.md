@@ -10,7 +10,8 @@ tags:
 ## intro
 
 Esse texto tem como objetivo mostrar como instalar e configurar emuladores
-de videogames antigos no Android (e acredito que no iPhone o processo é o mesmo).
+de videogames antigos no Android (acredito que no iPhone o processo
+o processo de configuração é o mesmo).
 
 Vamos usar o RetroArch, que é um software muito poderoso, cheio recursos,
 totalmente livre e sem propaganda alguma(!). Ele age como se fosse uma
