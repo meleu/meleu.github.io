@@ -293,7 +293,15 @@ sem botão algum também.
 - `Load state`: **L**. Carrega o estado do jogo que foi salvo.
 
 
-## Carregar um jogo
+## salvar configurações
+
+Agora vamos salvar todas estas configurações que fizemos. Vá em `Main Menu`
+(ícone da casinha) e escolha `Save Current Config`:
+
+![alt text][savecurrentconfig]
+
+
+## carregar um jogo
 
 Finalmente vamos jogar! Vá no `Main Menu` (ícone da casinha) e escolha
 `Load Content`
@@ -363,25 +371,26 @@ Qualquer dúvida, coloca aí nos comentários que a gente tenta resolver.
 
 {% assign imgra = "/images/retroarch/" %}
 
-[retropad]:         {{ imgra }}Retropad_360pad.png "RetroPad"
-[ataricore]:        {{ imgra }}ataricore.png
-[configuration]:    {{ imgra }}configuration.png
-[coreupdater]:      {{ imgra }}coreupdater.png
-[displayoverlay]:   {{ imgra }}displayoverlay.png
-[input]:            {{ imgra }}input.png
-[inputuser1binds]:  {{ imgra }}inputuser1binds.png
-[inputbindall]:     {{ imgra }}inputbindall.png
-[inputhotkeys]:     {{ imgra }}inputhotkeys.png
-[loadcontent]:      {{ imgra }}loadcontent.png
-[loadrecent]:       {{ imgra }}loadrecent.png
-[mainmenu]:         {{ imgra }}mainmenu.png
-[main-quickmenu]:   {{ imgra }}main-quickmenu.png
-[megadrivecore]:    {{ imgra }}megadrivecore.png
-[nescore]:          {{ imgra }}nescore.png
-[onlineupdater]:    {{ imgra }}onlineupdater.png
-[onscreenoverlay]:  {{ imgra }}onscreenoverlay.png
-[quickmenu]:        {{ imgra }}quickmenu.png
-[quickmenu-search]: {{ imgra }}quickmenu-search.png
-[saveconfigonexit]: {{ imgra }}saveconfigonexit.png
-[selectfile]:       {{ imgra }}selectfile.png
-[snescore]:         {{ imgra }}snescore.png
+[retropad]:          {{ imgra }}Retropad_360pad.png "RetroPad"
+[ataricore]:         {{ imgra }}ataricore.png
+[configuration]:     {{ imgra }}configuration.png
+[coreupdater]:       {{ imgra }}coreupdater.png
+[displayoverlay]:    {{ imgra }}displayoverlay.png
+[input]:             {{ imgra }}input.png
+[inputuser1binds]:   {{ imgra }}inputuser1binds.png
+[inputbindall]:      {{ imgra }}inputbindall.png
+[inputhotkeys]:      {{ imgra }}inputhotkeys.png
+[loadcontent]:       {{ imgra }}loadcontent.png
+[loadrecent]:        {{ imgra }}loadrecent.png
+[mainmenu]:          {{ imgra }}mainmenu.png
+[main-quickmenu]:    {{ imgra }}main-quickmenu.png
+[megadrivecore]:     {{ imgra }}megadrivecore.png
+[nescore]:           {{ imgra }}nescore.png
+[onlineupdater]:     {{ imgra }}onlineupdater.png
+[onscreenoverlay]:   {{ imgra }}onscreenoverlay.png
+[quickmenu]:         {{ imgra }}quickmenu.png
+[quickmenu-search]:  {{ imgra }}quickmenu-search.png
+[saveconfigonexit]:  {{ imgra }}saveconfigonexit.png
+[savecurrentconfig]: {{ imgra }}savecurrentconfig.png
+[selectfile]:        {{ imgra }}selectfile.png
+[snescore]:          {{ imgra }}snescore.png
