@@ -248,7 +248,7 @@ No menu de configurações vá em `Input`:
 Vai abrir um menu com várias opções, desça a lista que lá embaixo, quase no
 final, vai ter a opção `Input Hotkey Binds`.
 
-![alt text][inputhotkeybinds]
+![alt text][inputuser1binds]
 
 
 Aparecerão várias opções, mas vou explicar aqui somente as configurações
