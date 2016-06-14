@@ -253,20 +253,20 @@ Vamos à explicação
 tem que pressionar em combinação com algum outro para realizar determinada
 ação.
 
-<b>&larr</b>
+<b>&larr;</b>
 
-<b>&rarr</b>
+<b>&rarr;</b>
 
-<b>&uarr</b>
+<b>&uarr;</b>
 
-<b>&darr</b>
+<b>&darr;</b>
 
 - `Menu toggle`: **X**. Sai momentaneamente do jogo e volta para o Quickmenu do RetroArch
 (falarei mais sobre esse QuickMenu daqui a pouco.)
 
 - `Reset game`: **B**. Reinicia o jogo. Apesar de ser comum essa configuração
 no botão B, eu acho ruim pois você pode apertar acidentalmente. Eu costumava
-alterar isso para direcional para baixo.
+alterar isso para <b>&darr;</b> direcional para baixo.
 
 Load state
 Save state
