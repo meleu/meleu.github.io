@@ -224,8 +224,8 @@ Você vai observar que existem os botões L3 e R3:
 
 ![alt text][inputl3r3]
 
-Estes botões são os botões analógicos pressionados. Ou seja L3 é o direcional
-analógico esquerdo pressionado, e o R3 é o direcional analógico direito
+Estes botões são os direcionais analógicos pressionados. Ou seja L3 é o
+analógico esquerdo pressionado, e o R3 é o analógico direito
 pressionado. Se o seu joystick não possuir estes botões, simplesmente ignore
 (o meu 8Bitdo Zero, por exemplo, não tem direcional analógico, nem L2 e R2).
 
