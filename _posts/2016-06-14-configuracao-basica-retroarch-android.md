@@ -277,12 +277,13 @@ que você tem que pressionar em combinação com algum outro para realizar
 determinada ação. Portanto, nas funções que explico abaixo, você tem que pressionar
 **Select+[botão]**.
 
-- `Menu toggle`: **X**. Sai momentaneamente do jogo e vai para o Quick Menu
+- `Menu toggle`: **X**. Dá uma pausa no jogo e vai para o Quick Menu
 do RetroArch (falarei mais sobre esse Quick Menu daqui a pouco.)
 
 - `Reset game`: **B**. Reinicia o jogo. Apesar de ser comum essa configuração
 no botão B, eu acho ruim pois você pode apertar acidentalmente e reiniciar o
-jogo. Se isso acontecer quando você estiver na fase última fase de Battletoads (NES)
+jogo. Se isso acontecer quando você estiver bem avançado no Battletoads (NES),
+por exemplo,
 te garanto que não será nada agradável! Portanto é melhor deixar o Reset
 sem botão algum. E dá pra reiniciar pelo Quick Menu, como veremos daqui a pouco.
 É mais seguro.
@@ -294,10 +295,6 @@ sem botão algum também.
 - `Save state`: **R**. Salva o estado do jogo.
 
 - `Load state`: **L**. Carrega o estado do jogo que foi salvo.
-
-- `Savestate slot +`: **[direcional direita]**. Muda o slot do savestate para +1.
-
-- `Savestate slot -`: **[direcional esquerda]**. Muda o slot do savestate para -1.
 
 
 ## Carregar um jogo
