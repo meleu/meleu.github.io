@@ -313,6 +313,9 @@ o diretório onde você salvou as ROMs e escolha algum jogo.
 O RetroArch automaticamente vai detectar qual core utilizar para a ROM que você
 escolher, se ele ficar na dúvida, irá te perguntar qual core você quer utilizar.
 
+Uma forma mais rápida de carregar um jogo é indo no `Main Menu`, opção `Load Recent`.
+Ali você verá os últimos games que você jogou.
+
 Pronto! Você está no game! Mas espere um pouco antes de se entregar ao vício!
 Vamos rapidinho dar uma olhada no `Quick Menu`.
 
