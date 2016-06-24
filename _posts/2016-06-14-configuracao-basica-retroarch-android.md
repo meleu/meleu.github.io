@@ -11,14 +11,14 @@ tags:
 
 Esse texto tem como objetivo mostrar como instalar e configurar emuladores
 de videogames antigos no Android (acredito que no iPhone o processo
-o processo de configuração é o mesmo).
+de configuração é o mesmo).
 
 Vamos usar o RetroArch, que é um software muito poderoso, cheio recursos,
 totalmente livre e sem propaganda alguma(!). Ele age como se fosse uma
 central de emuladores. Nele você terá em apenas um app os emuladores dos
 clássicos Atari 2600, NES, Master System, Mega Drive, SNES e muitos outros
-que estão disponíveis pra você escolher. Isso mesmo! Você não vai precisar
-ficar caçando emuladores para cada videogame que você curte! Basta instalar
+que estão disponíveis pra você escolher. Você não vai precisar
+ficar procurando emuladores para cada videogame que você curte! Basta instalar
 o RetroArch e a partir dele você terá disponível emuladores de diversos
 sistemas.
 
