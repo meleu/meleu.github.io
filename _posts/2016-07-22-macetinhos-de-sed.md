@@ -13,10 +13,9 @@ de sed que serão muito úteis para as coisas que eu ando me metendo...
 
 **sed imitando o grep**
 
-```sed
-# print only lines which match regular expression (emulates "grep")
-sed -n '/regexp/p'           # method 1
-sed '/regexp/!d'             # method 2
+```sh
+sed -n '/regexp/p'  # method 1
+sed '/regexp/!d'    # method 2
 ```
 
 Gostei mais do método 2. Então vou usá-lo daqui pra frente.
@@ -24,13 +23,13 @@ Gostei mais do método 2. Então vou usá-lo daqui pra frente.
 
 **imprimir conteúdo de um arquivo da linha 1 até REGEXP**
 
-```sed
+```sh
 sed '1,/regexp/!d'
 ```
 
 **imprimir conteúdo de um arquivo de REGEXP1 até REGEXP2**
 
-```sed
+```sh
 sed '/regexp1/,/regexp2/!d'
 ```
 
