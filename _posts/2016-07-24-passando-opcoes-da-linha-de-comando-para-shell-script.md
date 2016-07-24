@@ -11,7 +11,7 @@ Esse post é só pra deixar um template do esquema que costumo usar para passar
 parâmetros da linha de comando para um shell script. No final das contas achei
 esse esquema mais intuitivo e versátil do que o `getopts`.
 
-Aprendi esse método no [livro de Shell Script](http://novatec.com.br/livros/shellscript/) do [Aurélio](https://aurelio.net). Eu tenho o liro e recomendo fortemente.
+Aprendi esse método no [livro de Shell Script](http://novatec.com.br/livros/shellscript/) do [Aurélio](https://aurelio.net). Eu tenho o livro e recomendo fortemente.
 
 Uma coisa bacana é que o capítulo de amostra disponibilizado pela editora é justamente o que trata do esquema mostrado aqui. Confira:
 [https://novatec.com.br/livros/shellscript/capitulo9788575221525.pdf](https://novatec.com.br/livros/shellscript/capitulo9788575221525.pdf)
