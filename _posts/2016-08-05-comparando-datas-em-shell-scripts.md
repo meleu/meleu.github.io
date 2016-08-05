@@ -10,7 +10,7 @@ Mas uma diquinha bacana para quem precisa manipular datas no shell script...
 
 Primeiramente vamos lembrar do macetinho de validação de datas publicado em [outro post aqui no blog](http://meleu.github.io/blog/2016/06/09/validando-datas-em-shell-scripts).
 
-Cosiderando que temos duas variáveis com datas já validadas `date1` e `date2`. Podemos usar o formato `+%s` do comando date(1), que ele nos retorno um número inteiro que corresponde ao número de segundos passados desde primeiro de janeiro de 1970.
+Cosiderando que temos duas variáveis com datas já validadas `date1` e `date2`. Podemos usar o formato `+%s` do comando `date`, que ele nos retorna um número inteiro correspondente ao número de segundos passados desde primeiro de janeiro de 1970.
 
 O trecho do script ficaria mais ou menos assim:
 
