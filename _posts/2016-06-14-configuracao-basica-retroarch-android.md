@@ -10,18 +10,18 @@ tags:
 ## Índice
 
 - [Introdução](#intro)
-- [Pré-requisitos](#pré-requisitos)
-- [Instalação](#instalação)
-- [Interface com usuário](#interface-com-usuário)
+- [Pré-requisitos](#pre-requisitos)
+- [Instalação](#instalacao)
+- [Interface com usuário](#interface-com-usuario)
 - [Instalando os cores (emuladores)](#instalando-os-cores)
 - [Configurando](#configurando)
   - [Desabilitar o joystick virtual](#desabilitar-o-joystick-virtual)
-  - [Configuração dos botões](#configuração-dos-botões)
-  - [Configuração dos hotkeys](#configuração-dos-hotkeys)
-- [Salvar configurações](#salvar-configurações)
+  - [Configuração dos botões](#configuracao-dos-botoes)
+  - [Configuração dos hotkeys](#configuracao-dos-hotkeys)
+- [Salvar configurações](#salvar-configuracoes)
 - [Carregar um jogo](#carregar-um-jogo)
 - [Quick Menu](#quick-menu)
-- [Conclusão](#conclusão)
+- [Conclusão](#conclusao)
 
 ## intro
 
