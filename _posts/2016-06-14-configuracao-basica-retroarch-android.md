@@ -56,7 +56,7 @@ iniciais antes de começar a jogar. Foi para tentar mudar este cenário que
 escrevi este texto (eu mesmo sofri um pouco no começo).
 
 
-## pré requisitos
+## pre requisitos
 
 Para tirar o máximo proveito do RetroArch no Android, são necessárias duas coisas:
 
@@ -81,7 +81,7 @@ Ah! É interessante que você habilite o recurso de rotação de tela automátic
 Android.
 
 
-## instalação
+## instalacao
 
 Sem mistério: vai no Google Play Store e instala o
 [RetroArch](https://play.google.com/store/apps/details?id=com.retroarch).
@@ -89,7 +89,7 @@ Sem mistério: vai no Google Play Store e instala o
 Atualmente (junho/2016) a versão disponível é a 1.3.4.
 
 
-## interface com usuário
+## interface com usuario
 
 Isso é o que aparece quando você inicia o RetroArch pela primeira vez:
 
@@ -205,7 +205,7 @@ Desabilite a opção `Display Overlay`
 ![alt text][displayoverlay]
 
 
-### Configuração dos botões
+### Configuracao dos botoes
 
 No menu de configurações vá em `Input`:
 
@@ -312,7 +312,7 @@ sem botão algum também.
 - `Load state`: **L**. Carrega o estado do jogo que foi salvo.
 
 
-## salvar configurações
+## salvar configuracoes
 
 Agora vamos salvar todas estas configurações que fizemos. Vá em `Main Menu`
 (ícone da casinha) e escolha `Save Current Config`:
@@ -378,7 +378,7 @@ Isso só acontece quando você tem algum core ativo (quando você está jogando
 algum game).
 
 
-## conclusão
+## conclusao
 
 Agora você já pode jogar os saudosos jogos antigos! Aproveite e dê a nota
 máxima para o RetroArch lá no Google Play Store. Afinal de contas é um programa
