@@ -7,6 +7,22 @@ tags:
 - android
 ---
 
+## Índice
+
+- [Introdução](#intro)
+- [Pré-requisitos](#pré-requisitos)
+- [Instalação](#instalação)
+- [Interface com usuário](#interface-com-usuário)
+- [Instalando os cores (emuladores)](#instalando-os-cores)
+- [Configurando](#configurando)
+  - [Desabilitar o joystick virtual](#desabilitar-o-joystick-virtual)
+  - [Configuração dos botões](#configuração-dos-botões)
+  - [Configuração dos hotkeys](#configuração-dos-hotkeys)
+- [Salvar configurações](#salvar-configurações)
+- [Carregar um jogo](#carregar-um-jogo)
+- [Quick Menu](#quick-menu)
+- [Conclusão](#conclusão)
+
 ## intro
 
 Esse texto tem como objetivo mostrar como instalar e configurar emuladores
