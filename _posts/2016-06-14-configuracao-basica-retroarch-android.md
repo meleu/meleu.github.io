@@ -249,7 +249,7 @@ pressionado. Se o seu joystick não possuir estes botões, simplesmente ignore
 de um determinado jogo ou console, não faça essa configuração aqui no `Input`!
 Utilize o `Quick Menu`, opção `Controls`, como veremos daqui a pouco.**
 
-### configuração dos hotkeys
+### configuracao dos hotkeys
 
 As hotkeys são combinações de botões que você pode acionar no seu joystick
 para controlar o RetroArch sem necessidade de outro
