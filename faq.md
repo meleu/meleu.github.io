@@ -3,18 +3,18 @@ layout: page
 title: FAQ
 ---
 
-- [What is RetroAchievements.org?](faq#what-is-retroachievements.org)
-- [Where can I find ROMs?](faq#
-- [How do I view the overlay?](faq#
-- [How do I access that overlay?](faq#
-- [What is hardcore mode?](faq#
-- [I want to make achievements!](faq#
-- [These emulators are GPL protected! Where is the source code?](faq#
-- [My welcome email has gone missing!](faq#
-- [This achievement didn't trigger!](faq#
-- [I want to tell the world about RetroAchievements!](faq#
-- [How can I assign a controller button to view the achievement overlay?](faq#
-- [I have another question!](faq#
+- [What is RetroAchievements.org?](faq#what-is-retroachievementsorg)
+- [Where can I find ROMs?](faq.md#where-can-i-find-roms)
+- [How do I view the overlay?](faq.md#how-do-i-view-the-overlay)
+- [How do I access that overlay?](faq.md#how-do-i-access-that-overlay)
+- [What is hardcore mode?](faq.md#what-is-hardcore-mode)
+- [I want to make achievements!](faq.md#i-want-to-make-achievements)
+- [These emulators are GPL protected! Where is the source code?](faq.md#these-emulators-are-gpl-protected-where-is-the-source-code)
+- [My welcome email has gone missing!](faq.md#my-welcome-email-has-gone-missing)
+- [This achievement didn't trigger!](faq.md#this-achievement-didnt-trigger)
+- [I want to tell the world about RetroAchievements!](faq.md#i-want-to-tell-the-world-about-retroachievements)
+- [How can I assign a controller button to view the achievement overlay?](faq.md#how-can-i-assign-a-controller-button-to-view-the-achievement-overlay)
+- [I have another question!](faq.md#i-have-another-question)
 
 
 ## What is RetroAchievements.org?
@@ -79,3 +79,4 @@ Some of the emulators should already be setup for this. Generally ESC on the key
 ## I have another question!
 
 If you have any further questions, just ask! We'd love to hear from you, whether good or bad: you are very welcome in the chat, on the forums, to message us on Facebook or Twitter, however you like, and we'll get back to you ASAP!
+
