@@ -5,9 +5,9 @@ title: projetos
 
 No que eu estou me metendo ultimamente...
 
-### meus projetos
+## meus projetos
 
-[RetroPie-input-selection](https://github.com/meleu/RetroPie-input-selection) -
+[RetroPie-joystick-selection](https://github.com/meleu/RetroPie-joystick-selection) -
 Um script (para usar no RetroPie) que permite ao usuário escolher qual
 joystick será utilizado para controlar os players 1 ao 4 no RetroArch.
 
