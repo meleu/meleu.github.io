@@ -3,7 +3,7 @@ layout: page
 title: FAQ
 ---
 
-# This is just a test of what will be the RetroAchievements.github.io/faq/ soon
+# This is just a test of what will be the https://RetroAchievements.github.io/faq/ soon
 
 - [What is RetroAchievements.org?](faq#what-is-retroachievementsorg)
 - [Where can I find ROMs?](faq.md#where-can-i-find-roms)
