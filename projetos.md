@@ -25,8 +25,8 @@ emuladores oficiais do RetroAchievements.
 plataforma de videogames antigos.
 
 [RetroArch](https://github.com/libretro/RetroArch) - Um frontend para vários
-emuladores de games. Roda em inúmeras plataformas (as que eu uso são Android
-e Linux). E possui suporte à [RetroAchievements](http://retroachievements.org).
+emuladores de games. Roda em inúmeras plataformas (as que eu uso são Android,
+Linux, Raspberry Pi e PS Vita). E possui suporte à [RetroAchievements](http://retroachievements.org).
 
 [RetroAchievements](http://retroachievements.org) - Registre suas conquistas nos consoles clássicos:
 NES/SNES/MegaDrive/GameBoy. (OK. Isso não é exatamente um "projeto", mas eu ando bastante interessado nisso ultimamente).
