@@ -5,7 +5,7 @@ tagline: "home"
 keywords: linux, shell, C, programming, programacao, retropie, retroachievements, retrogames, linuxmint, archlinux, cygwin
 
 url: "http://meleu.github.io"
-baseurl: "/"
+# baseurl: "/"
 
 author:
   name: "meleu"
