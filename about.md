@@ -9,14 +9,13 @@ da Computação e achava que iria trabalhar com isso, mas o acaso acabou me leva
 
 Palavras chave de coisas que eu gosto/tenho interesse (sem ordem de preferência):
 
-- aggressive inline skating
-- bateria (sim, o instrumento musical)
+- old games (e o [RetroPie](https://retropie.org.uk/)/[RetroArch](https://retroarch.com) me proporciona todos eles num só lugar)
+- [RetroAchievements](http://retroachievements.org) (uma maneira de registrar suas conquistas nos videogames antigos)
 - Linux
 - shell script
 - linguagem C
-- TCP/IP
+- networking
 - Raspberry Pi
-- Android
+- aggressive inline skating
+- bateria (sim, o instrumento musical)
 - Cubo de Rubik (cubo mágico)
-- old games (e o [RetroPie](http://retropie.org.uk/)/RetroArch me proporciona todos eles num só lugar)
-- [RetroAchievements](http://retroachievements.org) (uma maneira de registrar suas conquistas nos videogames antigos)
