@@ -3,7 +3,7 @@
     <div class="sidebar-about">
       <img src="{{ site.avatar }}" />
       <h1>
-        <a href="{{ site.baseurl }}">
+        <a href="{{ "/" | relative_url }}">
           {{ site.title }}
         </a>
       </h1>
@@ -13,13 +13,13 @@
     <nav class="sidebar-nav">
 
       <p>
-        <a class="sidebar-nav-item active" href="{{ site.baseurl }}blog/">blog</a>
+        <a class="sidebar-nav-item active" href="{{ "/blog/" | relative_url }}">blog</a>
       </p> 
 
 <!--
       <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">home</a>
 -->
-      <a class="sidebar-nav-item active" href="{{ site.baseurl }}">home</a>
+      <a class="sidebar-nav-item active" href="{{ "/" | relative_url }}">home</a>
  
       {% comment %}
         The code below dynamically generates a sidebar nav of pages with
