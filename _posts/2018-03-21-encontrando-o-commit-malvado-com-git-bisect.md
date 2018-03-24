@@ -1,6 +1,6 @@
 ---
 layout: post
-title: git bisect: encontrando o commit malvado
+title: encontrando o commit malvado com git bisect
 date: 2018-03-21
 tags:
 - git
