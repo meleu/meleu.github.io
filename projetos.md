@@ -5,6 +5,19 @@ title: projetos
 
 No que eu estou me metendo ultimamente...
 
+
+## RetroAchievements stuff
+
+[RAWeb](https://github.com/RetroAchievements/RAWeb) - repositório com o back-end do
+site RetroAchievements.org. É aqui que implementamos as melhorias no site.
+
+[RALibretro](https://github.com/leiradel/RALibretro) - uma ferramenta para criar 
+achievements para vários consoles! Mais informações aqui: [RALibretro](https://retroachievements.github.io/docs/RALibretro/).
+
+[RADocs](https://retroachievements.github.io/) - documentação sobre como desenvolver conquistas
+para retrogames.
+
+
 ## meus projetos
 
 [RetroPie-joystick-selection](https://github.com/meleu/RetroPie-joystick-selection) -
@@ -19,6 +32,7 @@ replicar em todas as máquinas que eu uso.
 coleção de savestates de jogos em pontos um pouco antes de realizar
 um Achievement que é problemático no RetroArch e funciona normalmente nos
 emuladores oficiais do RetroAchievements.
+
 
 ### projetos que acompanho
 [RetroPie](http://retropie.org.uk/) - transforma seu Raspberry Pi numa
