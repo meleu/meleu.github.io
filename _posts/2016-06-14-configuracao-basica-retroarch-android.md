@@ -1,4 +1,5 @@
 ---
+layout: post
 title: configuração básica do RetroArch no Android
 date: 2016-06-14
 tags:
