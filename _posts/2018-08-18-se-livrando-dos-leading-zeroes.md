@@ -6,7 +6,7 @@ tags:
 - bash
 ---
 
-**TL;DR**: aprendi [aqui](http://www.theunixschool.com/2013/03/how-to-remove-leading-zeros-in-string.html) uma maneira bacana
+**TL;DR**: aprendi [aqui](https://stackoverflow.com/a/11130324/6354514) uma maneira bacana
 de fazer variáveis automaticamente descartarem os "leading zeroes" no bash:
 ```bash
 var=000666
