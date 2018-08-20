@@ -47,7 +47,7 @@ fi
 
 *facepalm*
 
-Para o meu propósito específico acima (pegar a hora sem o zero a esquerda) bastava eu usar `date +%-H`. Daí fui olhar na man page e achei isso:
+Um amigo me alertou que para o meu propósito específico acima (pegar a hora sem o zero a esquerda) bastava eu usar `date +%-H`. Daí fui olhar na man page e achei isso:
 
 ```
  By default, date  pads  numeric  fields  with  zeroes.   The  following
