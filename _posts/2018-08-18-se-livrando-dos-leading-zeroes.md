@@ -40,3 +40,20 @@ if [[ $hour -gt 18 ]]; then
     echo "do something..."
 fi
 ```
+
+---
+
+**EDIT**
+
+*facepalm*
+
+Para o meu propósito específico acima (pegar a hora sem o zero a esquerda) bastava eu usar `date +%-H`. Daí fui olhar na man page e achei isso:
+
+```
+       By default, date  pads  numeric  fields  with  zeroes.   The  following
+       optional flags may follow '%':
+
+       -      (hyphen) do not pad the field
+```
+
+Bem mais simples, né?
