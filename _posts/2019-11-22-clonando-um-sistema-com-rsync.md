@@ -1,7 +1,7 @@
 ---
 layout: post
 title: clonando um sistema com rsync
-date: 2018-08-18
+date: 2019-11-22
 tags:
 - linux
 ---
