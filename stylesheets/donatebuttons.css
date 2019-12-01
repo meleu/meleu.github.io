@@ -1,0 +1,17 @@
+#buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.picpay {
+  background-color: #555;
+  color: white;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 10%;
+}
+
+.picpay:hover {
+  background-color: #0c0;
+}
