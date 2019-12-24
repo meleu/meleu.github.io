@@ -143,6 +143,6 @@ Vou terminar este post recomendando o seguinte:
 
 ## Fontes
 
-- https://github.com/dylanaraps/pure-bash-bible
-- https://mywiki.wooledge.org/glob
-- https://stackoverflow.com/a/15394738/6354514
+- [https://github.com/dylanaraps/pure-bash-bible](https://github.com/dylanaraps/pure-bash-bible)
+- [https://mywiki.wooledge.org/glob](https://mywiki.wooledge.org/glob)
+- [https://stackoverflow.com/a/15394738/6354514](https://stackoverflow.com/a/15394738/6354514)
