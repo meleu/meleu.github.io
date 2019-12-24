@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Checando se um elemento está presente em um array (bash)
+title: checando se um elemento está presente em um array (bash)
 date: 2019-12-23
 tags:
 - bash
