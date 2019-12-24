@@ -43,6 +43,7 @@ elementInArray1() {
     return 1
 }
 
+$ . elementInArray.sh 
 $ procurar='melancia'
 $ frutas=(pera uva maçã laranja kiwi)
 $ elementInArray1 "$procurar" "${frutas[@]}" && echo 'sim :)' || echo 'não :('
