@@ -20,7 +20,7 @@ Em 2017 comecei a atuar no projeto [RetroAchievements](http://retroachievements.
     - Jekyll (para o [site de documentação](https://docs.retroachievements.org))
     - JavaScript (para o [bot do nosso servidor Discord](https://github.com/RetroAchievements/RABot))
 
-A partir de 2019, graças a minha intimidade com Linux, eu administro sistemas para alguns poucos clientes/amigos, mas essa (ainda) não é minha principal fonte de renda. Tal atividade me permite colocar em prática conhecimentos relacionados ao que hoje é conhecido como DevOps.
+A partir de 2019, graças a minha intimidade com Linux, comecei a administrar sistemas para alguns poucos clientes/amigos, mas essa (ainda) não é minha principal fonte de renda. Tal atividade me permite colocar em prática conhecimentos relacionados ao que hoje é conhecido como DevOps.
 
 Desde Janeiro/2020, com o intuito de praticar tanto web design e como codificação para web (HTML/CSS/JavaScript), eu iniciei o projeto [https://meleu.sh/](https://meleu.sh/). Sim, o domínio `.sh` é uma referência a extensão que costuma-se usar para shell scripts. Resolvi produzir conteúdo relacionado a este tema ao mesmo tempo que pratico desenvolvimento web e design.
 
