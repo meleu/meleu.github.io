@@ -22,7 +22,7 @@ Em 2017 comecei a atuar no projeto [RetroAchievements](http://retroachievements.
 
 A partir de 2019, graças a minha intimidade com Linux, comecei a administrar sistemas para alguns poucos clientes/amigos, mas essa (ainda) não é minha principal fonte de renda. Tal atividade me permite colocar em prática conhecimentos relacionados ao que hoje é conhecido como DevOps.
 
-Desde Janeiro/2020, com o intuito de praticar tanto web design e como codificação para web (HTML/CSS/JavaScript), eu iniciei o projeto [https://meleu.sh/](https://meleu.sh/). E como conteúdo para este site eu decidi compartilhar o que sei sobre shell script e linha de comando (por isso o domínio `.sh`,  uma referência à extensão usada em arquivos de shell script).
+Desde Janeiro/2020, com o intuito de praticar tanto web design e como codificação (HTML/CSS/JS), eu iniciei o projeto [https://meleu.sh/](https://meleu.sh/). E para conteúdo deste site eu decidi compartilhar o que sei sobre shell script e linha de comando (por isso o domínio `.sh`,  uma referência à extensão usada em arquivos de shell script).
 
 
 ## Hobbies
