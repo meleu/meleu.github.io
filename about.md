@@ -3,7 +3,7 @@ layout: page
 title: about
 ---
 
-Desde 1999, quando comecei a trampar e comprei meu primeiro computador, que eu sou um usuário Linux. Naquela época me amarrava programar em bash, C, e estudar redes (TCP/IP). Desde aquela época até hoje eu me amarro em fazer ~~tudo~~ a maioria das coisas pela linha de comando.
+Sou usuário de Linux desde 1999, quando comecei a trampar e comprei meu primeiro computador. Foi nessa época que me apaixonei pela "filosofia Unix". Me amarrava programar em bash, C, e estudar redes (TCP/IP). Desde aquela época até hoje eu me amarro em fazer ~~tudo~~ a maioria das coisas pela linha de comando.
 
 Cheguei a me formar em Ciência da Computação e achava que o caminho natural seria trabalhar com TI, mas o ~~dinheiro~~ acaso acabou me levando para outra área.
 
