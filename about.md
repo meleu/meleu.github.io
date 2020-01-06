@@ -3,7 +3,9 @@ layout: page
 title: about
 ---
 
-Desde 1999, quando comecei a trampar e comprei meu primeiro computador, eu sou um usuário e "evangelista" do Linux. Naquela época me amarrava em bash, C, e estudar TCP/IP. Me amarro em programar em e futucar o Linux pela linha de comando. Cheguei a me formar em Ciência da Computação e achava que o caminho natural seria trabalhar com TI, mas o ~~dinheiro~~ acaso acabou me levando para outra área.
+Desde 1999, quando comecei a trampar e comprei meu primeiro computador, que eu sou um usuário Linux. Naquela época me amarrava programar em bash, C, e estudar redes (TCP/IP). Desde aquela época até hoje eu me amarro em fazer ~~tudo~~ a maioria das coisas pela linha de comando.
+
+Cheguei a me formar em Ciência da Computação e achava que o caminho natural seria trabalhar com TI, mas o ~~dinheiro~~ acaso acabou me levando para outra área.
 
 No intuito de não "perder o feeling", comecei a me envolver com projetos Open Source (geralmente relacionado à games retrô, um dos meus hobbies).
 
@@ -32,6 +34,6 @@ Outras coisas que eu curto, não necessariamente relacionado a área de tecnolog
 - Ler livros
 - Ler histórias em quadrinhos
 - [Desenhar](https://meleuartblog.wordpress.com/)
-- [patins street](https://www.youtube.com/watch?v=m2kTpd1C-as)
-- bateria (sim, o instrumento musical)
+- [Patins street](https://www.youtube.com/watch?v=m2kTpd1C-as)
+- Bateria (sim, o instrumento musical)
 - Cubo de Rubik (cubo mágico)
