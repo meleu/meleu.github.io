@@ -29,11 +29,11 @@ Desde Janeiro/2020, com o intuito de praticar tanto web design e como codificaç
 
 Outras coisas que eu curto, não necessariamente relacionado a área de tecnologia
 
-- Curtir meus filhos
+- Curtir meus filhos.
 - Videogames antigos, principalmente os do Nintendinho 8 bits e Atari 2600 (uso o RetroArch para emulação).
-- Ler livros
-- Ler histórias em quadrinhos
-- [Desenhar](https://meleuartblog.wordpress.com/)
-- [Patins street](https://www.youtube.com/watch?v=m2kTpd1C-as)
-- Bateria (sim, o instrumento musical)
-- Cubo de Rubik (cubo mágico)
+- Ler (de livros clássicos à histórias em quadrinhos).
+- [Desenhar](https://meleuartblog.wordpress.com/).
+- [Patins street](https://www.youtube.com/watch?v=m2kTpd1C-as).
+- Bateria (sim, o instrumento musical).
+- Cubo de Rubik (cubo mágico).
+- Cerveja gelada.
