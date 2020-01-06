@@ -14,7 +14,9 @@ A seção de [textos](/txts/) possui alguns textos que escrevi.
 Em [projetos](/projetos) pode-se ver no que eu ando me metendo ultimamente.
 
 E o [blog](/blog/) é onde vou colocando algumas nerdezas que
-vou aprendendo por aí.
+vou aprendendo por aí. (Se você gosta de shell scripts e linha de comando,
+também vale uma visita num blog que criei exclusivamente para esse tema:
+[https://meleu.sh/](https://meleu.sh/))
 
 Postagens mais recentes do blog:
 <ul class="posts">
