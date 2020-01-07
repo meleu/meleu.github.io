@@ -3,7 +3,9 @@ layout: page
 title: about
 ---
 
-Sou usuário de Linux desde 1999, quando comecei a trampar e comprei meu primeiro computador. Foi nessa época que me apaixonei pela "filosofia Unix" (foque em fazer uma coisa, e faça isso muito bem). Me amarrava programar em bash, C, e estudar redes (TCP/IP) e socializar no IRC. Desde aquela época até hoje eu tento sempre resolver ~~tudo~~ a maioria das coisas pela linha de comando.
+Sou usuário de Linux desde 1999, quando comecei a trampar e comprei meu primeiro computador. Foi nessa época que me apaixonei pela "filosofia Unix" (foque em fazer uma coisa, e faça isso muito bem). Me amarrava programar em bash, C, e estudar redes (TCP/IP) e socializar no IRC. Estudava tanto essas coisas que no começo dos 2000s produzi um texto esmiuçando a fundo as [Permissões de Arquivos UNIX](http://meleu.github.io/txts/permissoes.txt) e um outro sobre [Programação em bash](http://meleu.github.io/txts/bashscripting.txt).
+
+Desde aquela época até hoje eu tento sempre resolver ~~tudo~~ a maioria das coisas pela linha de comando.
 
 Cheguei a me formar em Ciência da Computação e achava que o caminho natural seria trabalhar com TI, mas o ~~dinheiro~~ acaso acabou me levando para outra área.
 
