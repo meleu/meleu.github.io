@@ -16,7 +16,7 @@ Eis como resolvi:
 
 ```js
 function arrayCountValues(sourceArray) {
-    const conter = {};
+    const counter = {};
     let key;
     for (let i = 0; i < sourceArray.length; i++) {
         counter[key] = (counter[key] ? counter[key} + 1 : 1);
