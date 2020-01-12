@@ -19,7 +19,7 @@ function arrayCountValues(sourceArray) {
     const counter = {};
     let key;
     for (let i = 0; i < sourceArray.length; i++) {
-        counter[key] = (counter[key] ? counter[key} + 1 : 1);
+        counter[key] = (counter[key] ? counter[key] + 1 : 1);
     }
     return counter;
 }
