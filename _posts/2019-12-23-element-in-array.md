@@ -5,7 +5,7 @@ date: 2019-12-23
 tags:
 - bash
 ---
-[**UPDATE**: republiquei este post com um pouco mais de conteúdo no meu outro site https://meleu.sh/elemento-presente-no-array/]
+[**UPDATE**: republiquei este post com um pouco mais de conteúdo no meu outro site [https://meleu.sh/elemento-presente-no-array/](https://meleu.sh/elemento-presente-no-array/)]
 
 Quando estamos trabalhando com arrays em shell scripts é comum ocorrer situações onde queremos saber se um determinado elemento está presente no array.
 
@@ -149,5 +149,5 @@ Vou terminar este post recomendando o seguinte:
 - [https://mywiki.wooledge.org/glob](https://mywiki.wooledge.org/glob)
 - [https://stackoverflow.com/a/15394738/6354514](https://stackoverflow.com/a/15394738/6354514)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjcyMTAyODYzXX0=
+eyJoaXN0b3J5IjpbLTM5ODQ4NTQ4NF19
 -->
