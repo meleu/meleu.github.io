@@ -5,7 +5,7 @@ date: 2019-12-23
 tags:
 - bash
 ---
-
+[UPDATE: republiquei este post com um pouco mais de conteúdo no meu outro site https://meleu.sh/elemento-no
 Quando estamos trabalhando com arrays em shell scripts é comum ocorrer situações onde queremos saber se um determinado elemento está presente no array.
 
 O bash não tem um recurso específico para isso, portanto temos que arrumar um outro jeito de conseguir esse resultado.
@@ -147,3 +147,6 @@ Vou terminar este post recomendando o seguinte:
 - [https://github.com/dylanaraps/pure-bash-bible](https://github.com/dylanaraps/pure-bash-bible)
 - [https://mywiki.wooledge.org/glob](https://mywiki.wooledge.org/glob)
 - [https://stackoverflow.com/a/15394738/6354514](https://stackoverflow.com/a/15394738/6354514)
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTEzNzY0NTQzMDRdfQ==
+-->
