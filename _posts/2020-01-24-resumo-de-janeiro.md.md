@@ -3,7 +3,7 @@ layout: post
 title: Resumo de Janeiro/2020
 date: 2019-12-23
 tags:
-
+- pessoal
 ---
 
 Esse post é mais para mim mesmo...
@@ -59,5 +59,5 @@ Esse mês de Janeiro está sendo/foi frenético de aprendizado, e se eu não esc
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MTUyMzM5MTRdfQ==
+eyJoaXN0b3J5IjpbMzQ0Njg5MjM4XX0=
 -->
