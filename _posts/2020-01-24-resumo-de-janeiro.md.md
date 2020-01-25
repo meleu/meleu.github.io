@@ -39,7 +39,7 @@ Esse mês de Janeiro está sendo/foi frenético de aprendizado, e se eu não esc
     - curti airbnb coding style
 - nvm para gerenciar diversas versões do node
     - **pendência**: instalar globalmente
-- RABot commands:
+- [RABot](https://github.com/RetroAchievements/RABot/) commands:
     - frames
     - parsemem aceita URLs e ainda busca codenotes
     - user (thanks zapo)
@@ -60,5 +60,5 @@ Esse mês de Janeiro está sendo/foi frenético de aprendizado, e se eu não esc
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2OTAzNTczNywzNDQ2ODkyMzhdfQ==
+eyJoaXN0b3J5IjpbMTYwMTg5OTU4LDM0NDY4OTIzOF19
 -->
