@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Resumo de Janeiro/2020
+title: resumo de janeiro/2020
 date: 2019-12-23
 tags:
 - pessoal
@@ -35,8 +35,9 @@ Esse mês de Janeiro está sendo/foi frenético de aprendizado, e se eu não esc
 - link: nodeschool.io
 - semana omnistack rocketseat
 - eslint é legal! :)
+    - ler as páginas explicando os motivos de cada regra agrega conhecimento.
     - curti airbnb coding style
-- nvm para gerenciar diversas funções do node
+- nvm para gerenciar diversas versões do node
     - **pendência**: instalar globalmente
 - RABot commands:
     - frames
@@ -59,5 +60,5 @@ Esse mês de Janeiro está sendo/foi frenético de aprendizado, e se eu não esc
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQ0Njg5MjM4XX0=
+eyJoaXN0b3J5IjpbLTc2OTAzNTczNywzNDQ2ODkyMzhdfQ==
 -->
