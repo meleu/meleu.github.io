@@ -55,12 +55,12 @@ Esse mês de Janeiro está sendo/foi frenético de aprendizado, e se eu não esc
     - font: Fira Code
 - livro: Pragmatic Programmer é muito bom! (ainda nem terminei mas já aprendi muita coisa boa)
 - livro: Clean Code também é muito bom!
-- link: stackedit
+- link: stackedit.io para editar markdown (dá pra sincronizar com github).
 - link: https://thecrashcourse.com/courses/computerscience
 - link: katacoda
 - Cambly é muito maneiro para treinar spoken english
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQ1Nzg2OTI2LDM0NDY4OTIzOF19
+eyJoaXN0b3J5IjpbLTE5ODI5MjE5OTMsMzQ0Njg5MjM4XX0=
 -->
