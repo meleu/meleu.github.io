@@ -34,6 +34,7 @@ Esse mês de Janeiro está sendo/foi frenético de aprendizado, e se eu não esc
 - telegraf para bots telegram
 - link: nodeschool.io
 - semana omnistack rocketseat
+- nodemon para reiniciar a aplicação assim que salvar o código fonte.
 - eslint é legal! :)
     - ler as páginas explicando os motivos de cada regra agrega conhecimento.
     - curti airbnb coding style
@@ -62,5 +63,5 @@ Esse mês de Janeiro está sendo/foi frenético de aprendizado, e se eu não esc
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTE3NjExMTgzXX0=
+eyJoaXN0b3J5IjpbMTUxNjAzOTc3OSw1MTc2MTExODNdfQ==
 -->
