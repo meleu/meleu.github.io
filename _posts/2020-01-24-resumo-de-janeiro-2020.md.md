@@ -60,8 +60,7 @@ Esse mês de Janeiro está sendo/foi frenético de aprendizado, e se eu não esc
 - link: https://thecrashcourse.com/courses/computerscience
 - link: katacoda
 - Cambly é muito maneiro para treinar spoken english
-
-
+- engoo é um site legal para ler artigos e praticar inglês.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxNjAzOTc3OSw1MTc2MTExODNdfQ==
+eyJoaXN0b3J5IjpbMTI5OTI3OTk0Nyw1MTc2MTExODNdfQ==
 -->
