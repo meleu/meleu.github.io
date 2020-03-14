@@ -53,7 +53,7 @@ Se eu não anotar o que venho aprendendo, para futuras consultas, eu vou ficar p
 
 - validação/formatação de datas e horários usando date-fns. Também dá pra usar _locales_ para exibir data-hora de acordo com a preferência do usuário (date-fns/locale/pt).
 
-- básico de utilização do mongoose para interagi
+- básico de utilização do mongoose para interagir com o MongoDB.
 
 - usar nodemailer para enviar emails.
     - usar templates de email com express-handlebars e nodemailer-express-handlebars
@@ -83,5 +83,5 @@ Se eu não anotar o que venho aprendendo, para futuras consultas, eu vou ficar p
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2MzA5MjAxXX0=
+eyJoaXN0b3J5IjpbMjEzMzczODIxOV19
 -->
