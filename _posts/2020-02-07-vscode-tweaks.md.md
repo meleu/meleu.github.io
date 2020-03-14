@@ -1,3 +1,10 @@
+---
+layout: post
+title: vscode tweaks
+date: 2020-02-07
+tags:
+- vscode
+---
 Alguns _tweaks_ que tenho feito em projetos novos envolvendo JavaScript/Node.
 
 ## nodemon + sucrase
@@ -133,5 +140,5 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODA1MjYwOTNdfQ==
+eyJoaXN0b3J5IjpbODQ0ODI0MDQ1XX0=
 -->
