@@ -2,6 +2,7 @@
 layout: post
 title: checando se um elemento está presente em um array (bash)
 date: 2019-12-23
+author: meleu
 tags:
 - bash
 ---
@@ -149,5 +150,5 @@ Vou terminar este post recomendando o seguinte:
 - [https://mywiki.wooledge.org/glob](https://mywiki.wooledge.org/glob)
 - [https://stackoverflow.com/a/15394738/6354514](https://stackoverflow.com/a/15394738/6354514)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5ODQ4NTQ4NF19
+eyJoaXN0b3J5IjpbNzc4NzA4ODEsLTM5ODQ4NTQ4NF19
 -->
