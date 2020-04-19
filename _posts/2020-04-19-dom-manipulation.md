@@ -117,8 +117,11 @@ link.classList.remove('classToBeRemoved');
 link.classList.toggle('done');
 ```
 
-## Resu
+## Resumo
+
+1. Acessar os elementos com `document.querySelector()` (ou `querySelectorAll()`).
+2. Manipular atributos com `Element
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMxOTk5MTQxNCwtMTQ1OTM3MjYzMSwtOT
+eyJoaXN0b3J5IjpbLTg0NTM2MTAyNCwtMTQ1OTM3MjYzMSwtOT
 QwOTQ3MjQxXX0=
 -->
