@@ -36,7 +36,7 @@ querySelectorAll()
 
 ### Exemplos:
 
-```
+```js
 document.getElementsByTagName('li');
 // vai retornar um HTMLCollection com todos os elementos 'li' que existirem
 
@@ -93,7 +93,7 @@ link.setAttribute('style', 'background-color: yellow');
 ## Estilização
 
 Uma vez que temos um elemento já devidamente selecionado, podemos manipular sua estilização usando as seguintes propriedades:
-```
+```js
 // manipulando a propriedade CSS diretamente
 style.{propertyName}  // propertyName é uma versão camelCase de uma propriedade CSS
 
@@ -136,7 +136,7 @@ link.classList.toggle('done');
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MDk5OTk5NzUsLTE3MzkxNjg0NjQsLT
+eyJoaXN0b3J5IjpbLTE1MjYwNzQzMTEsLTE3MzkxNjg0NjQsLT
 E1MTQzMDA4NTksLTg0NTM2MTAyNCwtMTQ1OTM3MjYzMSwtOTQw
 OTQ3MjQxXX0=
 -->
