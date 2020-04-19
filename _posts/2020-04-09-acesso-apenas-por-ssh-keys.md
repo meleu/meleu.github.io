@@ -2,6 +2,7 @@
 layout: post
 title: Criar um usuário sem senha com acesso apenas por chave pública SSH
 date: 2020-04-09
+author: meleu
 tags:
 - linux
 ---
@@ -41,3 +42,6 @@ Se tudo der certo agora é possível ir na "máquina local" e se logar sem senha
 ssh USERNAME@maquinaremota
 ```
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbODg0NjcyNjZdfQ==
+-->
