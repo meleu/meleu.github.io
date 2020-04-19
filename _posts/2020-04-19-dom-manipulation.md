@@ -110,8 +110,15 @@ link.style.backgroundColor = 'red';
 
 // o mais organizado (e considerado boa prática)
 // é fazer estilização através de classes
-link.classList.add('
+link.classList.add('className');
+link.classList.remove('classToBeRemoved');
+
+// e o legal é que dá pra ligar/desligar uma classe
+link.classList.toggle('done');
 ```
+
+## Resu
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NTkzNzI2MzEsLTk0MDk0NzI0MV19
+eyJoaXN0b3J5IjpbLTMxOTk5MTQxNCwtMTQ1OTM3MjYzMSwtOT
+QwOTQ3MjQxXX0=
 -->
