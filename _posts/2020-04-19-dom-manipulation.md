@@ -12,7 +12,7 @@ Todos os exemplos mencionados aqui podem ser testados no console do seu browser.
 
 
 - [acessando elementos](#elementos)
-    - [exemplos:](#exemplos)
+    - [exemplos](#exemplos)
 - [manipulando atributos](#atributos)
     - [exemplos](#exemplos)
 - [manipulando estilização](#estilizao)
@@ -136,7 +136,7 @@ link.classList.toggle('done');
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjYyNzU1NDM1LC0xNzM5MTY4NDY0LC0xNT
-E0MzAwODU5LC04NDUzNjEwMjQsLTE0NTkzNzI2MzEsLTk0MDk0
-NzI0MV19
+eyJoaXN0b3J5IjpbLTE4MDk5OTk5NzUsLTE3MzkxNjg0NjQsLT
+E1MTQzMDA4NTksLTg0NTM2MTAyNCwtMTQ1OTM3MjYzMSwtOTQw
+OTQ3MjQxXX0=
 -->
