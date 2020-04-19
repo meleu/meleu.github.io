@@ -69,16 +69,14 @@ setAttribute()
 ### Exemplos
 
 ```js
-let links = document.getElementsByTagName('a');
+let link = document.querySelector('a');
 
-links[0].getAttribute('href');
+link.getAttribute('href');
 
-let firstLink = links[0];
+link.setAttribute('https://meleu.sh/');
 
-firstLink.setAttribute('https://meleu.sh/');
-
-// NÃO FAÇA ISSO!:
-firstLink.setAttribute('style', 'background-color: yellow');
+// NÃO FAÇA ESTILIZAÇÃO!:
+link.setAttribute('style', 'background-color: yellow');
 // para manipular estilização prefira o método explicado abaixo.
 ```
 
@@ -108,5 +106,5 @@ Apesar de podermos manipular a estilização de um elemento diretamente usando, 
 let fir
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4NTUzNjM2OSwtOTQwOTQ3MjQxXX0=
+eyJoaXN0b3J5IjpbMTI1ODg5ODE2OSwtOTQwOTQ3MjQxXX0=
 -->
