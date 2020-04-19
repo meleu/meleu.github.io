@@ -103,8 +103,10 @@ Apesar de podermos manipular a estilização de um elemento diretamente usando, 
 ### Exemplos
 
 ```js
-let fir
+let link = document.querySelector('a');
+
+
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI1ODg5ODE2OSwtOTQwOTQ3MjQxXX0=
+eyJoaXN0b3J5IjpbMTE4NTcwOTE4NiwtOTQwOTQ3MjQxXX0=
 -->
