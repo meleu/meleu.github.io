@@ -2,6 +2,7 @@
 layout: post
 title: resumo de janeiro/2020
 date: 2020-01-25
+author: meleu
 tags:
 - pessoal
 ---
@@ -62,5 +63,6 @@ Esse mês de Janeiro está sendo/foi frenético de aprendizado, e se eu não esc
 - Cambly é muito maneiro para treinar spoken english
 - engoo é um site legal para ler artigos e praticar inglês.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI5OTI3OTk0Nyw1MTc2MTExODNdfQ==
+eyJoaXN0b3J5IjpbMTczNTk4OTA4NCwxMjk5Mjc5OTQ3LDUxNz
+YxMTE4M119
 -->
