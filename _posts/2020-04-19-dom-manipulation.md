@@ -71,8 +71,14 @@ setAttribute()
 ```js
 let links = document.getElementsByTagName('a');
 
-// 
 links[0].getAttribute('href');
+
+let firstLink = links[0];
+
+firstLink.setAttribute('https://meleu.sh/');
+
+// NÃO FAÇA ISSO!:
+firstLink.setAttribute('
 ```
 
 
@@ -95,5 +101,5 @@ classList.toggle()
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMzc0OTQ2MjksLTk0MDk0NzI0MV19
+eyJoaXN0b3J5IjpbLTEyMjAxNjAxMjEsLTk0MDk0NzI0MV19
 -->
