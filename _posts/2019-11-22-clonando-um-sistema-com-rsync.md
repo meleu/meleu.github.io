@@ -2,6 +2,7 @@
 layout: post
 title: clonando um sistema com rsync
 date: 2019-11-22
+author: meleu
 tags:
 - linux
 ---
@@ -37,3 +38,6 @@ A man page do `rsync` explica a função de cada uma das opções que utilizamos
 **Observação**: é de suma importância que o acesso ao host que vai receber os arquivos seja `root` pois queremos manter as permissões e as informações de proprietário e grupo dos arquivos. E se usarmos um usuário regular para receber os arquivos, ele não terá permissão de alterar as permissões e consequentemente todos os arquivos pertencerão a ele (o que inviabiliza o que estamos querendo fazer aqui).
 
 A execução deste comando vai demorar muitos minutos. Recomenda-se um bom café...
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbOTcyNjQ1NzI0XX0=
+-->
