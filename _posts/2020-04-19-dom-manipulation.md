@@ -11,7 +11,7 @@ Apenas algumas anotações do que venho aprendendo. O mais básico do básico de
 Todos os exemplos mencionados aqui podem ser testados no console do seu browser. Basta abrir o "Developer Tools" (geralmente a tecla `F12` abre o DevTools).
 
 
-- [acessando elementos](#elementos)
+- [acessando elementos](#acessando-elementos)
     - [exemplos](#exemplos)
 - [manipulando atributos](#atributos)
     - [exemplos](#exemplos)
@@ -20,7 +20,7 @@ Todos os exemplos mencionados aqui podem ser testados no console do seu browser.
 - [resumo](#resumo)
 
 
-## Elementos
+## acessando elementos
 
 ```js
 // métodos de document
@@ -138,7 +138,7 @@ link.classList.toggle('done');
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2ODIwNTI0NywtMTczOTE2ODQ2NCwtMT
+eyJoaXN0b3J5IjpbLTg2MjI2ODUzMiwtMTczOTE2ODQ2NCwtMT
 UxNDMwMDg1OSwtODQ1MzYxMDI0LC0xNDU5MzcyNjMxLC05NDA5
 NDcyNDFdfQ==
 -->
