@@ -7,6 +7,15 @@ tags:
 - frontend
 ---
 
+- [Elementos](#elementos)
+    - [Exemplos:](#exemplos)
+- [Atributos](#atributos)
+    - [Exemplos](#exemplos)
+- [Estilização](#estilizao)
+    - [Exemplos](#exemplos)
+- [Resumo](#resumo)
+
+
 Apenas algumas anotações do que venho aprendendo. O mais básico do básico de DOM manipulation.
 
 Todos os exemplos mencionados aqui podem ser testados no console do seu browser. Basta abrir o "Developer Tools" (geralmente a tecla `F12` abre o DevTools).
@@ -127,6 +136,6 @@ link.classList.toggle('done');
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MTQzMDA4NTksLTg0NTM2MTAyNCwtMT
-Q1OTM3MjYzMSwtOTQwOTQ3MjQxXX0=
+eyJoaXN0b3J5IjpbLTE3MzkxNjg0NjQsLTE1MTQzMDA4NTksLT
+g0NTM2MTAyNCwtMTQ1OTM3MjYzMSwtOTQwOTQ3MjQxXX0=
 -->
