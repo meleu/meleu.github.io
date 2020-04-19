@@ -2,6 +2,7 @@
 layout: post
 title: vscode tweaks
 date: 2020-02-07
+author: meleu
 tags:
 - vscode
 ---
@@ -140,5 +141,5 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQ0ODI0MDQ1XX0=
+eyJoaXN0b3J5IjpbLTE3NTUwNzEzOTYsODQ0ODI0MDQ1XX0=
 -->
