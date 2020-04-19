@@ -105,8 +105,11 @@ Apesar de podermos manipular a estilização de um elemento diretamente usando, 
 ```js
 let link = document.querySelector('a');
 
+// <a style="background: red">
+link.style.backgroundColor = 'red';
 
+// o mais organizado e considerado boa prá
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE4NTcwOTE4NiwtOTQwOTQ3MjQxXX0=
+eyJoaXN0b3J5IjpbNDM2MjYzNDkxLC05NDA5NDcyNDFdfQ==
 -->
