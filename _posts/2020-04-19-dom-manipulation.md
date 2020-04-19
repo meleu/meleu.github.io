@@ -6,19 +6,19 @@ author: meleu
 tags:
 - frontend
 ---
-
-- [Elementos](#elementos)
-    - [Exemplos:](#exemplos)
-- [Atributos](#atributos)
-    - [Exemplos](#exemplos)
-- [Estilização](#estilizao)
-    - [Exemplos](#exemplos)
-- [Resumo](#resumo)
-
-
 Apenas algumas anotações do que venho aprendendo. O mais básico do básico de DOM manipulation.
 
 Todos os exemplos mencionados aqui podem ser testados no console do seu browser. Basta abrir o "Developer Tools" (geralmente a tecla `F12` abre o DevTools).
+
+
+- [acessando elementos](#elementos)
+    - [exemplos:](#exemplos)
+- [manipulando atributos](#atributos)
+    - [exemplos](#exemplos)
+- [manipulando estilização](#estilizao)
+    - [exemplos](#exemplos)
+- [resumo](#resumo)
+
 
 ## Elementos
 
@@ -136,6 +136,7 @@ link.classList.toggle('done');
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MzkxNjg0NjQsLTE1MTQzMDA4NTksLT
-g0NTM2MTAyNCwtMTQ1OTM3MjYzMSwtOTQwOTQ3MjQxXX0=
+eyJoaXN0b3J5IjpbNjYyNzU1NDM1LC0xNzM5MTY4NDY0LC0xNT
+E0MzAwODU5LC04NDUzNjEwMjQsLTE0NTkzNzI2MzEsLTk0MDk0
+NzI0MV19
 -->
