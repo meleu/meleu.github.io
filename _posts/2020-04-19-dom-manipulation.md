@@ -100,7 +100,13 @@ classList.add()
 classList.remove()
 classList.toggle()
 ```
-Apesar de podermos manipular a estilização de um elemento diretamente usando, por exemplo, `element.style.backgroundColor`, uma melhor prática é fazer a estilização através de classes e então adicionar/remover
+Apesar de podermos manipular a estilização de um elemento diretamente usando, por exemplo, `element.style.backgroundColor`, uma melhor prática é fazer a estilização através de classes e então adicionar/remover a classe através dos métodos de `classList`. Vejamos isso nos exemplos a seguir.
+
+### Exemplos
+
+```js
+let fir
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQyMjI1NTc4NiwtOTQwOTQ3MjQxXX0=
+eyJoaXN0b3J5IjpbMTg4NTUzNjM2OSwtOTQwOTQ3MjQxXX0=
 -->
