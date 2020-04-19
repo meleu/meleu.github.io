@@ -100,7 +100,7 @@ classList.add()
 classList.remove()
 classList.toggle()
 ```
-Apesar de podermos manipular a estilização de um elemento diretamente usando, por `element.style., uma melhor prática é fazer
+Apesar de podermos manipular a estilização de um elemento diretamente usando, por exemplo, `element.style.backgroundColor`, uma melhor prática é fazer a estilização através de classes e então adicionar/remover
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MzU3NzQzNDIsLTk0MDk0NzI0MV19
+eyJoaXN0b3J5IjpbLTQyMjI1NTc4NiwtOTQwOTQ3MjQxXX0=
 -->
