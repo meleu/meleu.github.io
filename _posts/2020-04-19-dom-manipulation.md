@@ -2,6 +2,7 @@
 layout: post
 title: básico de DOM manipulation
 date: 2020-04-19
+author: meleu
 tags:
 - frontend
 ---
@@ -84,3 +85,6 @@ classList.remove()
 classList.toggle()
 ```
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMjA5MzU5NTc3N119
+-->
