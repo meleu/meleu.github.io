@@ -9,8 +9,7 @@ tags:
 
 Apenas algumas anotações do que venho aprendendo. O mais básico do básico de DOM manipulation.
 
-Todos os exemplos mencionados aqui podem ser testados no console do seu browser. Basta abrir o "Developer Tools" (geralmente a tec
-**TODO: colocar mais exemplos**
+Todos os exemplos mencionados aqui podem ser testados no console do seu browser. Basta abrir o "Developer Tools" (geralmente a tecla `F12` abre o DevTools).
 
 ## Elementos
 
@@ -68,6 +67,7 @@ setAttribute()
 Se podemos manipular os atributos de um elemento, então podemos alterar o atributo `class` e assim manipular a estilização do elemento. **No entanto**, para manipular a estilização é melhor usar as técnicas mostradas no próximo tópico.
 
 
+
 ## Estilização
 
 Uma vez que temos um elemento já devidamente selecionado, podemos manipular sua estilização usando as seguintes propriedades:
@@ -87,5 +87,5 @@ classList.toggle()
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2MzkyODk4N119
+eyJoaXN0b3J5IjpbLTExMTg1NTUyMTVdfQ==
 -->
