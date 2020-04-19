@@ -2,6 +2,7 @@
 layout: post
 title: se livrando dos leading zeroes [bash]
 date: 2018-08-18
+author: meleu
 tags:
 - bash
 ---
@@ -57,3 +58,6 @@ Um amigo me alertou que para o meu propósito específico acima (pegar a hora se
 ```
 
 Bem mais simples, né?
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMjcyOTAyNzkwXX0=
+-->
