@@ -100,7 +100,7 @@ classList.add()
 classList.remove()
 classList.toggle()
 ```
-Para manipular a estilização de um elemento diretament
+Apesar de podermos manipular a estilização de um elemento diretamente usando, por `element.style., uma melhor prática é fazer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3NTYzNzE4NCwtOTQwOTQ3MjQxXX0=
+eyJoaXN0b3J5IjpbLTE0MzU3NzQzNDIsLTk0MDk0NzI0MV19
 -->
