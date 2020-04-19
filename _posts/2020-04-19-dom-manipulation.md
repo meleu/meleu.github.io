@@ -69,8 +69,10 @@ setAttribute()
 ### Exemplos
 
 ```js
-let links = document.getElementsByTagName('a');  
-links[0].getAttribute('href');  
+let links = document.getElementsByTagName('a');
+
+// 
+links[0].getAttribute('href');
 ```
 
 
@@ -93,5 +95,5 @@ classList.toggle()
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzkyMzgwOTksLTk0MDk0NzI0MV19
+eyJoaXN0b3J5IjpbLTEwMzc0OTQ2MjksLTk0MDk0NzI0MV19
 -->
