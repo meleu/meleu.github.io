@@ -78,7 +78,8 @@ let firstLink = links[0];
 firstLink.setAttribute('https://meleu.sh/');
 
 // NÃO FAÇA ISSO!:
-firstLink.setAttribute('
+firstLink.setAttribute('style', 'background-color: yellow');
+// para manipular estilização prefira o método explicado abaixo.
 ```
 
 
@@ -99,7 +100,7 @@ classList.add()
 classList.remove()
 classList.toggle()
 ```
-
+Para manipular a estilização de um elemento diretament
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjAxNjAxMjEsLTk0MDk0NzI0MV19
+eyJoaXN0b3J5IjpbMTI3NTYzNzE4NCwtOTQwOTQ3MjQxXX0=
 -->
