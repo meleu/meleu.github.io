@@ -64,7 +64,7 @@ getAttribute()
 setAttribute()
 ```
 
-Podemos manipular 
+**Observação**: resista a tentação de usar `get/setAttribute` para manipular a estilização. Veja [Estilização](#estilizç
 Se podemos manipular os atributos de um elemento, então podemos alterar o atributo `class` e assim manipular a estilização do elemento. **No entanto**, para manipular a estilização é melhor usar as técnicas mostradas no próximo tópico.
 
 
@@ -88,5 +88,5 @@ classList.toggle()
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTczODQ4NDYzM119
+eyJoaXN0b3J5IjpbLTQxMzU3Mzk0Ml19
 -->
