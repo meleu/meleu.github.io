@@ -13,9 +13,9 @@ Todos os exemplos mencionados aqui podem ser testados no console do seu browser.
 
 - [acessando elementos](#acessando-elementos)
     - [exemplos](#exemplos)
-- [manipulando atributos](#atributos)
+- [manipulando atributos](#manipulando-atributos)
     - [exemplos](#exemplos)
-- [manipulando estilização](#estilizao)
+- [manipulando estilização](#manipulando-estilização)
     - [exemplos](#exemplos)
 - [resumo](#resumo)
 
@@ -34,7 +34,7 @@ querySelectorAll()
 ```
 **DICA**: É preferível usar `querySelector/querySelectorAll`, pois a sintaxe é similar aos seletores CSS.
 
-### Exemplos:
+### exemplos:
 
 ```js
 document.getElementsByTagName('li');
@@ -63,7 +63,7 @@ document.querySelectorAll('ul > li');
 
 ```
 
-## Atributos
+## manipulando atributos
 
 Uma vez que obtemos um elemento, podemos manipular seus atributos:
 
@@ -75,7 +75,7 @@ setAttribute()
 
 **Observação**: resista a tentação de usar `get/setAttribute` para manipular a estilização. Veja [Estilização](#estilização) mais abaixo e entenda o motivo.
 
-### Exemplos
+### exemplos
 
 ```js
 let link = document.querySelector('a');
@@ -90,7 +90,7 @@ link.setAttribute('style', 'background-color: yellow');
 ```
 
 
-## Estilização
+## manipulando estilização
 
 Uma vez que temos um elemento já devidamente selecionado, podemos manipular sua estilização usando as seguintes propriedades:
 ```js
@@ -111,7 +111,7 @@ classList.toggle()
 ```
 Apesar de podermos manipular a estilização de um elemento diretamente usando, por exemplo, `element.style.backgroundColor`, uma melhor prática é fazer a estilização através de classes e então adicionar/remover a classe através dos métodos de `classList`. Vejamos isso nos exemplos a seguir.
 
-### Exemplos
+### exemplos
 
 ```js
 let link = document.querySelector('a');
@@ -138,7 +138,7 @@ link.classList.toggle('done');
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2MjI2ODUzMiwtMTczOTE2ODQ2NCwtMT
+eyJoaXN0b3J5IjpbMTcwMTIyNTE4NiwtMTczOTE2ODQ2NCwtMT
 UxNDMwMDg1OSwtODQ1MzYxMDI0LC0xNDU5MzcyNjMxLC05NDA5
 NDcyNDFdfQ==
 -->
