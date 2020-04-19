@@ -44,10 +44,12 @@ document.getElementById('idName');
 // ----------
 
 document.querySelector('ul.customList > li');
-// retorna a primeira ocorrência de 'li' presente no 'ul' cuja classe é 'customList'
+// retorna a primeira ocorrência de 'li' presente
+// no 'ul' cuja classe é 'customList'
 
 document.querySelectorAll('ul > li');
-// retorna um NodeList (similar a um Array) com todos os 'li's filhos de 'ul's
+// retorna um NodeList (similar a um Array) com
+// todos os 'li's filhos de 'ul's
 
 ```
 
