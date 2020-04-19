@@ -2,6 +2,7 @@
 layout: post
 title: equivalente JavaScript para o array_count_values() do PHP
 date: 2019-12-12
+author: meleu
 tags:
 - JavaScript
 ---
@@ -25,3 +26,6 @@ function arrayCountValues(sourceArray) {
     return counter;
 }
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTg2NjQ1MTExMl19
+-->
