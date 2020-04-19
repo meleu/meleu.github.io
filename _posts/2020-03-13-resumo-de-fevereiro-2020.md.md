@@ -2,6 +2,7 @@
 layout: post
 title: resumo de fevereiro/2020
 date: 2020-03-13
+author: meleu
 tags:
 - pessoal
 ---
@@ -83,5 +84,5 @@ Se eu não anotar o que venho aprendendo, para futuras consultas, eu vou ficar p
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzMzczODIxOV19
+eyJoaXN0b3J5IjpbLTE5NTY2NjYzNDAsMjEzMzczODIxOV19
 -->
