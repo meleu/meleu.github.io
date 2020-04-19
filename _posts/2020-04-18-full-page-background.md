@@ -14,7 +14,7 @@ O objetivo é usar uma imagem com plano de fundo de uma página web, cobrindo to
 Premissas:
 - preencher toda a página com a imagem, sem espaços em branco;
 - redimensionar a imagem se necessário;
-- manter a proporção da imagem (_aspect ratio);
+- manter a proporção da imagem (_aspect ratio_);
 - imagem centralizada na página;
 - imagem não provoca o aparecimento de barras de rolagem;
 - funciona ~~em qualquer~~ na esmagadora maioria dos navegadores.
@@ -29,3 +29,6 @@ html {
 
 As simple as that!
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMjgwOTAxMDE4XX0=
+-->
