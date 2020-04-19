@@ -9,6 +9,7 @@ tags:
 
 Apenas algumas anotações do que venho aprendendo. O mais básico do básico de DOM manipulation.
 
+Todos os exemplos mencionados aqui podem ser testados no console do seu browser. Basta abrir o "Developer Tools" (geralmente a tec
 **TODO: colocar mais exemplos**
 
 ## Elementos
@@ -86,5 +87,5 @@ classList.toggle()
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA5MzU5NTc3N119
+eyJoaXN0b3J5IjpbMTY2MzkyODk4N119
 -->
