@@ -121,8 +121,9 @@ link.classList.toggle('done');
 
 1. Acessar os elementos com `document.querySelector()` (ou `querySelectorAll()`).
 2. Manipular atributos com `.setAttribute()`/`.getAttribute()`, **exceto para estilização**.
-3. 
+3. Manipular estilização:
+    1. preferencialmente através de classes utilizando `.classList.add()`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4Nzc5MTE5OTgsLTg0NTM2MTAyNCwtMT
-Q1OTM3MjYzMSwtOTQwOTQ3MjQxXX0=
+eyJoaXN0b3J5IjpbNDgzMDk1NzQ1LC04NDUzNjEwMjQsLTE0NT
+kzNzI2MzEsLTk0MDk0NzI0MV19
 -->
