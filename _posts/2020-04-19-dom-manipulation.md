@@ -95,7 +95,8 @@ link.setAttribute('style', 'background-color: yellow');
 Uma vez que temos um elemento já devidamente selecionado, podemos manipular sua estilização usando as seguintes propriedades:
 ```js
 // manipulando a propriedade CSS diretamente
-style.{propertyName}  // propertyName é uma versão camelCase de uma propriedade CSS
+style.{propertyName}  // propertyName é uma versão camelCase de uma
+                      // propriedade CSS. ex.: backgroundColor == background-color
 
 // manipulando estilo através de classes é mais elegante...
 className   // string com as classes separadas por espaço
@@ -136,7 +137,7 @@ link.classList.toggle('done');
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjYwNzQzMTEsLTE3MzkxNjg0NjQsLT
-E1MTQzMDA4NTksLTg0NTM2MTAyNCwtMTQ1OTM3MjYzMSwtOTQw
-OTQ3MjQxXX0=
+eyJoaXN0b3J5IjpbODYwMzAzMjg1LC0xNzM5MTY4NDY0LC0xNT
+E0MzAwODU5LC04NDUzNjEwMjQsLTE0NTkzNzI2MzEsLTk0MDk0
+NzI0MV19
 -->
