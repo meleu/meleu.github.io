@@ -108,8 +108,10 @@ let link = document.querySelector('a');
 // <a style="background: red">
 link.style.backgroundColor = 'red';
 
-// o mais organizado e considerado boa prá
+// o mais organizado (e considerado boa prática)
+// é fazer estilização através de classes
+link.classList.add('
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDM2MjYzNDkxLC05NDA5NDcyNDFdfQ==
+eyJoaXN0b3J5IjpbLTE0NTkzNzI2MzEsLTk0MDk0NzI0MV19
 -->
