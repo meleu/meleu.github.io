@@ -2,6 +2,7 @@
 layout: post
 title: Estudando CSS transition e transform
 date: 2020-04-17
+author: meleu
 tags:
 - frontend
 ---
@@ -269,5 +270,5 @@ Básico de animações com CSS: [https://thoughtbot.com/blog/css-animation-for-b
 
 [http://codepen.io/](http://codepen.io/) - um _CSS sandbox_ para testar o código e ver os resultados na hora.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMjA0NzE2MF19
+eyJoaXN0b3J5IjpbMTAxNzIwMDQ2NV19
 -->
