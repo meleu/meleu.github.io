@@ -14,9 +14,9 @@ Todos os exemplos mencionados aqui podem ser testados no console do seu browser.
 - [acessando elementos](#acessando-elementos)
     - [exemplos](#exemplos)
 - [manipulando atributos](#manipulando-atributos)
-    - [exemplos](#exemplos)
+    - [exemplos](#exemplos-1)
 - [manipulando estilização](#manipulando-estilização)
-    - [exemplos](#exemplos)
+    - [exemplos](#exemplos-2)
 - [resumo](#resumo)
 
 
@@ -138,7 +138,7 @@ link.classList.toggle('done');
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcwMTIyNTE4NiwtMTczOTE2ODQ2NCwtMT
+eyJoaXN0b3J5IjpbLTQ4MzY3Nzg0NSwtMTczOTE2ODQ2NCwtMT
 UxNDMwMDg1OSwtODQ1MzYxMDI0LC0xNDU5MzcyNjMxLC05NDA5
 NDcyNDFdfQ==
 -->
