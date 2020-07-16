@@ -6,12 +6,14 @@ author: meleu
 tags:
 - servidor
 ---
+**NOTA**: isso é mais uma nota pessoal do que um artigo. Apenas use se souber o que está fazendo.
 
 Passos para abilitar um virtual host num servidor rodando apache:
 ```shell
 sudo mkdir /var/www/your_domain
-sudo chown $USER:$USER
+sudo chown $USER:$USER /var/www/your_domain
+
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MTUzNDUyNTJdfQ==
+eyJoaXN0b3J5IjpbLTI2NjEzNzUzM119
 -->
