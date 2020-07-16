@@ -21,8 +21,17 @@ Criar o arquivo `/etc/apache2/sites-available/your_domain.conf`:
 <VirtualHost *:80>
   ServerAdmin webmaster@localhost
   ServerName your_domain
-  ServerAlias www.your-
+  ServerAlias www.your_domain
+  DocumentRoot /var/www/your_domain
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+
+De volta a linha de comando:
+```shell
+sudo a2ensite your_domain.c
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQ3MTM2OTE5XX0=
+eyJoaXN0b3J5IjpbLTQwNzcxNTA1NF19
 -->
