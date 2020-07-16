@@ -8,13 +8,21 @@ tags:
 ---
 **NOTA**: isso é mais uma nota pessoal do que um artigo. Apenas use se souber o que está fazendo.
 
+Usei isso num Ubuntu Server 18.04 com Apache 2.
+
 Passos para abilitar um virtual host num servidor rodando apache:
 ```shell
 sudo mkdir /var/www/your_domain
 sudo chown $USER:$USER /var/www/your_domain
 # criar /var/www/your_domain/index.html
 ```
-Criar o arquivo `/etc/apach
+Criar o arquivo `/etc/apache2/sites-available/your_domain.conf`:
+```
+<VirtualHost *:80>
+  ServerAdmin webmaster@localhost
+  ServerName your_domain
+  ServerAlias www.your-
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxNDUwMDc5NF19
+eyJoaXN0b3J5IjpbODQ3MTM2OTE5XX0=
 -->
