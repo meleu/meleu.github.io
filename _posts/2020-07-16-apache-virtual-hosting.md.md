@@ -30,8 +30,12 @@ Criar o arquivo `/etc/apache2/sites-available/your_domain.conf`:
 
 De volta a linha de comando:
 ```shell
-sudo a2ensite your_domain.c
+sudo a2ensite your_domain.conf
+sudo a2dissite 000-default.conf
+sudo apache2ctl configtest
+sudo systemctl restart apache2
 ```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwNzcxNTA1NF19
+eyJoaXN0b3J5IjpbMTkzODE3MzAyMl19
 -->
