@@ -10,16 +10,6 @@ Apenas algumas anotações do que venho aprendendo. O mais básico do básico de
 
 Todos os exemplos mencionados aqui podem ser testados no console do seu browser. Basta abrir o "Developer Tools" (geralmente a tecla `F12` abre o DevTools).
 
-
-- [acessando elementos](#acessando-elementos)
-    - [exemplos](#exemplos)
-- [manipulando atributos](#manipulando-atributos)
-    - [exemplos](#exemplos-1)
-- [manipulando estilização](#manipulando-estilização)
-    - [exemplos](#exemplos-2)
-- [resumo](#resumo)
-
-
 ## acessando elementos
 
 ```js
