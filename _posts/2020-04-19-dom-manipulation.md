@@ -118,6 +118,40 @@ link.classList.remove('classToBeRemoved');
 link.classList.toggle('done');
 ```
 
+## lidando com eventos
+
+Podemos disparar uma ação (executar uma função) através de eventos como click do mouse, pressionamento de uma tecla, scroll da tela, etc.
+
+Boa referência para ver lista de eventos observáveis: <https://developer.mozilla.org/en-US/docs/Web/Events>
+
+Para fazer com que um elemento do DOM fique monitorando por um determinado evento, usamos o método `addEventListener()`. O que este método faz é definir uma função que será executada quando um determinado evento ocorrer naquele elemento.
+
+```js
+target.addEventListener(eventType, eventListenerCallback);
+// obs 1: eventType é uma string (veja documentação linkada acima)
+// obs 2: eventListenerCallback recebe o evento como primeiro argumento
+```
+
+Maiores detalhes sobre `addEventListener`: <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener>
+
+
+### exemplos
+
+Vamos colocar um background vermelho quando clicarmos no primeiro `<p>` do documento.
+
+```js
+const paragrafo = document.querySelector('p');
+
+function handleClickParagrafo(event) {
+  this.style.backgroundColor = 'red';
+  // também poderia ser:
+  // event.currentTarget.style.backgroundColor = 'red';
+}
+
+paragrafo.addEventListener('click', handleClickParagrafo);
+```
+
+
 ## Resumo
 
 1. Acessar os elementos com `document.querySelector()` (ou `querySelectorAll()`).
@@ -125,10 +159,4 @@ link.classList.toggle('done');
 3. Manipular estilização:
     1. preferencialmente através de classes utilizando `.classList.add()`, `.classList.remove()` e `.classList.toggle()`.
     2. em último caso utilizar `.style.propertyName = newValue` (`propertyName` equivale a `property-name` no CSS).
-
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4MzY3Nzg0NSwtMTczOTE2ODQ2NCwtMT
-UxNDMwMDg1OSwtODQ1MzYxMDI0LC0xNDU5MzcyNjMxLC05NDA5
-NDcyNDFdfQ==
--->
+4. Lidar com eventos: `addEventListener()`.
