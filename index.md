@@ -5,10 +5,10 @@ title: home
 
 # home
 
-Este site é tipo minha casa na web. E assim como minha casa física, é um pouco bagunçado... :sweat_smile:
+Este site é tipo minha casa na web. E assim como minha casa física, é um pouco bagunçado...
 
 Em [my-notes](/my-notes/) eu vou deixando anotações sobre diversos assuntos que vou me interessando.
-O público alvo destas anotações é **eu**, mas pode ser que alguém ache alguma coisa útil por lá... :shrug:
+O público alvo destas anotações é **eu**, mas pode ser que alguém ache alguma coisa útil por lá...
 
 Em [artigos-traduzidos](/artigos-traduzidos/) eu publico alguns artigos relacionados à área de T.I. que vou traduzindo e que acredito que permanecerão relevantes por bastante tempo.
 
