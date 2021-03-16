@@ -5,11 +5,12 @@ title: home
 
 # home
 
-Estou tentando fazer do github meu novo lar na web. Passei algum tempo no
-blogspot, depois até tentei wordpress, mas quando vi o que dava para fazer
-no github, resolvi tentar. Acho que é mais o meu estilo...
+Este site é tipo minha casa na web. E assim como minha casa física, é um pouco bagunçado... :sweat_smile:
 
-A seção de [textos](/txts/) possui alguns textos que escrevi.
+Em [my-notes](/my-notes/) eu vou deixando anotações sobre diversos assuntos que vou me interessando.
+O público alvo destas anotações é **eu**, mas pode ser que alguém ache alguma coisa útil por lá... :shrug:
+
+Em [artigos-traduzidos](/artigos-traduzidos/) eu publico alguns artigos relacionados à área de T.I. que vou traduzindo e que acredito que permanecerão relevantes por bastante tempo.
 
 E o [blog](/blog/) é onde vou colocando algumas nerdezas que
 vou aprendendo por aí. (Se você gosta de shell scripts e linha de comando,
