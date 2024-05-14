@@ -1,3 +1,1 @@
-# http://meleu.github.io
-
-My personal web page.
+My old website. Now I'm at <https://meleu.dev/>.
