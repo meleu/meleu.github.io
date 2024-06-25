@@ -5,7 +5,7 @@ title: home
 
 # home
 
-Este site não é mais atualizado. Agora estou em <https://meleu.dev>.
+> ## **Este site não é mais atualizado. Agora estou em <https://meleu.dev>.**
 
 Em [my-notes](/my-notes/) eu vou deixando anotações sobre diversos assuntos que vou me interessando.
 O público alvo destas anotações é **eu**, mas pode ser que alguém ache alguma coisa útil por lá...
